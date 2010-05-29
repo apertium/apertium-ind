@@ -1,0 +1,60 @@
+read lexc < morphotactic-lexc-id.txt
+
+eliminate flag STEM
+
+eliminate flag PREF
+
+eliminate flag PREPREF
+
+eliminate flag REDUP
+
+eliminate flag SUFF
+
+eliminate flag DicegahPeN
+
+eliminate flag DiawaliPe
+
+eliminate flag i
+
+eliminate flag kan
+
+eliminate flag peN
+
+eliminate flag KeAn
+
+define initialnet
+
+source MorphophonemicRules9-1.xfst
+
+read regex initialnet .o. Morphrules ;
+
+# We can't do compile-replace with foma. 
+# Instead we use the _eq()-function to create the reduplicated forms
+# by removing the ^[ and ^] -symbols, and wrapping the stem (and ^REHYPH-symbols)
+# in brackets (< and >). We also insert arbitrary material inside brackets after the stem
+# after which we apply _eq(secondarynetB, %<, %>) which removes those strings (from the lower side) 
+# where material between brackets is not equal in content.
+# Example derivation:
+
+# ^[[{buku}%^REHYPH]^2^]           (lower side of initialnet)
+#    <buku^REHYPH><(anything)>     (lower-side of secondarynetB)
+#    <buku^REHYPH><buku^REHYPH>    (lower-side of secondarynet, after _eq())
+
+#compile-replace lower
+
+################################
+define secondarynetA ;
+define CRtoEQ [\"^["* "^[":0 "[":"<" "{":0 \"}"* "}":0 ["%^REHYPH":"^REHYPH"|"%^REHYPH m e %^N":["^REHYPH" m e "^N"]] "]":">" "^":0 2:["<" \["<"|">"]* ">"] "^]":0 ?*] ;
+define secondarynetB secondarynetA .o. [ ~[CRtoEQ.u] | CRtoEQ ];
+define secondarynet _eq(secondarynetB, %<, %>) .o. %<|%> -> 0;
+#################################
+
+# Here we continue as with xfst
+
+source HyphenRules9-1.xfst
+
+read regex secondarynet .o. HyphenRulesBiasa ;
+
+define ternarynet
+
+read regex ternarynet .o. Morphrules ;

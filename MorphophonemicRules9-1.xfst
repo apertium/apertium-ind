@@ -1,0 +1,79 @@
+! berikut ini code yang mengatur morfofonemik penganalisa morfilogi bahasa indonesia
+! perubahan pada versi ini terletak pada perbaikan untuk kasus khusus reduplikasi meng-
+! dijalankan pada xfst
+
+! mendefinisikan simbol yang diperlukan dalam code sesudahnya yaitu untuk huruf konsonan dan vokal
+define Cons [b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z];
+! push defined Cons;
+define Consnor [b|c|d|f|g|h|j|k|l|m|n|p|q|s|t|v|w|x|y|z];
+! push defined Consnor;
+define Vow [a|i|u|e|o];
+! push defined Vow;
+define lbraces ["^["|"["|"{"|"}"|"]"|"^"|2|"^]"];
+! push defined lbraces;
+
+! R1-R4b merupakan aturan yang akan dijalankan setelah DG pada composition rules di akhir
+define R1 %^N->n||[m e]_ lbraces* [d|c|j|[s y]];
+! push defined R1;
+define R2 %^N->n||[p e]_ lbraces* [d|c|j];
+! push defined R2;
+define R3 r %+ -> 0 || [b e] _ lbraces* [r|[Cons+ e r]];
+! push defined R3;
+define R4 r %+->0||[t e]_ lbraces* r;
+! push defined R4;
+define R6 r %+->0||[p e]_ lbraces* r;
+! push defined R4b;
+define R7 %^N->m||[[m e]|[p e]]_ lbraces* [b|f];
+! push defined R7;
+
+! R5 adalah aturan yang akan diparalel nantinya
+define R5 %^N->0||[m e|[p e]]_ lbraces* [l|m|n|r|y|w|t|s|p|k] ,, %^N->n g||[p e]_ lbraces* r;
+! push defined R5;
+
+! R9-R10 dikomposisi setelah R1-R4b
+define R9 r %+->0||[p e]_ lbraces* [r|[Cons+ e r]];
+! push defined R9;
+define R10 %^N->n g e||[[m e]|[p e]]_ lbraces* Cons* Vow Cons* .#.;
+! push defined R10;
+
+! R11-R14 akan diparalel dengan R5
+define R11 k->n g||[m|p] e %^N lbraces*_;
+! push defined R11;
+define R12 s->n y||[m|p] e %^N lbraces*_;
+! push defined R12;
+define R13 p->m||[m|p] e %^N lbraces*_;
+! push defined R13;
+define R14 t->n||[m|p] e %^N lbraces*_;
+! push defined R14;
+
+! R16-R17 menangani untuk bagian yang tidak mengalami perubahan morfofonemik
+define R16 %^N->n g||[m e|p e]_ lbraces*;
+! push defined R15;
+define R17 %+->0||[p e r|b e r|t e r]_ lbraces*;
+! push defined R16;
+
+! R18 untuk kasus khusus pada reduplikasi
+! define R18 %^NK->%^N||m e _ lbraces*;
+! push defined R18;
+
+! D1-D3 untuk kasus dimana perlu dideklarasikan aturan tambahan untuk prefiks bertingkat
+define D1 %^N->m||[m e]_[p e r %+|b e r %+];
+! push defined D1;
+define D2 %^N->0||[m e]_[t e r %+] ,, t e r %+->n e r||m e %^N_;
+! push defined D2;
+define D3 %^N->n g||[m e]_[k e] ,, k e->e||m e %^N_;
+! push defined D3;
+
+! Paralelisasi rule-rule sebelumnya yang perlu saja
+define RG4 %^N->0||[m e|p e]_lbraces* [l|m|n|r|y|w|t|s|p|k] ,, %^N->n g||[p e]_ lbraces* r ,, t->n||[m |p] e %^N lbraces* _ ,, p->m||[m|p] e %^N lbraces* _ ,, s->n y||[m|p] e %^N lbraces *_ ,, k->n g||[m|p] e %^N lbraces* _;
+! push defined RG4;
+
+! compose dua kategori aturan terakhir yang sudah diparalelkan
+define DG D1 .o. D2 .o. D3;
+! push defined DG;
+! define RG RG2 .o. RG4 .o. RG5 .o. RG1;
+! push defined RG;
+
+! composition rules terakhir
+define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17;
+! push defined Morphrules;
