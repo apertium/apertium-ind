@@ -34,4 +34,10 @@ list of the files:
 ***
 
 
+[31.05.2010]
+Change the form of the tags in Morphotactic rule file, from +Noun to <Noun> (plus '+' sign into inside brackets). Remove the 'Bare*' tags,
+and make "perangkat" and "pesan" to have 2 analysis (it was commented in the lexical entry to avoid this).
+How to run:
+echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakter pesan" | ./foma-proc xfst-id.bin 
 
+***
