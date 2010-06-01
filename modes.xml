@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="id-ms">
+    <pipeline>
+      <program name="foma-proc">
+        <file name="id-ms.automorf.foma"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="id-ms.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-id-ms.id-ms.t1x"/>
+        <file name="id-ms.t1x.bin"/>
+        <file name="id-ms.autobil.bin"/>
+      </program>
+      <program name="foma-proc -g">
+        <file name="id-ms.autogen.foma"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="id-ms-morph" install="no">
+    <pipeline>
+      <program name="foma-proc">
+        <file name="id-ms.automorf.foma"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="id-ms-tagger" install="no">
+    <pipeline>
+      <program name="foma-proc">
+        <file name="id-ms.automorf.foma"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="id-ms.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="id-ms-transfer" install="no">
+    <pipeline>
+      <program name="foma-proc">
+        <file name="id-ms.automorf.foma"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="id-ms.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-id-ms.id-ms.t1x"/>
+        <file name="id-ms.t1x.bin"/>
+        <file name="id-ms.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>

@@ -1,4 +1,5 @@
 all:
+	apertium-validate-dictionary apertium-id-ms.id-ms.dix
 	lt-comp lr apertium-id-ms.id-ms.dix id-ms.autobil.bin
 	lt-comp rl apertium-id-ms.id-ms.dix ms-id.autobil.bin
 	
