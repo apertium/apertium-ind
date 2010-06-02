@@ -41,3 +41,21 @@ How to run:
 echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakter pesan" | ./foma-proc xfst-id.bin 
 
 ***
+
+
+[02.06.2010]
+
+Adding the Morphological Analyzer prototypes, with a more fine-grained tags and. Works only with the toy sentence above.
+So Spectie can help me to work on the generation step. Toy ambiguities provided:
+-- ID --
+"pesan" -> "^pesan/pesan<n><regular><sg>/pes<n><entity><sg>$"
+"lari" -> "^lari/lari<v><av>$"
+"berlari" -> "^berlari/lari<v><av>$"
+
+-- MS --
+"lari" -> "^lari/lari<v><av>$"
+"berlari" -> "^berlari/lari<v><av>$"
+
+And deleting the old perl scripts
+
+***
