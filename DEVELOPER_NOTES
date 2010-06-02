@@ -59,3 +59,21 @@ So Spectie can help me to work on the generation step. Toy ambiguities provided:
 And deleting the old perl scripts
 
 ***
+
+$ echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakter pesan" | apertium -d . id-ms-morph
+10.6 kB. 337 states, 463 arcs, 351918 paths.
+^perangkat/perangkat<n><regular><sg>$ ^anda/anda<prn>$ ^mendukung/dukung<v><av>$ ^pengiriman/kirim<v><process><sg>$ ^pesan/pesan<n><regular><sg>/pes<n><entity><sg>$ ^teks/teks<n><regular><sg>$ ^yang/yang<cnjsub>$ ^melebihi/lebih<adj><av><trans><appl>$ ^batas/batas<n><regular><sg>$ ^karakter/karakter<n><regular><sg>$ ^pesan/pesan<n><regular><sg>/pes<n><entity><sg>$
+
+$ echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakter pesan" | apertium -d . id-ms-tagger
+10.6 kB. 337 states, 463 arcs, 351918 paths.
+^perangkat<n><regular><sg>$ ^anda<prn>$ ^dukung<v><av>$ ^kirim<v><process><sg>$ ^pesan<n><regular><sg>$ ^teks<n><regular><sg>$ ^yang<cnjsub>$ ^lebih<adj><av><trans><appl>$ ^batas<n><regular><sg>$ ^karakter<n><regular><sg>$ ^pesan<n><regular><sg>$
+
+$ echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakter pesan" | apertium -d . id-ms-transfer
+10.6 kB. 337 states, 463 arcs, 351918 paths.
+^piranti<n><regular><sg>$ ^anda<prn>$ ^sokong<v><av>$ ^hantar<v><process><sg>$ ^mesej<n><regular><sg>$ ^teks<n><regular><sg>$ ^yang<cnjsub>$ ^lebih<adj><av><trans><appl>$ ^had<n><regular><sg>$ ^aksara<n><regular><sg>$ ^mesej<n><regular><sg>$
+
+$ echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakter pesan" | apertium -d . id-ms
+9.9 kB. 298 states, 419 arcs, 295470 paths.
+10.6 kB. 337 states, 463 arcs, 351918 paths.
+piranti anda sokong penghantaran mesej teks yang melebihi had aksara mesej
+
