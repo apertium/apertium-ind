@@ -77,3 +77,9 @@ $ echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karak
 10.6 kB. 337 states, 463 arcs, 351918 paths.
 piranti anda sokong penghantaran mesej teks yang melebihi had aksara mesej
 
+***
+
+[04.06.2010]
+
+More morphological operations defined, still with temporary tags. Some capitalization handled (currently only on words without prefix).
+Hopefully the wiki pending test will be added soon...
