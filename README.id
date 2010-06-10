@@ -13,7 +13,7 @@ list of the files:
 - main-ms.foma                : main source file to build Indonesian Morphological Analyzer
 - apertium-id-ms.id.lexc      : Indonesian morphotactic file with lemmata as the lexical entry
 - apertium-id-ms.ms.lexc      : Malay morphotactic file with lemmata as the lexical entry
-- MorphophonemicRules9-1.xfst : morphophonemic file for both language (the morphophonemic rule for both language are similar)-
+- apertium-id-ms.morpho.xfst  : morphophonemic file for both language (the morphophonemic rule for both language are similar)-
 - HyphenRules9-1.xfst         : hyphen rule file to give the hyphen for the reduplication case
 
 How to build the bin file (LANG will be the language, either id or ms):

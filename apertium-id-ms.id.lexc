@@ -33,10 +33,11 @@ Multichar_Symbols
 	 +
 	 @P.VOICE.av@
 	 @P.VOICE.pv@
-	 @P.VERB.per@
-	 @P.VERB.imper@
+	 @P.ASPECT.perf@
+	 @P.ASPECT.imperf@
 	 @P.VERBVAR.vbser@
 	 @P.VERBVAR.vbhaver@
+	 @P.VERBVAR.vbexp@
 	 @P.POS.v@
 	 @P.POS.n@
 	 @P.POS.adj@
@@ -44,157 +45,100 @@ Multichar_Symbols
 	 @P.POS.prn@
 	 @P.POS.cnjsub@
 	 @P.POS.cnjcoo@
+	 @P.POS.det@
 	 @P.NUM.sg@
 	 @P.NUM.pl@
 	 @P.NUM.coll@
 	 @P.NUM.ord@
 	 @P.NUM.car@
+	 @P.NUM.uni@
 	 @P.ADJ.elev@
 	 @P.ADJ.sup@
 	 @P.REDUP.on@
 	 @P.REDUP.onsuff@
 	 @P.NOUN.ent@
-	 @P.NOUN.theme@
 	 @P.NOUN.act@
-	 @P.NOUN.ger@
+	 @P.NOUN.actor@
 	 @P.OBJ.caus@
 	 @P.OBJ.appl@
-	 @P.SUFF.an@
-	 @P.SUFF.kan@
-	 @P.SUFF.i@
-	 @P.SUFF.null@
-	 @P.PREPREF.null@
-	 @P.PREPREF.act@
-	 @P.PREPREF.pass@
-	 @P.PREPREF.dernoun@
-	 @P.PREF.null@
-	 @P.PREF.ber@
-	 @P.PREF.per@
 	 @P.CAP.on@
+	 @P.MARK.on@
+	 @P.MARK1.off@
+	 @P.MARK2.off@
+	 @P.MARK2.ke@
+	 @P.MARK2.pen@
+	 @P.PROCLITIC.pro@
+	 @P.ENCLITIC.enc@
+	 @P.CLITPARM1.p1@
+	 @P.CLITPARM1.p2@
+	 @P.CLITPARM1.p3@
+	 @P.CLITPARM2.p1@
+	 @P.CLITPARM2.p2@
+	 @P.CLITPARM2.p3@
 
 
 ! Root node
 LEXICON Root
-       PREPREF-Null ;
-       PREPREF-Active ;
-       PREPREF-Passive ;
-       PREPREF-DerNoun ;
-<"@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>       PREPREF-DerNoun ;
-<"@P.REDUP.onsuff@" [0 .x. "^[" "[" "{" ]>   PREPREF-DerNoun ;
+<0:ku "@P.MARK.on@" "@P.PROCLITIC.pro@" "@P.CLITPARM1.p1@">                 PRE-Prefix ;
+<0:kau "@P.PROCLITIC.pro@" "@P.CLITPARM1.p2@">                 PRE-Prefix ;
+        PRE-Prefix ;
 
-LEXICON PREPREF-Null
-<"@P.PREPREF.null@">      PREF-Null ;
-<"@P.PREPREF.null@">      PREF-Ber ;
-<"@P.PREPREF.null@">      PREF-Per ;
-<"@P.PREPREF.null@" "@P.SUFF.an@">      PREF-Per ;
-<"@P.PREPREF.null@" "@P.SUFF.an@" "@P.REDUP.onsuff@" [0 .x. "^[" "[" "{" ]>      PREF-Per ;
-<"@P.PREPREF.null@" "@P.SUFF.kan@">      PREF-Per ;
+LEXICON PRE-Prefix
+<"@P.MARK.on@" "@P.VOICE.av@" "@P.ASPECT.imperf@" [0 .x. m e "^N"]>                    Prefix ;
+<0:di "@P.MARK.on@" "@P.VOICE.pv@" "@P.ASPECT.imperf@">                    Prefix ;
+!<"@P.MARK1.off@">        Prefix ;
+        Prefix ;
 
-LEXICON PREPREF-Active
-<"@P.PREPREF.act@"  "@P.VOICE.av@" "@P.VERB.imper@" [0 .x. m e "^N"]>      PREF-Null ;
+LEXICON Prefix
+<[0 .x. b e r] "@P.MARK.on@" "@D.VOICE@" "@P.VOICE.av@" "@P.ASPECT.perf@">                 Stem ;
+<[0 .x. b e r] "@P.MARK.on@" "@P.VERBVAR.vbhaver@">                 Stem ;
+<[0 .x. b e r] "@P.MARK.on@" "@P.NUM.coll@">                 Stem ;
+<[0 .x. p e r] "@P.MARK.on@" "@P.VERBVAR.vbser@">                 Stem ;
+<[0 .x. k e] "@P.MARK.on@" "@P.MARK2.ke@" "@P.VERBVAR.vbexp@">                 Stem ;
+<[0 .x. k e] "@P.MARK.on@" "@P.NUM.ord@">                 Stem ;
+<[0 .x. t e r] "@P.MARK.on@" "@D.VOICE@" "@P.VOICE.pv@" "@P.ASPECT.perf@">                 Stem ;
+<[0 .x. t e r] "@P.MARK.on@" "@R.POS.adj@" "@P.ADJ.sup@">                 Stem ;
+<[0 .x. s e] "@P.MARK.on@" "@P.NUM.uni@">                 Stem ;
+<"@P.MARK.on@" "@P.MARK2.pen@" "@P.NUM.sg@" "@P.NOUN.actor@" [0 .x. p e "^N"]>                    Stem ;
+<"@D.MARK@" "@P.MARK.on@" "@P.MARK2.pen@" "@P.NUM.sg@" "@P.NOUN.actor@" "@P.CAP.on@" [0 .x. P e "^N"]>                    Stem ;
+<"@P.MARK.on@" "@P.MARK2.pen@" "@P.NOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" p e "^N"]>                    Stem ;
+<"@D.MARK@" "@P.MARK.on@" "@P.MARK2.pen@" "@P.NOUN.actor@" "@P.REDUP.on@" "@D.MARK@" "@P.CAP.on@" [0 .x. "^[" "[" "{" P e "^N"]>                    Stem ;
+<"@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>       Stem ;
+!<"@P.MARK2.off@">        Stem ;
+        Stem ;
 
-LEXICON PREPREF-Passive
-<0:di "@P.PREPREF.pass@"  "@P.VOICE.pv@" "@P.VERB.imper@">                 PREF-Null ;
+LEXICON Stem
+        Verb ;
+        Verb2 ;
+        Noun ;
+        Adjective ;
+        Numeral ;
+        Subordinating ;
+        Pronoun ;
+        Determiner ;
 
-LEXICON PREPREF-DerNoun
-<"@P.PREPREF.dernoun@" "@P.NUM.sg@" "@P.NOUN.act@" [0 .x. p e "^N"]>                    PREF-Null ;
-
-LEXICON PREF-Null
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.VOICE.av@" "@P.VERB.per@">                                           Verb ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.VOICE.av@" "@P.VERB.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>      Verb ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.VOICE.av@" "@P.VERB.per@">                                           Verb2 ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.VOICE.av@" "@P.VERB.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>      Verb2 ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.NUM.sg@">                                                            Noun ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>                       Noun ;
-<"@R.PREPREF.null@" "@P.PREF.null@">                                                                         Adjective ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>                                    Adjective ;
-<"@R.PREPREF.null@" "@P.PREF.null@">                                                                         Numeral ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.SUFF.an@">                                                           Verb ;
-<"@R.PREPREF.null@" "@P.PREF.null@" "@P.SUFF.an@" "@P.REDUP.onsuff@" [0 .x. "^[" "[" "{" ]>                  Verb ;
-
-<"@R.PREPREF.null@" "@P.PREF.null@" ["@P.SUFF.kan@"|"@P.SUFF.i@"] "@P.VOICE.av@" "@P.VERB.per@" "@P.VERBVAR.vbser@">        Verb ;
-<"@R.PREPREF.null@" "@P.PREF.null@" ["@P.SUFF.kan@"|"@P.SUFF.i@"] "@P.VOICE.av@" "@P.VERB.per@" "@P.VERBVAR.vbser@">        Verb2 ;
-<"@R.PREPREF.null@" "@P.PREF.null@" ["@P.SUFF.kan@"|"@P.SUFF.i@"] "@P.VOICE.av@" "@P.VERB.per@" "@P.VERBVAR.vbser@">        Noun ;
-<"@R.PREPREF.null@" "@P.PREF.null@" ["@P.SUFF.kan@"|"@P.SUFF.i@"] "@P.VOICE.av@" "@P.VERB.per@" "@P.VERBVAR.vbser@">        Adjective ;
-<"@R.PREPREF.null@" "@P.PREF.null@" ["@P.SUFF.kan@"|"@P.SUFF.i@"] "@P.VOICE.av@" "@P.VERB.per@" "@P.VERBVAR.vbser@">        Numeral ;
-
-<"@R.PREPREF.act@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                        Verb ;
-<"@R.PREPREF.act@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                        Noun ;
-<"@R.PREPREF.act@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                        Adjective ;
-<"@R.PREPREF.act@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                        Numeral ;
-
-<"@R.PREPREF.pass@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                       Verb ;
-<"@R.PREPREF.pass@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                       Noun ;
-<"@R.PREPREF.pass@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                       Adjective ;
-<"@R.PREPREF.pass@" "@P.PREF.null@" ["@P.SUFF.kan@" | "@P.SUFF.i@" | "@P.SUFF.null@"]>                       Numeral ;
-
-<"@R.PREPREF.act@" "@P.PREF.null@" "@P.SUFF.kan@">                                                           Verb2 ;
-
-<"@R.PREPREF.dernoun@" "@P.PREF.null@" ["@P.SUFF.an@" | "@P.SUFF.null@"]>                                    Verb ;
-<"@R.PREPREF.dernoun@" "@P.PREF.null@" ["@P.SUFF.an@" | "@P.SUFF.null@"]>                                    Verb2 ;
-<"@R.PREPREF.dernoun@" "@P.PREF.null@" ["@P.SUFF.an@" | "@P.SUFF.null@"]>                                    Noun ;
-<"@R.PREPREF.dernoun@" "@P.PREF.null@" ["@P.SUFF.an@" | "@P.SUFF.null@"]>                                    Adjective ;
-<"@R.PREPREF.dernoun@" "@P.PREF.null@" ["@P.SUFF.an@" | "@P.SUFF.null@"]>                                    Numeral ;
-
-
-<"@R.PREPREF.null@" "@P.PREF.null@">        Pronoun ; ! check
-<"@R.PREPREF.null@" "@P.PREF.null@">        Subordinating ; ! check
-
-LEXICON PREF-Ber
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERB.imper@">                                          Verb2 ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@">                        Noun ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" ]>        Noun ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@">                        Adjective ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@" "@P.NOUN.ent@" "@P.SUFF.an@">        Verb ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@" "@P.SUFF.kan@">                      Noun ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.VOICE.av@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@" "@P.NOUN.ent@" "@P.SUFF.kan@">       Verb ;
-<0:ber "@R.PREPREF.null@" "@P.PREF.ber@" "@P.NUM.coll@">       Numeral ;
-
-LEXICON PREF-Per
-<0:per "@R.PREPREF.null@" "@P.PREF.per@" "@P.VOICE.av@" "@P.VERBVAR.vbser@" "@P.ADJ.elev@" "@P.OBJ.caus@" "@D.SUFF@">       Adjective ;
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.NOUN.theme@" "@P.NUM.sg@" "@R.SUFF.an@">       Noun ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.NOUN.theme@" "@P.NUM.sg@" "@R.SUFF.an@">       Verb ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.NOUN.theme@" "@P.NUM.sg@" "@R.SUFF.an@">       Adjective ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.NOUN.theme@" "@P.NUM.sg@" "@R.SUFF.an@">       Numeral ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.VOICE.av@" "@R.SUFF.kan@">       Noun ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.VOICE.av@" "@R.SUFF.kan@">       Verb ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.VOICE.av@" "@R.SUFF.kan@">       Adjective ; 
-<[0 .x. p e r] "@R.PREPREF.null@" "@P.PREF.per@" "@P.VOICE.av@" "@R.SUFF.kan@">       Numeral ; 
 
 
 LEXICON RedupOption
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@P.NUM.pl@">		Suffix ;
-<"@D.REDUP.on@">        Suffix ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@P.NUM.pl@" "@C.REDUP@">		Suffix ;
+        Suffix ;
 
 LEXICON Suffix
-<"@R.SUFF.an@">      SuffixAN ;
-<"@R.SUFF.kan@">     SuffixKAN ;
-<"@R.SUFF.i@">       SuffixI ;
-<"@R.SUFF.null@">    ClosureCheck ;
-<"@D.SUFF@">         ClosureCheck ;
+<[0 .x. a n "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@D.VOICE@" "@R.REDUP.on@" "@P.NUM.pl@" "@D.MARK2@" "@P.NOUN.ent@" "@C.REDUP@">		Enclitic ;
+<0:an "@D.VOICE@" "@D.REDUP@" "@D.MARK2@" "@P.NOUN.ent@">                Enclitic ;
+<[0 .x. a n "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@P.NUM.pl@" "@R.MARK2.pen@" "@P.NOUN.act@" "@C.REDUP@">		Enclitic ;
+<0:an "@D.REDUP@" "@R.MARK2.pen@" "@P.NOUN.act@">                Enclitic ;
+<[0 .x. a n "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@P.NUM.pl@" "@R.VERBVER.vbexp@" "@C.REDUP@">		Enclitic ;
+<0:an "@D.REDUP@" "@R.VERBVAR.vbexp@">                Enclitic ;
+<0:kan "@D.REDUP@" "@U.VOICE.av@" "@P.OBJ.caus@">                Enclitic ;
+<0:i "@D.REDUP@" "@U.VOICE.av@" "@P.OBJ.appl@">                Enclitic ;
+<"@D.REDUP@">                Enclitic ;
 
-LEXICON SuffixAN
-<0:an "@R.PREPREF.null@" "@R.PREF.null@" "@P.NOUN.ent@" "@P.NUM.sg@" "@D.REDUP@">     ClosureCheck ;
-<[0 .x. a n "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.PREPREF.null@" "@R.PREF.null@" "@R.REDUP.onsuff@" "@P.NOUN.ent@" "@P.NUM.pl@">		ClosureCheck ;
-!<0:an "@R.PREPREF.null@" "@R.PREF.ber@" "@P.NOUN.ent@" "@P.NUM.sg@" "@D.REDUP@">     ClosureCheck ;
-<[0 .x. a n "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.PREPREF.null@" "@R.PREF.per@" "@R.REDUP.onsuff@" "@P.NUM.pl@">		ClosureCheck ;
-<0:an "@R.PREPREF.null@" "@R.PREF.per@" "@D.REDUP@">		ClosureCheck ;
-<0:an "@R.PREPREF.dernoun@" "@R.PREF.null@" "@P.NUM.sg@" "@P.NOUN.theme@" "@D.REDUP.onsuff@">     ClosureCheck ;
-<[0 .x. a n "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.PREPREF.dernoun@" "@R.PREF.null@" "@R.REDUP.onsuff@" "@P.NUM.pl@" "@P.NOUN.theme@">		ClosureCheck ;
-
-LEXICON SuffixKAN
-<0:kan "@R.PREPREF.null@" "@R.PREF.null@" "@P.OBJ.caus@">     ClosureCheck ;
-<0:kan "@R.PREPREF.null@" "@R.PREF.ber@">      ClosureCheck ;
-<0:kan "@R.PREPREF.null@" "@R.PREF.per@" "@P.OBJ.caus@">     ClosureCheck ;
-<0:kan "@R.PREPREF.act@" "@R.PREF.null@" "@P.OBJ.caus@">     ClosureCheck ;
-<0:kan "@R.PREPREF.pass@" "@R.PREF.null@" "@P.OBJ.caus@">     ClosureCheck ;
-
-LEXICON SuffixI
-<0:i "@R.PREPREF.null@" "@R.PREF.null@" "@P.OBJ.appl@">     ClosureCheck ;
-<0:i "@R.PREPREF.null@" "@R.PREF.per@" "@P.OBJ.appl@">     ClosureCheck ;
-<0:i "@R.PREPREF.act@" "@R.PREF.null@" "@P.OBJ.appl@">     ClosureCheck ;
-<0:i "@R.PREPREF.pass@" "@R.PREF.null@" "@P.OBJ.appl@">     ClosureCheck ;
-
+LEXICON Enclitic
+<0:ku  "@P.ENCLITIC.enc@" "@P.CLITPARM2.p1@">                 ClosureCheck ;
+<0:mu  "@P.ENCLITIC.enc@" "@P.CLITPARM2.p2@">                 ClosureCheck ;
+<0:nya  "@P.ENCLITIC.enc@" "@P.CLITPARM2.p3@">                 ClosureCheck ;
+                 ClosureCheck ;
 
 
 Lexicon ClosureCheck
@@ -205,6 +149,7 @@ Lexicon ClosureCheck
 <[%<prn%> .x. 0] "@R.POS.prn@">		           CheckVoice ;
 <[%<cnjsub%> .x. 0] "@R.POS.cnjsub@">              CheckVoice ;
 <[%<cnjcoo%> .x. 0] "@R.POS.cnjcoo@">	           CheckVoice ;
+<[%<det%> .x. 0] "@R.POS.det@">	           CheckVoice ;
 
 Lexicon CheckVoice
 <[%<av%> .x. 0] "@R.VOICE.av@">		           CheckDef ;
@@ -212,20 +157,20 @@ Lexicon CheckVoice
 <"@D.VOICE@">                                      CheckDef ;
 
 Lexicon CheckDef
-<[%<per%> .x. 0] "@R.VERB.per@">		   CheckNounType ;
-<[%<imper%> .x. 0] "@R.VERB.imper@">		   CheckNounType ;
-<"@D.VERB@">                                       CheckNounType ;
+<[%<perf%> .x. 0] "@R.ASPECT.perf@">		   CheckNounType ;
+<[%<imperf%> .x. 0] "@R.ASPECT.imperf@">		   CheckNounType ;
+<"@D.ASPECT@">                                       CheckNounType ;
 
 Lexicon CheckNounType
 <[%<ent%> .x. 0] "@R.NOUN.ent@">		   CheckVerbVariance ;
-<[%<theme%> .x. 0] "@R.NOUN.theme@">		   CheckVerbVariance ;
-!<[%<ger%> .x. 0] "@R.NOUN.ger@">		   CheckVerbVariance ;
-<[%<actor%> .x. 0] "@R.NOUN.act@">		   CheckVerbVariance ;
+<[%<act%> .x. 0] "@R.NOUN.act@">		   CheckVerbVariance ;
+<[%<actor%> .x. 0] "@R.NOUN.actor@">		   CheckVerbVariance ;
 <"@D.NOUN@">                                       CheckVerbVariance ;
 
 Lexicon CheckVerbVariance
 <[%<vbser%> .x. 0] "@R.VERBVAR.vbser@">		   CheckObject ;
 <[%<vbhaver%> .x. 0] "@R.VERBVAR.vbhaver@">        CheckObject ;
+<[%<vbexp%> .x. 0] "@R.VERBVAR.vbexp@">        CheckObject ;
 <"@D.VERBVAR@">                                    CheckObject ;
 
 Lexicon CheckObject
@@ -240,12 +185,25 @@ Lexicon CheckAdj
 
 
 Lexicon CheckNum
-<[%<sg%> .x. 0] "@R.NUM.sg@">           CheckCaps ;
-<[%<pl%> .x. 0] "@R.NUM.pl@">           CheckCaps ;
-<[%<coll%> .x. 0] "@R.NUM.coll@">       CheckCaps ;
-<[%<ord%> .x. 0] "@R.NUM.ord@">         CheckCaps ;
-<[%<car%> .x. 0] "@R.NUM.car@">         CheckCaps ;
-<"@D.NUM@">                             CheckCaps ;
+<[%<sg%> .x. 0] "@R.NUM.sg@">           CheckProClitic ;
+<[%<pl%> .x. 0] "@R.NUM.pl@">           CheckProClitic ;
+<[%<coll%> .x. 0] "@R.NUM.coll@" "@R.POS.num@">       CheckProClitic ;
+<[%<ord%> .x. 0] "@R.NUM.ord@" "@R.POS.num@">         CheckProClitic ;
+<[%<car%> .x. 0] "@R.NUM.car@" "@R.POS.num@">         CheckProClitic ;
+<[%<uni%> .x. 0] "@R.NUM.uni@">         CheckProClitic ;
+<"@D.NUM@">                             CheckProClitic ;
+
+Lexicon CheckProClitic
+<[%<pro%>%<p1%> .x. 0] "@R.PROCLITIC.pro@" "@R.CLITPARM1.p1@" "@D.POS.cnjsub@" "@D.POS.cnjcoo@">                    CheckEnClitic ;
+<[%<pro%>%<p2%> .x. 0] "@R.PROCLITIC.pro@" "@R.CLITPARM1.p2@" "@D.POS.cnjsub@" "@D.POS.cnjcoo@">                    CheckEnClitic ;
+<[%<pro%>%<p3%> .x. 0] "@R.PROCLITIC.pro@" "@R.CLITPARM1.p3@" "@D.POS.cnjsub@" "@D.POS.cnjcoo@">                    CheckEnClitic ;
+<"@D.PROCLITIC@">                                                                 CheckEnClitic ;
+
+Lexicon CheckEnClitic
+<[%<enc%>%<p1%> .x. 0] "@R.ENCLITIC.enc@" "@R.CLITPARM2.p1@" "@D.POS.cnjsub@" "@D.POS.cnjcoo@">                    CheckCaps ;
+<[%<enc%>%<p2%> .x. 0] "@R.ENCLITIC.enc@" "@R.CLITPARM2.p2@" "@D.POS.cnjsub@" "@D.POS.cnjcoo@">                    CheckCaps ;
+<[%<enc%>%<p3%> .x. 0] "@R.ENCLITIC.enc@" "@R.CLITPARM2.p3@" "@D.POS.cnjsub@" "@D.POS.cnjcoo@">                    CheckCaps ;
+<"@D.ENCLITIC@">                                                                 CheckCaps ;
 
 Lexicon CheckCaps
 <[%<cap%> .x. 0] "@R.CAP.on@">           # ;
@@ -256,34 +214,38 @@ Lexicon CheckCaps
 
 
 LEXICON Verb
-< ["@P.CAP.on@" t:T | t] ulis "@P.POS.v@">        RedupOption ;
-< ["@P.CAP.on@" k:K | k] irim "@P.POS.v@">        RedupOption ;
-< ["@P.CAP.on@" d:D | d] ukung "@P.POS.v@">       RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" t:T | t] ulis "@P.POS.v@">        RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" k:K | k] irim "@P.POS.v@">        RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" d:D | d] ukung "@P.POS.v@">       RedupOption ;
 
 LEXICON Verb2
-< ["@P.CAP.on@" l:L | l] ari "@P.POS.v@">         RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" l:L | l] ari "@P.POS.v@">         RedupOption ;
 
 LEXICON Noun
-< ["@P.CAP.on@" p:P | p] esan "@P.POS.n@">        RedupOption ;
-< ["@P.CAP.on@" p:P | p] es "@P.POS.n@">          RedupOption ; !toy
-< ["@P.CAP.on@" p:P | p] erangkat "@P.POS.n@">    RedupOption ;
-< ["@P.CAP.on@" t:T | t] eks "@P.POS.n@">         RedupOption ;
-< ["@P.CAP.on@" b:B | b] atas "@P.POS.n@">        RedupOption ;
-< ["@P.CAP.on@" k:K | k] arakter "@P.POS.n@">     RedupOption ;
-< ["@P.CAP.on@" t:T | t] oko "@P.POS.n@">         RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" p:P | p] esan "@P.POS.n@">        RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" p:P | p] es "@P.POS.n@">          RedupOption ; !toy
+< ["@D.MARK@" "@P.CAP.on@" p:P | p] erangkat "@P.POS.n@">    RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" t:T | t] eks "@P.POS.n@">         RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" b:B | b] atas "@P.POS.n@">        RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" k:K | k] arakter "@P.POS.n@">     RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" t:T | t] oko "@P.POS.n@">         RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" b:B | b] uku "@P.POS.n@">         RedupOption ;
 
 LEXICON Adjective
-< ["@P.CAP.on@" b:B | b] esar "@P.POS.adj@">      RedupOption ;
-< ["@P.CAP.on@" l:L | l] ebih "@P.POS.adj@">      RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" b:B | b] esar "@P.POS.adj@">      RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" l:L | l] ebih "@P.POS.adj@">      RedupOption ;
 
 LEXICON Numeral
-< ["@P.CAP.on@" d:D | d] ua "@P.POS.num@">        RedupOption ;
-< ["@P.CAP.on@" t:T | t] iga "@P.POS.num@">       RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" d:D | d] ua "@P.POS.num@">        RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" t:T | t] iga "@P.POS.num@">       RedupOption ;
 
 
 LEXICON Pronoun
-< ["@P.CAP.on@" a:A | a] nda "@P.POS.prn@">       RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" a:A | a] nda "@P.POS.prn@">       RedupOption ;
 
 LEXICON Subordinating
-< ["@P.CAP.on@" y:Y | y] ang "@P.POS.cnjsub@">    RedupOption ;
+< ["@D.MARK@" "@P.CAP.on@" y:Y | y] ang "@P.POS.cnjsub@">    RedupOption ;
+
+LEXICON Determiner
+< ["@D.MARK@" "@P.CAP.on@" i:I | i] ni "@P.POS.det@">       RedupOption ;
 
