@@ -14,6 +14,7 @@ define Consnor [b|c|d|f|g|h|j|k|l|m|n|p|q|s|t|v|w|x|y|z];
 define Vow [a|i|u|e|o];
 ! push defined Vow;
 define lbraces ["^["|"["|"{"|"}"|"]"|"^"|2|"^]"];
+define all ["^["|"["|"{"|"}"|"]"|"^"|2|"^]"|a-z|A-Z|"."];
 ! push defined lbraces;
 
 ! R1-R4b merupakan aturan yang akan dijalankan setelah DG pada composition rules di akhir
@@ -97,8 +98,13 @@ define DG D1 .o. D2 .o. D3;
 ! define RG RG2 .o. RG4 .o. RG5 .o. RG1;
 ! push defined RG;
 
+!! Reduplication Capitalization
+define Hyp A -> a || "-" _ .o. B -> b || "-" _ .o. C -> c || "-" _ .o. D -> d || "-" _ .o. E -> e || "-" _ .o. F -> f || "-" _ .o. G -> g || "-" _ .o. H -> h || "-" _ .o. I -> i || "-" _ .o. J -> j || "-" _ .o. K -> k || "-" _ .o. L -> l || "-" _ .o. M -> m || "-" _ .o. N -> n || "-" _ .o. O -> o || "-" _ .o. P -> p || "-" _ .o. Q -> q || "-" _ .o. R -> r || "-" _ .o. S -> s || "-" _ .o. T -> t || "-" _ .o. U -> u || "-" _ .o. V -> v || "-" _ .o. W -> w || "-" _ .o. X -> x || "-" _ .o. Y -> y || "-" _ .o. Z -> z || "-" _ ; 
+!define Hyp T -> t || "-" _ ;
+
 ! composition rules terakhir
-define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17;
+!define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17;
+define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17 .o. Hyp;
 ! push defined Morphrules;
 
 
