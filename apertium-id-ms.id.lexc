@@ -86,8 +86,8 @@ Multichar_Symbols
 LEXICON Root
 <aku%<prn%>%<pro%>%<p1%>%<sg%>%+:ku         "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
 <aku%<prn%>%<pro%>%<p1%>%<sg%>%<cap%>%+:Ku  "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
-<kau%<prn%>%<pro%>%<p2%>%<sg%>%+:kau        "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
-<kau%<prn%>%<pro%>%<p2%>%<sg%>%<cap%>%+:Kau "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
+<kamu%<prn%>%<pro%>%<p2%>%<sg%>%+:kau        "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
+<kamu%<prn%>%<pro%>%<p2%>%<sg%>%<cap%>%+:Kau "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
                                                                  MainWord ;
 
 Lexicon MainWord
@@ -341,12 +341,12 @@ Lexicon CheckCaps
 Lexicon CheckEnClitic
 <[%+aku%<prn%>%<enc%>%<p1%>%<sg%>%<pos%> .x. ku]  "@R.DERNOUN@">          # ;
 <[%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. mu] "@R.DERNOUN@">          # ;
-<[%+kau%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. kau] "@R.DERNOUN@">          # ;
+<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. kau] "@R.DERNOUN@">          # ;
 <[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%> .x. nya] "@R.DERNOUN@">          # ;
 <[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%> .x. "-" Nya] "@R.DERNOUN@">   # ;
 <[%+aku%<prn%>%<enc%>%<p1%>%<sg%> .x. ku]  "@R.VOICE@">                 # ;
 <[%+kamu%<prn%>%<enc%>%<p2%>%<sg%> .x. mu] "@R.VOICE@">                 # ;
-<[%+kau%<prn%>%<enc%>%<p2%>%<sg%> .x. kau] "@R.VOICE@">                 # ;
+<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%> .x. kau] "@R.VOICE@">                 # ;
 <[%+dia%<prn%>%<enc%>%<p3%>%<sg%> .x. nya] "@R.VOICE@">                 # ;
 <[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%> .x. "-" Nya] "@R.VOICE@">   # ;
                                                                           # ;
@@ -391,7 +391,7 @@ LEXICON Pronoun
 <[a:A "@D.MARK@" "@P.CAP.on@" | a] ku "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.sg@">        InflectionOption ;
 <[a:A "@D.MARK@" "@P.CAP.on@" | a] nda "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">       InflectionOption ;
 <[k:K "@D.MARK@" "@P.CAP.on@" | k] amu "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">       InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] au "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">        InflectionOption ;
+<[k:K "@D.MARK@" "@P.CAP.on@" | k] amu:au "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">        InflectionOption ;
 <[d:D "@D.MARK@" "@P.CAP.on@" | d] ia "@P.POS.prn@" "@P.PERSON.p3@" "@P.NUM.sg@">        InflectionOption ;
 <[k:K "@D.MARK@" "@P.CAP.on@" | k] ami "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.pl@">       InflectionOption ;
 <[k:K "@D.MARK@" "@P.CAP.on@" | k] ita "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.pl@">       InflectionOption ;
