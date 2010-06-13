@@ -98,3 +98,14 @@ Change the Enclitic and Proclitic tag format, and at last solved the problem of 
 Instead of "Buku-Buku" I have "Buku-buku" now :D
 
 ***
+
+[13.06.2010]
+
+Yet another revision on the tags :(
+Added the missing <prn> on proclitic
+1 Transfer Rule to change "aku tulis" -> "kutulis" which is the start of a lot more rules
+Some capitalization still uncovered
+
+**
+
+
