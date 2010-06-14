@@ -1,6 +1,6 @@
 ! Indonesian Morphological Analyzer
 ! Modified by : Septina Dian Larasati (septina.larasati@gmail.com)
-! Date        : 04 June 2010
+! Date        : 14 June 2010
 
 ! Morphotactic Rules
 
@@ -30,65 +30,68 @@ Multichar_Symbols
 	 ^N
 	 ^REHYPH
 	 +
-	 @P.POS.v@
-	 @P.POS.n@
-	 @P.POS.adj@
-	 @P.POS.num@
-	 @P.POS.prn@
-	 @P.POS.cnjsub@
-	 @P.POS.cnjcoo@
-	 @P.POS.det@
-	 @P.PROCLITIC.pro@
-	 @P.ENCLITIC.enc@
-	 @P.NUM.sg@
-	 @P.NUM.pl@
-	 @P.VOICE.av@
-	 @P.VOICE.pv@
-	 @P.ASPECT.perf@
-	 @P.ASPECT.imperf@
-	 @P.VERBVAR.vbser@
-	 @P.VERBVAR.vbhaver@
-	 @P.DERNOUN.ent@
-	 @P.DERNOUN.act@
-	 @P.DERNOUN.actor@
-	 @P.DERNOUN.theme@
-	 @P.DERNOUN.abstract@
-	 @P.DERNOUN.bare@
-	 @P.DERADJ.positive@
-	 @P.DERADJ.sup@
-	 @P.DERADJ.manner@
-	 @P.DERADJ.exceed@
-	 @P.DERNUM.car@
-	 @P.DERNUM.ord@
-	 @P.DERNUM.coll@
-	 @P.DERNUM.ref@
-	 @P.DERNUM.uni@
-	 @P.OBJ.caus@
-	 @P.OBJ.appl@
-	 @P.PERSON.p1@
-	 @P.PERSON.p2@
-	 @P.PERSON.p3@
-	 @P.REDUP.on@
-	 @P.FLAG.bare@
-	 @P.FLAG.numinfl@
-	 @P.FLAG.deradj@
-	 @P.FLAG.dernoun@
-	 @P.MARK2.bare@
-	 @P.MARK.ke@
-	 @P.MARK.ber@
-	 @P.MARK.ter@
-	 @P.MARK.pen@
-	 @P.MARK.per@
-	 @P.MARK.on@
-
+         @P.ASPECT.imperf@
+         @P.ASPECT.perf@
+         @P.CAP.on@
+         @P.DERADJ.exceed@
+         @P.DERADJ.manner@
+         @P.DERADJ.positive@
+         @P.DERADJ.sup@
+         @P.DERNOUN.abstract@
+         @P.DERNOUN.act@
+         @P.DERNOUN.actor@
+         @P.DERNOUN.bare@
+         @P.DERNOUN.ent@
+         @P.DERNOUN.theme@
+         @P.DERNUM.car@
+         @P.DERNUM.coll@
+         @P.DERNUM.ord@
+         @P.DERNUM.ref@
+         @P.DERNUM.uni@
+         @P.ENCLITIC.enc@
+         @P.FLAG.bare@
+         @P.FLAG.deradj@
+         @P.FLAG.dernoun@
+         @P.FLAG.numinfl@
+         @P.FLAG.verbinfl@
+         @P.MARK.bare@
+         @P.MARK.ber@
+         @P.MARK.ke@
+         @P.MARK.on@
+         @P.MARK.pen@
+         @P.MARK.per@
+         @P.MARK.ter@
+         @P.NUM.pl@
+         @P.NUM.sg@
+         @P.OBJ.appl@
+         @P.OBJ.caus@
+         @P.PERSON.p1@
+         @P.PERSON.p2@
+         @P.PERSON.p3@
+         @P.POS.adj@
+         @P.POS.cnjcoo@
+         @P.POS.cnjsub@
+         @P.POS.det@
+         @P.POS.n@
+         @P.POS.num@
+         @P.POS.prn@
+         @P.POS.v@
+         @P.PROCLITIC.pro@
+         @P.REDUP.on@
+         @P.VERBVAR.vbhaver@
+         @P.VERBVAR.vbser@
+         @P.VOICE.av@
+         @P.VOICE.pv@
 
 ! Root node
 LEXICON Root
-<aku%<prn%>%<pro%>%<p1%>%<sg%>%+:ku         "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
-<aku%<prn%>%<pro%>%<p1%>%<sg%>%<cap%>%+:Ku  "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
-<kamu%<prn%>%<pro%>%<p2%>%<sg%>%+:kau        "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
-<kamu%<prn%>%<pro%>%<p2%>%<sg%>%<cap%>%+:Kau "@P.MARK.on@" "@P.FLAG.verbinfl@">       VerbInflection ;
-                                                                 MainWord ;
+<aku%<prn%>%<pro%>%<p1%>%<sg%>%+:ku          "@P.FLAG.verbinfl@">       VerbInflection ;
+<aku%<prn%>%<pro%>%<p1%>%<sg%>%<cap%>%+:Ku   "@P.FLAG.verbinfl@">       VerbInflection ;
+<kamu%<prn%>%<pro%>%<p2%>%<sg%>%+:kau        "@P.FLAG.verbinfl@">       VerbInflection ;
+<kamu%<prn%>%<pro%>%<p2%>%<sg%>%<cap%>%+:Kau "@P.FLAG.verbinfl@">       VerbInflection ;
+<"@P.CAP.on@">                        MainWord ;
+                                                      MainWord ;
+
 
 Lexicon MainWord
 <"@P.FLAG.numinfl@">        NumeralInflection ;
@@ -107,107 +110,85 @@ Lexicon MainWord
 !!---- Prefixes ----!!
 
 Lexicon NumeralInflection
-<      "@P.MARK2.bare@">                                                                          Numeral ;
-<[0:Ke "@D.MARK@" "@P.CAP.on@" | 0:ke]   "@P.MARK.ke@">                                           Numeral ;
-<[0:Ke "@D.MARK@" "@P.CAP.on@" | 0:ke]   "@P.MARK.ke@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>       Numeral ;
-<[0:Ber "@D.MARK@" "@P.CAP.on@" | 0:ber] "@P.MARK.ber@">                                          Numeral ;
+<"@P.MARK.bare@">                                                           Numeral ;
+<0:k 0:e  "@P.MARK.ke@">                                                    Numeral ;
+<0:k 0:e  "@P.MARK.ke@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                Numeral ;
+<0:b 0:er "@P.MARK.ber@">                                                   Numeral ;
 
 Lexicon DerivingAdjective
-<[0:Ke "@D.MARK@" "@P.CAP.on@" | 0:ke]  "@P.MARK.ke@">          Noun ;
-<[0:Ke "@D.MARK@" "@P.CAP.on@" | 0:ke]  "@P.MARK.ke@">          Adjective ;
-<[0:Ter "@D.MARK@" "@P.CAP.on@" | 0:ter] "@P.MARK.ter@">        Adjective ;
-<      "@P.MARK2.bare@">                                        Adjective ;
-<      "@P.MARK2.bare@""@P.REDUP.on@" [0 .x. "^[" "[" "{"]>     Adjective ;
+<0:k 0:e  "@P.MARK.ke@">                                                    Noun ;
+<0:k 0:e  "@P.MARK.ke@">                                                    Adjective ;
+<0:t 0:er "@P.MARK.ter@">                                                   Adjective ;
+<"@P.MARK.bare@">                                                           Adjective ;
+<"@P.MARK.bare@""@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                        Adjective ;
 
 Lexicon DerivingNoun-Singular
-<"@P.NUM.sg@">                               DerivingNoun-main ;
+<"@P.NUM.sg@">                                                              DerivingNoun-main ;
 
 Lexicon DerivingNoun-Plural
-<"@P.MARK2.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>              Verb ;
-<"@P.MARK2.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>              Noun ;
-<"@P.MARK2.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>              Adjective ;
-<"@P.MARK2.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>              Numeral ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. p e "^N"]>        Verb ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. p e "^N"]>        Noun ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. p e "^N"]>        Adjective ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. p e "^N"]>        Numeral ;
-<"@P.MARK.ke@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]  0:ke>           Adjective ;
-<"@P.MARK.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] 0:per>          Noun ;
-<"@P.MARK.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] 0:per>          Adjective ;
-<"@P.MARK.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] 0:per>          Numeral ;
-<"@D.MARK@" "@P.CAP.on@" "@P.MARK.ke@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. K e]>                     Adjective ; !check xxx
-<"@D.MARK@" "@P.CAP.on@" "@P.MARK.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e r] >                    Noun ; !check xxx
-<"@D.MARK@" "@P.CAP.on@" "@P.MARK.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e r] >                    Adjective ; !check xxx
-<"@D.MARK@" "@P.CAP.on@" "@P.MARK.per@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e r] >                    Numeral ; !check xxx
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e "^N"]>        Verb ;
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e "^N"]>        Noun ;
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e "^N"]>        Adjective ;
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"] [0 .x. P e "^N"]>        Numeral ;
-
-!<"@P.REDUP.on@" [0 .x. "^[" "[" "{"]>        DerivingNoun-main ;
-!<"@P.REDUP.on@" "@P.MARK2.bare@" [0 .x. "^[" "[" "{"]>        Verb ;
-!<"@P.REDUP.on@" "@P.MARK2.bare@" [0 .x. "^[" "[" "{"]>        Noun ;
+<"@P.MARK.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                       Verb ;
+<"@P.MARK.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                       Noun ;
+<"@P.MARK.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                       Adjective ;
+<"@P.MARK.bare@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                       Numeral ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" p e "^N"]>        Verb ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" p e "^N"]>        Noun ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" p e "^N"]>        Adjective ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" "@P.REDUP.on@" [0 .x. "^[" "[" "{" p e "^N"]>        Numeral ;
+<"@P.REDUP.on@" [0 .x. "^[" "[" "{" k e] "@P.MARK.ke@">                     Adjective ;
+<"@P.REDUP.on@" [0 .x. "^[" "[" "{" p e r] "@P.MARK.per@">                  Noun ;
+<"@P.REDUP.on@" [0 .x. "^[" "[" "{" p e r] "@P.MARK.per@">                  Adjective ;
+<"@P.REDUP.on@" [0 .x. "^[" "[" "{" p e r] "@P.MARK.per@">                  Numeral ;
 
 Lexicon DerivingNoun-main
-<"@P.MARK2.bare@">              Verb ;
-<"@P.MARK2.bare@">              Noun ;
-<"@P.MARK2.bare@">              Adjective ;
-<"@P.MARK2.bare@">              Numeral ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>        Verb ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>        Noun ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>        Adjective ;
-<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>        Numeral ;
-<"@P.MARK.ke@"  0:ke>           Adjective ;
-<"@P.MARK.per@" 0:per>          Noun ;
-<"@P.MARK.per@" 0:per>          Adjective ;
-<"@P.MARK.per@" 0:per>          Numeral ;
-<[0 .x. K e]   "@D.MARK@" "@P.CAP.on@" "@P.MARK.ke@">                     Adjective ; !check xxx
-<[0 .x. P e r] "@D.MARK@" "@P.CAP.on@" "@P.MARK.per@">                    Noun ; !check xxx
-<[0 .x. P e r] "@D.MARK@" "@P.CAP.on@" "@P.MARK.per@">                    Adjective ; !check xxx
-<[0 .x. P e r] "@D.MARK@" "@P.CAP.on@" "@P.MARK.per@">                    Numeral ; !check xxx
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" [0 .x. P e "^N"]>        Verb ;
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" [0 .x. P e "^N"]>        Noun ;
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" [0 .x. P e "^N"]>        Adjective ;
-<"@P.MARK.pen@" "@P.CAP.on@" "@P.DERNOUN.actor@" [0 .x. P e "^N"]>        Numeral ;
-
+<"@P.MARK.bare@">                                                          Verb ;
+<"@P.MARK.bare@">                                                          Noun ;
+<"@P.MARK.bare@">                                                          Adjective ;
+<"@P.MARK.bare@">                                                          Numeral ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>                      Verb ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>                      Noun ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>                      Adjective ;
+<"@P.MARK.pen@" "@P.DERNOUN.actor@" [0 .x. p e "^N"]>                      Numeral ;
+<0:k 0:e  "@P.MARK.ke@">                                                   Adjective ;
+<0:p 0:er "@P.MARK.per@">                                                  Noun ;
+<0:p 0:er "@P.MARK.per@">                                                  Adjective ;
+<0:p 0:er "@P.MARK.per@">                                                  Numeral ;
 
 
 Lexicon VerbInflection
-<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.NUM.sg@">                                                  Verb ;
-<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>              Verb ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" [0 .x. m e "^N"]>                               Verb ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>   Verb ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" [0 .x. m e "^N"]>                               Noun ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>   Noun ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" [0 .x. m e "^N"]>                               Adjective ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>   Adjective ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" [0 .x. m e "^N"]>                               Numeral ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>   Numeral ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" 0:di>                                           Verb ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" 0:di [0 .x. "^[" "[" "{"]>       Verb ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" 0:di>                                           Noun ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" 0:di [0 .x. "^[" "[" "{"]>       Noun ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" 0:di>                                           Adjective ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" 0:di [0 .x. "^[" "[" "{"]>       Adjectibe ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" 0:di>                                           Numeral ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@" "@P.REDUP.on@" 0:di [0 .x. "^[" "[" "{"]>       Numeral ;
-<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.NUM.sg@" 0:ter>                                            Verb ;
-<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.NUM.sg@" "@P.REDUP.on@" 0:ter [0 .x. "^[" "[" "{"]>        Verb ;
-<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.NUM.sg@" 0:ter>                                            Noun ;
-<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.NUM.sg@" "@P.REDUP.on@" 0:ter [0 .x. "^[" "[" "{"]>        Noun ;
-<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" 0:per>                                          Adjective ;
-<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" "@P.REDUP.on@" 0:per [0 .x. "^[" "[" "{"]>      Adjective ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" 0:memper>                                          Adjective ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" "@P.REDUP.on@" 0:memper [0 .x. "^[" "[" "{"]>      Adjective ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" 0:diper>                                          Adjective ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" "@P.REDUP.on@" 0:diper [0 .x. "^[" "[" "{"]>      Adjective ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" 0:memper>                                          Verb ;
-<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" "@P.REDUP.on@" 0:memper [0 .x. "^[" "[" "{"]>      Verb ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" 0:diper>                                          Verb ;
-<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@" "@P.REDUP.on@" 0:diper [0 .x. "^[" "[" "{"]>      Verb ;
-<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@" 0:ber "@P.FLAG.dernoun@">                        DerivingNoun-Singular ;
-<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@" 0:ber "@P.FLAG.dernoun@">                        DerivingNoun-Plural ;
-
+<"@P.VOICE.av@" "@P.ASPECT.perf@"   "@P.NUM.sg@">                                                            Verb ;
+<"@P.VOICE.av@" "@P.ASPECT.perf@"   "@P.REDUP.on@" [0 .x. "^[" "[" "{"]>                                     Verb ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   [0 .x. m e "^N"]>                                         Verb ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>                            Verb ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   [0 .x. m e "^N"]>                                         Noun ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>                            Noun ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   [0 .x. m e "^N"]>                                         Adjective ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>                            Adjective ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   [0 .x. m e "^N"]>                                         Numeral ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.REDUP.on@" [0 .x. m e "^N" "^[" "[" "{"]>                            Numeral ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   0:d 0:i>                                                  Verb ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.REDUP.on@" 0:d 0:i [0 .x. "^[" "[" "{"]>                             Verb ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   0:d 0:i>                                                  Noun ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.REDUP.on@" 0:d 0:i [0 .x. "^[" "[" "{"]>                             Noun ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   0:d 0:i>                                                  Adjective ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.REDUP.on@" 0:d 0:i [0 .x. "^[" "[" "{"]>                             Adjective ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.NUM.sg@"   0:d 0:i>                                                  Numeral ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.REDUP.on@" 0:d 0:i [0 .x. "^[" "[" "{"]>                             Numeral ;
+<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.NUM.sg@"   0:t 0:er>                                                   Verb ;
+<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.REDUP.on@" 0:t 0:er [0 .x. "^[" "[" "{"]>                              Verb ;
+<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.NUM.sg@"   0:t 0:er>                                                   Noun ;
+<"@P.VOICE.pv@" "@P.ASPECT.perf@" "@P.REDUP.on@" 0:t 0:er [0 .x. "^[" "[" "{"]>                              Noun ;
+<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@"   0:p 0:er>                               Adjective ;
+<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbser@" "@P.REDUP.on@" 0:p 0:er>                               Adjective ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@"   0:m 0:emper>                          Adjective ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.REDUP.on@" 0:m 0:emper [0 .x. "^[" "[" "{"]>     Adjective ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@"   0:m 0:emper>                          Verb ;
+<"@P.VOICE.av@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.REDUP.on@" 0:m 0:emper [0 .x. "^[" "[" "{"]>     Verb ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@"   0:d 0:iper>                           Adjective ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.REDUP.on@" 0:d 0:iper [0 .x. "^[" "[" "{"]>      Adjective ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.NUM.sg@"   0:d 0:iper>                           Verb ;
+<"@P.VOICE.pv@" "@P.ASPECT.imperf@" "@P.VERBVAR.vbser@" "@P.REDUP.on@" 0:d 0:iper [0 .x. "^[" "[" "{"]>      Verb ;
+<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@"   0:b 0:er "@P.FLAG.dernoun@">          DerivingNoun-Singular ;
+<"@P.VOICE.av@" "@P.ASPECT.perf@" "@P.VERBVAR.vbhaver@" "@P.NUM.sg@"   0:b 0:er "@P.FLAG.dernoun@">          DerivingNoun-Plural ;
 
 
 
@@ -221,31 +202,32 @@ Lexicon InflectionOption
 
 
 Lexicon NumeralInflectionEnding
-<      "@D.REDUP@" "@R.MARK2.bare@" "@P.DERNUM.car@">           Tagging ;
-<      "@D.REDUP@" "@R.MARK.ke@"   "@P.DERNUM.ord@">           Tagging ;
-<0:nya "@D.REDUP@" "@R.MARK.ke@"   "@P.DERNUM.ref@">     Tagging ;
+<      "@D.REDUP@" "@R.MARK.bare@" "@P.DERNUM.car@">            Tagging ;
+<      "@D.REDUP@" "@R.MARK.ke@"   "@P.DERNUM.ord@">            Tagging ;
+<0:nya "@D.REDUP@" "@R.MARK.ke@"   "@P.DERNUM.ref@">            Tagging ;
 <[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.ke@" "@P.DERNUM.ref@" 0:nya>        Tagging ;
-<      "@D.REDUP@" "@R.MARK.ber@" "@P.DERNUM.coll@">         Tagging ;
+<      "@D.REDUP@" "@R.MARK.ber@" "@P.DERNUM.coll@">            Tagging ;
 
 Lexicon DerivingAdjectiveEnding
-<0:an "@D.REDUP@" "@R.MARK.ke@"   "@R.POS.n@"   "@P.DERADJ.manner@">        Tagging ;
-<0:an "@D.REDUP@" "@R.MARK.ke@"   "@R.POS.adj@" "@P.DERADJ.exceed@">        Tagging ;
-<     "@D.REDUP@" "@R.MARK.ter@"  "@R.POS.adj@" "@P.DERADJ.sup@">           Tagging ;
-<     "@D.REDUP@" "@R.MARK2.bare@" "@R.POS.adj@" "@P.DERADJ.positive@">      Tagging ;
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@""@R.MARK2.bare@" "@R.POS.adj@" "@P.DERADJ.positive@">      Tagging ;
+<0:an "@D.REDUP@" "@R.MARK.ke@"   "@R.POS.n@"   "@P.DERADJ.manner@">         Tagging ;
+<0:an "@D.REDUP@" "@R.MARK.ke@"   "@R.POS.adj@" "@P.DERADJ.exceed@">         Tagging ;
+<     "@D.REDUP@" "@R.MARK.ter@"  "@R.POS.adj@" "@P.DERADJ.sup@">            Tagging ;
+<     "@D.REDUP@" "@R.MARK.bare@" "@R.POS.adj@" "@P.DERADJ.positive@">       Tagging ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@""@R.MARK.bare@" "@R.POS.adj@" "@P.DERADJ.positive@">      Tagging ;
 
 Lexicon DerivingNounEnding
-<     "@R.MARK2.bare@" "@R.POS.n@" "@P.DERNOUN.bare@">  LastReduplicationCheck ;
-<0:an "@R.MARK2.bare@" "@P.DERNOUN.ent@">               LastReduplicationCheck ;
-<0:an "@R.MARK.pen@"  "@P.DERNOUN.act@">               LastReduplicationCheck ;
-<     "@R.MARK.pen@">                                  LastReduplicationCheck ;
-<0:an "@R.MARK.ke@"   "@P.DERNOUN.abstract@">          LastReduplicationCheck ;
-<0:an "@R.MARK.per@"  "@P.DERNOUN.theme@">             LastReduplicationCheck ;
+<     "@R.MARK.bare@" "@R.POS.n@" "@P.DERNOUN.bare@">   LastReduplicationCheck ;
+<0:an "@R.MARK.bare@" "@P.DERNOUN.ent@">                LastReduplicationCheck ;
+<0:an "@R.MARK.pen@"   "@P.DERNOUN.act@">               LastReduplicationCheck ;
+<     "@R.MARK.pen@">                                   LastReduplicationCheck ;
+<0:an "@R.MARK.ke@"    "@P.DERNOUN.abstract@">          LastReduplicationCheck ;
+<0:an "@R.MARK.per@"   "@P.DERNOUN.theme@">             LastReduplicationCheck ;
 
 
 Lexicon VerbInflectionEnding
 <"@D.REDUP@">                                                                            VerbInflectionEnding-main ;
 <[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@">        VerbInflectionEnding-main ;
+!<[0 .x. "%^REHYPH" ">>"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@">                     VerbInflectionEnding-main ;
 
 Lexicon VerbInflectionEnding-main
 <0:kan "@P.OBJ.caus@">            Tagging ;
@@ -258,11 +240,7 @@ Lexicon LastReduplicationCheck
 
 
 
-!Lexicon Proclitic
-!<aku%<prn%>%<pro%>%<p1%>%<sg%>%+:ku "@P.MARK.on@">               VerbInflection ;
-!<aku%<prn%>%<pro%>%<p1%>%<sg%>%<cap%>%+:Ku "@P.MARK.on@">        VerbInflection ;
-!<kau%<prn%>%<pro%>%<p2%>%<sg%>%+:kau "@P.MARK.on@">              VerbInflection ;
-!<kau%<prn%>%<pro%>%<p2%>%<sg%>%<cap%>%+:Kau "@P.MARK.on@">       VerbInflection ;
+
 
 
 !!---- Tagging ----!!
@@ -339,69 +317,163 @@ Lexicon CheckCaps
 <"@D.CAP@">                                        CheckEnClitic ;
 
 Lexicon CheckEnClitic
-<[%+aku%<prn%>%<enc%>%<p1%>%<sg%>%<pos%> .x. ku]  "@R.DERNOUN@">          # ;
-<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. mu] "@R.DERNOUN@">          # ;
-<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. kau] "@R.DERNOUN@">          # ;
-<[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%> .x. nya] "@R.DERNOUN@">          # ;
+<[%+aku%<prn%>%<enc%>%<p1%>%<sg%>%<pos%> .x. ku]  "@R.DERNOUN@">              # ;
+<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. mu] "@R.DERNOUN@">              # ;
+<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%> .x. kau] "@R.DERNOUN@">             # ;
+<[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%> .x. nya] "@R.DERNOUN@">              # ;
 <[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%> .x. "-" Nya] "@R.DERNOUN@">   # ;
-<[%+aku%<prn%>%<enc%>%<p1%>%<sg%> .x. ku]  "@R.VOICE@">                 # ;
-<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%> .x. mu] "@R.VOICE@">                 # ;
-<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%> .x. kau] "@R.VOICE@">                 # ;
-<[%+dia%<prn%>%<enc%>%<p3%>%<sg%> .x. nya] "@R.VOICE@">                 # ;
-<[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%> .x. "-" Nya] "@R.VOICE@">   # ;
-                                                                          # ;
-
-
+<[%+aku%<prn%>%<enc%>%<p1%>%<sg%> .x. ku]  "@R.VOICE@">                       # ;
+<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%> .x. mu] "@R.VOICE@">                       # ;
+<[%+kamu%<prn%>%<enc%>%<p2%>%<sg%> .x. kau] "@R.VOICE@">                      # ;
+<[%+dia%<prn%>%<enc%>%<p3%>%<sg%> .x. nya] "@R.VOICE@">                       # ;
+<[%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%> .x. "-" Nya] "@R.VOICE@">     # ;
+                                                                              # ;
 
 
 !!---- Dictionary ----!!
 
 
 LEXICON Verb
-<[t:T "@D.MARK@" "@P.CAP.on@" | t] ulis "@P.POS.v@">        InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] irim "@P.POS.v@">        InflectionOption ;
-<[d:D "@D.MARK@" "@P.CAP.on@" | d] ukung "@P.POS.v@">       InflectionOption ;
-<[l:L "@D.MARK@" "@P.CAP.on@" | l] ari "@P.POS.v@">         InflectionOption ;
-<[t:T "@D.MARK@" "@P.CAP.on@" | t] ertawa "@P.POS.v@">      InflectionOption ;
-
-LEXICON Verb2
-<[b:B "@D.MARK@" "@P.CAP.on@" | b] erlari "@P.POS.v@">         InflectionOption ;
-<[b:B "@D.MARK@" "@P.CAP.on@" | b] erlari "@P.POS.v@">         InflectionOption ;
+<t ulis "@P.POS.v@">        InflectionOption ;
+<k irim "@P.POS.v@">        InflectionOption ;
+<d ukung "@P.POS.v@">        InflectionOption ;
+<l ari "@P.POS.v@">        InflectionOption ;
+<a bid "@P.POS.v@">        InflectionOption ;
+<a bsen "@P.POS.v@">        InflectionOption ;
+<a bsorbir "@P.POS.v@">        InflectionOption ;
+<a bstain "@P.POS.v@">        InflectionOption ;
+<a bu "@P.POS.v@">        InflectionOption ;
+<a bus "@P.POS.v@">        InflectionOption ;
+<a cah "@P.POS.v@">        InflectionOption ;
+<a cap "@P.POS.v@">        InflectionOption ;
+<a cara "@P.POS.v@">        InflectionOption ;
+<a cu "@P.POS.v@">        InflectionOption ;
+<a cum "@P.POS.v@">        InflectionOption ;
+<a cung "@P.POS.v@">        InflectionOption ;
+<a da "@P.POS.v@">        InflectionOption ;
+<a dalah "@P.POS.v@">        InflectionOption ;
+<a dang "@P.POS.v@">        InflectionOption ;
+<a dapun "@P.POS.v@">        InflectionOption ;
+<a dar "@P.POS.v@">        InflectionOption ;
+<a das "@P.POS.v@">        InflectionOption ;
+<a dat "@P.POS.v@">        InflectionOption ;
+<a du "@P.POS.v@">        InflectionOption ;
+<a gah "@P.POS.v@">        InflectionOption ;
+<a gan "@P.POS.v@">        InflectionOption ;
+<a gih "@P.POS.v@">        InflectionOption ;
+<a juk "@P.POS.v@">        InflectionOption ;
+<a jur "@P.POS.v@">        InflectionOption ;
+<a lah "@P.POS.v@">        InflectionOption ;
+<a lih "@P.POS.v@">        InflectionOption ;
+<a mbak "@P.POS.v@">        InflectionOption ;
+<a mbal "@P.POS.v@">        InflectionOption ;
+<a mbau "@P.POS.v@">        InflectionOption ;
+<a mbil "@P.POS.v@">        InflectionOption ;
+<a mblas "@P.POS.v@">        InflectionOption ;
+<a mblek "@P.POS.v@">        InflectionOption ;
+<a mbles "@P.POS.v@">        InflectionOption ;
+<a mbrol "@P.POS.v@">        InflectionOption ;
+<a mbruk "@P.POS.v@">        InflectionOption ;
+<a mbuh "@P.POS.v@">        InflectionOption ;
+<a mbul "@P.POS.v@">        InflectionOption ;
+<a mbung "@P.POS.v@">        InflectionOption ;
+<a mbyar "@P.POS.v@">        InflectionOption ;
+<a merta "@P.POS.v@">        InflectionOption ;
+<a mpai "@P.POS.v@">        InflectionOption ;
+<a mprok "@P.POS.v@">        InflectionOption ;
+<a mpu "@P.POS.v@">        InflectionOption ;
+<a ncai "@P.POS.v@">        InflectionOption ;
+<a ndak "@P.POS.v@">        InflectionOption ;
+<a ndam "@P.POS.v@">        InflectionOption ;
+<a ndan "@P.POS.v@">        InflectionOption ;
+<a ndok "@P.POS.v@">        InflectionOption ;
+<a nduh "@P.POS.v@">        InflectionOption ;
+<a nggar "@P.POS.v@">        InflectionOption ;
+<a nggit "@P.POS.v@">        InflectionOption ;
+<a ngglap "@P.POS.v@">        InflectionOption ;
+<a nggul "@P.POS.v@">        InflectionOption ;
+<a nggung "@P.POS.v@">        InflectionOption ;
+<a nggung "-" anggip "@P.POS.v@">        InflectionOption ;
+<a ngka "@P.POS.v@">        InflectionOption ;
+<a ngkat "@P.POS.v@">        InflectionOption ;
+<a ngkit "@P.POS.v@">        InflectionOption ;
+<a ngkut "@P.POS.v@">        InflectionOption ;
+<a ngler "@P.POS.v@">        InflectionOption ;
+<a ngon "@P.POS.v@">        InflectionOption ;
+<a ngop "@P.POS.v@">        InflectionOption ;
+<a ngsur "@P.POS.v@">        InflectionOption ;
+<a njak "@P.POS.v@">        InflectionOption ;
+<a njal "@P.POS.v@">        InflectionOption ;
+<a njang "@P.POS.v@">        InflectionOption ;
+<a njlok "@P.POS.v@">        InflectionOption ;
+<a njur "@P.POS.v@">        InflectionOption ;
+<a ntar "@P.POS.v@">        InflectionOption ;
+<a ntih "@P.POS.v@">        InflectionOption ;
+<a ntre "@P.POS.v@">        InflectionOption ;
+<a nut "@P.POS.v@">        InflectionOption ;
+<a nyam "@P.POS.v@">        InflectionOption ;
+<a nyang "@P.POS.v@">        InflectionOption ;
+<a pel "@P.POS.v@">        InflectionOption ;
+<a pkir "@P.POS.v@">        InflectionOption ;
+<a plus "@P.POS.v@">        InflectionOption ;
+<a prit "@P.POS.v@">        InflectionOption ;
+<a pung "@P.POS.v@">        InflectionOption ;
+<a rak "@P.POS.v@">        InflectionOption ;
+<a ras "@P.POS.v@">        InflectionOption ;
+<a rik "@P.POS.v@">        InflectionOption ;
+<a rsir "@P.POS.v@">        InflectionOption ;
+<a run "@P.POS.v@">        InflectionOption ;
+<a sa "@P.POS.v@">        InflectionOption ;
+<a sah "@P.POS.v@">        InflectionOption ;
+<a sese "@P.POS.v@">        InflectionOption ;
+<a suh "@P.POS.v@">        InflectionOption ;
+<a sung "@P.POS.v@">        InflectionOption ;
+<a teret "@P.POS.v@">        InflectionOption ;
+<a top "@P.POS.v@">        InflectionOption ;
+<a tret "@P.POS.v@">        InflectionOption ;
+<a tur "@P.POS.v@">        InflectionOption ;
+<a wai "@P.POS.v@">        InflectionOption ;
+<a walengas "@P.POS.v@">        InflectionOption ;
+<a was "@P.POS.v@">        InflectionOption ;
+<a wat "@P.POS.v@">        InflectionOption ;
+<b aka "@P.POS.v@">        InflectionOption ;
 
 LEXICON Noun
-<[p:P "@D.MARK@" "@P.CAP.on@" | p] esan     "@P.POS.n@">         InflectionOption ;
-<[p:P "@D.MARK@" "@P.CAP.on@" | p] erangkat "@P.POS.n@">         InflectionOption ;
-<[t:T "@D.MARK@" "@P.CAP.on@" | t] eks      "@P.POS.n@">         InflectionOption ;
-<[b:B "@D.MARK@" "@P.CAP.on@" | b] atas     "@P.POS.n@">         InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] arakter  "@P.POS.n@">         InflectionOption ;
-<[t:T "@D.MARK@" "@P.CAP.on@" | t] oko      "@P.POS.n@">         InflectionOption ;
-<[b:B "@D.MARK@" "@P.CAP.on@" | b] uku      "@P.POS.n@">         InflectionOption ;
+<b uku "@P.POS.n@">         InflectionOption ;
+<t oko "@P.POS.n@">         InflectionOption ;
+<k arakter "@P.POS.n@">         InflectionOption ;
+<b atas "@P.POS.n@">         InflectionOption ;
+<t eks "@P.POS.n@">         InflectionOption ;
+<p erangkat "@P.POS.n@">         InflectionOption ;
+<p esan "@P.POS.n@">         InflectionOption ;
+
 
 LEXICON Adjective
-<[b:B "@D.MARK@" "@P.CAP.on@" | b] esar "@P.POS.adj@">      InflectionOption ;
-<[l:L "@D.MARK@" "@P.CAP.on@" | l] ebih "@P.POS.adj@">      InflectionOption ;
+<b esar "@P.POS.adj@">        InflectionOption ;
+<l ebih "@P.POS.adj@">        InflectionOption ;
 
 LEXICON Numeral
-<[d:D "@D.MARK@" "@P.CAP.on@" | d] ua  "@P.POS.num@">       InflectionOption ;
-<[t:T "@D.MARK@" "@P.CAP.on@" | t] iga "@P.POS.num@">       InflectionOption ;
+<s atu  "@P.POS.num@">        InflectionOption ;
+<d ua  "@P.POS.num@">        InflectionOption ;
+<t iga "@P.POS.num@">        InflectionOption ;
 
 
 LEXICON Pronoun
-<[s:S "@D.MARK@" "@P.CAP.on@" | s] aya "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.sg@">       InflectionOption ;
-<[a:A "@D.MARK@" "@P.CAP.on@" | a] ku "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.sg@">        InflectionOption ;
-<[a:A "@D.MARK@" "@P.CAP.on@" | a] nda "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">       InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] amu "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">       InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] amu:au "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">        InflectionOption ;
-<[d:D "@D.MARK@" "@P.CAP.on@" | d] ia "@P.POS.prn@" "@P.PERSON.p3@" "@P.NUM.sg@">        InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] ami "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.pl@">       InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] ita "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.pl@">       InflectionOption ;
-<[k:K "@D.MARK@" "@P.CAP.on@" | k] alian "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.pl@">     InflectionOption ;
-<[m:M "@D.MARK@" "@P.CAP.on@" | m] ereka "@P.POS.prn@" "@P.PERSON.p3@" "@P.NUM.pl@">     InflectionOption ;
+<s aya "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.sg@">       InflectionOption ;
+<a ku "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.sg@">        InflectionOption ;
+<a nda "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">       InflectionOption ;
+<k amu "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">       InflectionOption ;
+<k amu:au "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.sg@">    InflectionOption ;
+<d ia "@P.POS.prn@" "@P.PERSON.p3@" "@P.NUM.sg@">        InflectionOption ;
+<k ami "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.pl@">       InflectionOption ;
+<k ita "@P.POS.prn@" "@P.PERSON.p1@" "@P.NUM.pl@">       InflectionOption ;
+<k alian "@P.POS.prn@" "@P.PERSON.p2@" "@P.NUM.pl@">     InflectionOption ;
+<m ereka "@P.POS.prn@" "@P.PERSON.p3@" "@P.NUM.pl@">     InflectionOption ;
 
 LEXICON Subordinating
-<[y:Y "@D.MARK@" "@P.CAP.on@" | y] ang "@P.POS.cnjsub@">    InflectionOption ;
+<y ang "@P.POS.cnjsub@">        InflectionOption ;
 
 LEXICON Determiner
-<[i:I "@D.MARK@" "@P.CAP.on@" | i] ni "@P.POS.det@">        InflectionOption ;
+<i ni "@P.POS.det@">            InflectionOption ;
 
 
