@@ -1,27 +1,5 @@
 read lexc < apertium-id-ms.id.lexc
 
-eliminate flag STEM
-
-eliminate flag PREF
-
-eliminate flag PREPREF
-
-eliminate flag REDUP
-
-eliminate flag SUFF
-
-eliminate flag DicegahPeN
-
-eliminate flag DiawaliPe
-
-eliminate flag i
-
-eliminate flag kan
-
-eliminate flag peN
-
-eliminate flag KeAn
-
 define initialnet
 
 source apertium-id-ms.morpho.xfst
