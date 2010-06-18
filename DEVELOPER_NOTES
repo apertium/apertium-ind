@@ -44,7 +44,6 @@ echo "perangkat anda mendukung pengiriman pesan teks yang melebihi batas karakte
 
 
 [02.06.2010]
-
 Adding the Morphological Analyzer prototypes, with a more fine-grained tags and. Works only with the toy sentence above.
 So Spectie can help me to work on the generation step. Toy ambiguities provided:
 -- ID --
@@ -80,40 +79,41 @@ piranti anda sokong penghantaran mesej teks yang melebihi had aksara mesej
 ***
 
 [04.06.2010]
-
 More morphological operations defined, still with temporary tags. Some capitalization handled (currently only on words without prefix).
 Hopefully the wiki pending test will be added soon...
 
 ***
 
 [10.06.2010]
-
 Adding Enclitic and Proclitic.
 
 ***
 
 [10.06.2010]
-
 Change the Enclitic and Proclitic tag format, and at last solved the problem of capitalization on reduplication :D
 Instead of "Buku-Buku" I have "Buku-buku" now :D
 
 ***
 
 [13.06.2010]
-
 Yet another revision on the tags :(
 Added the missing <prn> on proclitic
 1 Transfer Rule to change "aku tulis" -> "kutulis" which is the start of a lot more rules
 Some capitalization still uncovered
 
-**
+***
 
 [14.06.2010]
-
 Capitalization problem done. Added some more prefix operations
 
-**
+****
 [15.06.2010]
-
 Only in id side: Equivalent lexc file with a lot less regex expression. With a big number of lemmata
 
+***
+[18.06,2010]
+Only on id side:
+Added more Noun and Adjective Derivations
+Added more Numeral and Verb Inflections.
+Added Particle and Preposistion.
+Provided examples on the comments and also small sample lexical entries
