@@ -497,12 +497,13 @@ LEXICON CheckNum
 @D.NUM@                                                       CheckCaps ;
 
 LEXICON CheckCaps
-%<cap%>@R.CAP.on@:0@R.CAP.on@                                 OptionalHyp ;
-@D.CAP@                                                       OptionalHyp ;
+%<cap%>@R.CAP.on@:0@R.CAP.on@                                 CheckEnClitic ;
+@D.CAP@                                                       CheckEnClitic ;
 
-LEXICON OptionalHyp
-0:%-                                                          CheckEnClitic ;
-                                                              CheckEnClitic ;
+!LEXICON OptionalHyp
+!0:%-                                                          CheckEnClitic ;
+!                                                              CheckEnClitic ;
+
 LEXICON CheckEnClitic
 %+aku%<prn%>%<enc%>%<p1%>%<sg%>%<pos%>@R.DERNOUN@:00ku00000@R.DERNOUN@                   CheckParticle ;
 %+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%>@R.DERNOUN@:000mu00000@R.DERNOUN@                 CheckParticle ;
@@ -2523,6 +2524,7 @@ zikir@P.POS.n@             InflectionOption ;
 zina@P.POS.n@             InflectionOption ;
 zulkarnain@P.POS.n@             InflectionOption ;
 zulkifli@P.POS.n@             InflectionOption ;
+<p irant [ i%+ .x. "i "] lunak "@P.POS.n@">             InflectionOption ;
 
 LEXICON Numeral
 dua@P.POS.num@              InflectionOption ;
@@ -2948,5 +2950,19 @@ LEXICON Preposition
 di%<pr%>:di0      # ;
 ke%<pr%>:ke0      # ;
 
+LEXICON Pronoun
+saya@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@                 InflectionOption ;
+aku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@                  InflectionOption ;
+anda@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@                 InflectionOption ;
+kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@                 InflectionOption ;
+kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@:au00@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@      InflectionOption ;
+dia@P.POS.prn@@P.PERSON.p3@@P.NUM.sg@                  InflectionOption ;
+kami@P.POS.prn@@P.PERSON.p1@@P.NUM.pl@                 InflectionOption ;
+kita@P.POS.prn@@P.PERSON.p1@@P.NUM.pl@                 InflectionOption ;
+kalian@P.POS.prn@@P.PERSON.p2@@P.NUM.pl@               InflectionOption ;
+mereka@P.POS.prn@@P.PERSON.p3@@P.NUM.pl@               InflectionOption ;
+beliau@P.POS.prn@@P.PERSON.p3@@P.NUM.sg@                 InflectionOption ;
+0aku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@:daku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@      InflectionOption ;
+0kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@:dikau@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@    InflectionOption ;
 
 !!! -- End -- !!!
