@@ -121,3 +121,8 @@ Provided examples on the comments and also small sample lexical entries
 ***
 [28.06.2010]
 Added untested bidix and monodix
+
+***
+[08.07.2010]
+Added compound words problem, example: "piranti lunak", "piranti" and "lunak" on Indonesian side
+Change some leftover multichar affixes to letterwise

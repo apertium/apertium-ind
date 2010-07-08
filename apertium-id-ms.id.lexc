@@ -383,8 +383,8 @@ LEXICON NumeralInflectionEnding
 @D.REDUP@@R.MARK.bare@@P.DERNUM.car@               Tagging ;
 @D.REDUP@@R.MARK.ke@@P.DERNUM.ord@                 Tagging ;
 000@D.REDUP@@R.MARK.ke@@P.DERNUM.ref@:nya@D.REDUP@@R.MARK.ke@@P.DERNUM.ref@                                      Tagging ;
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.ke@" "@P.DERNUM.ref@" 0:nya>        Tagging ;   !! check this later
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.bare@" "@P.DERNUM.ref@" 0:nya>        Tagging ;   !! check this later
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.ke@" "@P.DERNUM.ref@" 0:n 0:y 0:a>        Tagging ;   !! check this later
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.bare@" "@P.DERNUM.ref@" 0:n 0:y 0:a>        Tagging ;   !! check this later
 @D.REDUP@@R.MARK.ber@@P.DERNUM.coll@               Tagging ;
 belas@D.REDUP@@R.MARK.bare@@P.DERNUM.car@          Tagging ;
 
@@ -395,8 +395,8 @@ LEXICON DerivingAdjectiveEnding
 @D.REDUP@@R.MARK.bare@@R.POS.adj@@P.DERADJ.positive@                                                          Tagging ;
 <[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@""@R.MARK.bare@" "@R.POS.adj@" "@P.DERADJ.positive@">      Tagging ;  !! check this later
 @D.REDUP@@R.MARK.se@@R.POS.adj@:@D.REDUP@@R.MARK.se@@R.POS.adj@                                                                           Tagging ;
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@""@R.MARK.ke@" "@R.POS.n@" "@P.DERADJ.manner@" 0:an>       Tagging ;  !! check this later
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.se@" "@R.POS.adj@" "@P.DERADJ.possib@" 0:nya>                      Tagging ;  !! check this later
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@""@R.MARK.ke@" "@R.POS.n@" "@P.DERADJ.manner@" 0:a 0:n>       Tagging ;  !! check this later
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.se@" "@R.POS.adj@" "@P.DERADJ.possib@" 0:n 0:y 0:a>                      Tagging ;  !! check this later
 <[0 .x. "}" "%^REHYPH m e %^N" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.MARK.bare@" "@R.POS.v@" "@P.DERADJ.positive@">            Tagging ;  !! check this later
 
 LEXICON DerivingNounEnding
@@ -406,7 +406,7 @@ LEXICON DerivingNounEnding
 @R.MARK.pen@                                                                             LastReduplicationCheck ;
 00@R.MARK.ke@@P.DERNOUN.abstract@:an@R.MARK.ke@@P.DERNOUN.abstract@                      LastReduplicationCheck ;
 00@R.MARK.per@@P.DERNOUN.theme@:an@R.MARK.per@@P.DERNOUN.theme@                          LastReduplicationCheck ;
-<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] 0:an "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@R.MARK.bare@" "@P.DERNOUN.bare@">        Tagging ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] 0:a 0:n "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@R.MARK.bare@" "@P.DERNOUN.bare@">        Tagging ;
 
 LEXICON VerbInflectionEnding
 @D.REDUP@                                                                                VerbInflectionEnding-main ;
