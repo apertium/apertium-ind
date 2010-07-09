@@ -1,7 +1,7 @@
 !!! ================================================================
 !!! Indonesian Morphological Analyzer
 !!! Author        : Septina Dian Larasati (septina.larasati@gmail.com)
-!!! Last Modified : 28 June 2010
+!!! Last Modified : 09 July 2010
 !!! ================================================================
 
 
@@ -11,14 +11,14 @@
 !!! ----------------------------------------------------------------
 Multichar_Symbols
          %<abstract%>           !! Morphological Tags
-         %<act%>
+         %<actio%>
          %<actor%>
          %<adj%>
          %<appl%>
-         %<av%>
+         %<actv%>
          %<bare%>
          %<cap%>
-         %<car%>
+         %<card%>
          %<caus%>
          %<cnjcoo%>
          %<cnjsub%>
@@ -41,25 +41,24 @@ Multichar_Symbols
          %<positive%>
          %<prn%>
          %<pro%>
-         %<pv%>
+         %<pasv%>
          %<ref%>
          %<sg%>
          %<sup%>
          %<theme%>
          %<uni%>
-         %<v%>
+         %<vblex%>
          %<vbhaver%>
          %<vbser%>
-         %<par%>
+         %<part%>
          %<uni%>
          %<mod%>
-         %<inj%>
+         %<ij%>
          %<qst%>
-         %<par%>
          %<pr%>
          %<possib%>
 	 ^N                        !! Nasal Mark
-	 %+
+	 %~
 	 ^REHYPH
 	 ^[
 	 ^2^]
@@ -267,7 +266,7 @@ LEXICON NumeralInflection
 00@P.MARK.ke@@P.REDUP.on@000:ke@P.MARK.ke@@P.REDUP.on@%^%[%[%{              Numeral ;  ! eg. "ke- + tujuh-tujuh + -nya" [all the seven of them]
 @P.MARK.bare@@P.REDUP.on@000:@P.MARK.bare@@P.REDUP.on@%^%[%[%{              Numeral ;  ! eg. "tujuh-tujuh + -nya" [all the seven of them]
 000@P.MARK.ber@:ber@P.MARK.ber@                                             Numeral ;  ! eg. "ber- + tujuh" [in group of seven]
-satu%<num%>%<car%>+per%<adv%>+@P.MARK.bare@:seper0000000@P.MARK.bare@       Numeral ;  ! eg. "se- + per + tujuh" [one seventh, 1/7, lit. one each seven]
+satu%<num%>%<card%>+per%<adv%>+@P.MARK.bare@:seper0000000@P.MARK.bare@       Numeral ;  ! eg. "se- + per + tujuh" [one seventh, 1/7, lit. one each seven]
 
 !! Adjective Derivations
 LEXICON DerivingAdjective
@@ -427,7 +426,7 @@ LEXICON LastReduplicationCheck
 !! but aslo includes pronoun proclitic and particle
 
 LEXICON Tagging
-%<v%>@R.POS.v@:0@R.POS.v@                                     CheckVoice ;
+%<vblex%>@R.POS.v@:0@R.POS.v@                                     CheckVoice ;
 %<n%>@R.POS.n@:0@R.POS.n@                                     CheckVoice ;
 %<adj%>@R.POS.adj@:0@R.POS.adj@                               CheckVoice ;
 %<adv%>@R.POS.adv@:0@R.POS.adv@                               CheckVoice ;
@@ -437,12 +436,12 @@ LEXICON Tagging
 %<cnjcoo%>@R.POS.cnjcoo@:0@R.POS.cnjcoo@                      CheckVoice ;
 %<det%>0@R.POS.det@:0@R.POS.det@                              CheckVoice ;
 %<mod%>0@R.POS.mod@:0@R.POS.mod@                              CheckVoice ;
-%<inj%>0@R.POS.interjection@:0@R.POS.interjection@            CheckVoice ;
+%<ij%>0@R.POS.interjection@:0@R.POS.interjection@            CheckVoice ;
 %<qst%>0@R.POS.question@:0@R.POS.question@                    CheckVoice ;
 
 LEXICON CheckVoice
-%<av%>@R.VOICE.av@:0@R.VOICE.av@                              CheckAspect ;
-%<pv%>@R.VOICE.pv@:0@R.VOICE.pv@                              CheckAspect ;
+%<actv%>@R.VOICE.av@:0@R.VOICE.av@                              CheckAspect ;
+%<pasv%>@R.VOICE.pv@:0@R.VOICE.pv@                              CheckAspect ;
 @D.VOICE@                                                     CheckAspect ;
 
 LEXICON CheckAspect
@@ -462,7 +461,7 @@ LEXICON CheckTransitivity
 
 LEXICON CheckDerNoun
 %<ent%>@R.DERNOUN.ent@:0@R.DERNOUN.ent@                       CheckDerNum ;
-%<act%>@R.DERNOUN.act@:0@R.DERNOUN.act@                       CheckDerNum ;
+%<actio%>@R.DERNOUN.act@:0@R.DERNOUN.act@                       CheckDerNum ;
 %<actor%>@R.DERNOUN.actor@:0@R.DERNOUN.actor@                 CheckDerNum ;
 %<theme%>@R.DERNOUN.theme@:0@R.DERNOUN.theme@                 CheckDerNum ;
 %<abstract%>@R.DERNOUN.abstract@:0@R.DERNOUN.abstract@        CheckDerNum ;
@@ -470,7 +469,7 @@ LEXICON CheckDerNoun
 @D.DERNOUN@                                                   CheckDerNum ;
 
 LEXICON CheckDerNum
-%<car%>@R.DERNUM.car@:0@R.DERNUM.car@                         CheckPerson ;
+%<card%>@R.DERNUM.car@:0@R.DERNUM.car@                         CheckPerson ;
 %<ord%>@R.DERNUM.ord@:0@R.DERNUM.ord@                         CheckPerson ;
 %<coll%>@R.DERNUM.coll@:0@R.DERNUM.coll@                      CheckPerson ;
 %<ref%>@R.DERNUM.ref@:0@R.DERNUM.ref@                         CheckPerson ;
@@ -520,10 +519,10 @@ LEXICON CheckEnClitic
 %<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
 
 LEXICON CheckParticle
-%<par%>00:kah                   # ;
-%<par%>00:lah                   # ;
-%<par%>00:tah                   # ;
-%<par%>00:pun                   # ;
+%<part%>00:kah                   # ;
+%<part%>00:lah                   # ;
+%<part%>00:tah                   # ;
+%<part%>00:pun                   # ;
                                 # ;
 
 
@@ -2525,7 +2524,7 @@ zikir@P.POS.n@             InflectionOption ;
 zina@P.POS.n@             InflectionOption ;
 zulkarnain@P.POS.n@             InflectionOption ;
 zulkifli@P.POS.n@             InflectionOption ;
-piranti%+lunak@P.POS.n@             InflectionOption ;
+piranti%~lunak@P.POS.n@             InflectionOption ;
 
 LEXICON Numeral
 dua@P.POS.num@              InflectionOption ;
@@ -2942,10 +2941,10 @@ utus@P.POS.v@        InflectionOption ;
 wajib@P.POS.v@        InflectionOption ;
 
 LEXICON Particle
-lah%<par%>:lah0    # ;
-kah%<par%>:kah0    # ;
-tah%<par%>:tah0    # ;
-pun%<par%>:pun0    # ;
+lah%<part%>:lah0    # ;
+kah%<part%>:kah0    # ;
+tah%<part%>:tah0    # ;
+pun%<part%>:pun0    # ;
 
 LEXICON Preposition
 di%<pr%>:di0      # ;
