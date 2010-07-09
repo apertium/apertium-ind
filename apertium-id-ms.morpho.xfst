@@ -107,13 +107,14 @@ define DG D1 .o. D2 .o. D3;
 !define Hyp A -> a || "-" _ .o. B -> b || "-" _ .o. C -> c || "-" _ .o. D -> d || "-" _ .o. E -> e || "-" _ .o. F -> f || "-" _ .o. G -> g || "-" _ .o. H -> h || "-" _ .o. I -> i || "-" _ .o. J -> j || "-" _ .o. K -> k || "-" _ .o. L -> l || "-" _ .o. M -> m || "-" _ .o. N -> n || "-" _ .o. O -> o || "-" _ .o. P -> p || "-" _ .o. Q -> q || "-" _ .o. R -> r || "-" _ .o. S -> s || "-" _ .o. T -> t || "-" _ .o. U -> u || "-" _ .o. V -> v || "-" _ .o. W -> w || "-" _ .o. X -> x || "-" _ .o. Y -> y || "-" _ .o. Z -> z || "-" _ ; 
 define Hyp A -> a || "-" _ ,, B -> b || "-" _ ,, C -> c || "-" _ ,, D -> d || "-" _ ,, E -> e || "-" _ ,, F -> f || "-" _ ,, G -> g || "-" _ ,, H -> h || "-" _ ,, I -> i || "-" _ ,, J -> j || "-" _ ,, K -> k || "-" _ ,, L -> l || "-" _ ,, M -> m || "-" _ ,, N -> n || "-" _ ,, O -> o || "-" _ ,, P -> p || "-" _ ,, Q -> q || "-" _ ,, R -> r || "-" _ ,, S -> s || "-" _ ,, T -> t || "-" _ ,, U -> u || "-" _ ,, V -> v || "-" _ ,, W -> w || "-" _ ,, X -> x || "-" _ ,, Y -> y || "-" _ ,, Z -> z || "-" _ ; 
 define CAP a -> A || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, b -> B || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, c -> C || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, d -> D || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, e -> E || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, f -> F || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, g -> G || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, h -> H || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, i -> I || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, j -> J || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, k -> K || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, l -> L || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, m -> M || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, n -> N || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, o -> O || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, p -> P || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, q -> Q || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, r -> R || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, s -> S || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, t -> T || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, u -> U || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, v -> V || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, w -> W || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, x -> X || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, y -> Y || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, z -> Z || .#. "@P.CAP.on@" [lbraces|flgs]* _ ;
+define Space %+ -> [ " " ] ;
 !define DelFlag %^CAPA -> 0;
 
 
 ! composition rules terakhir
 !define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17;
 !define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17 .o. Hyp .o. CAP .o. DelFlag;
-define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17 .o. Hyp .o. CAP;
+define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17 .o. Hyp .o. CAP .o. Space;
 ! push defined Morphrules;
 
 

@@ -59,6 +59,7 @@ Multichar_Symbols
          %<pr%>
          %<possib%>
 	 ^N                        !! Nasal Mark
+	 %+
 	 ^REHYPH
 	 ^[
 	 ^2^]
@@ -2524,7 +2525,7 @@ zikir@P.POS.n@             InflectionOption ;
 zina@P.POS.n@             InflectionOption ;
 zulkarnain@P.POS.n@             InflectionOption ;
 zulkifli@P.POS.n@             InflectionOption ;
-<p irant [ i%+ .x. "i "] lunak "@P.POS.n@">             InflectionOption ;
+piranti%+lunak@P.POS.n@             InflectionOption ;
 
 LEXICON Numeral
 dua@P.POS.num@              InflectionOption ;
