@@ -126,3 +126,15 @@ Added untested bidix and monodix
 [08.07.2010]
 Added compound words problem, example: "piranti lunak", "piranti" and "lunak" on Indonesian side
 Change some leftover multichar affixes to letterwise
+
+***
+[09.07.2010]
+Added one perl script in the pipeline to capture the compound words provided the COMPOUNDWORDLIST
+
+the COMPOUNDWORDLIST will be in this format:
+piranti lunak||piranti+lunak
+
+it will change "piranti lunak" to "piranti+lunak". It's still one way no generation part yet :(
+There still some weird problem in the pipeline particularly when passing through apertium-pretransfer.
+It gave "ERROR: Unexpected EOF"
+while when it's done by simple pipe it works perfecly fine :(

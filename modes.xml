@@ -2,6 +2,10 @@
 <modes>
   <mode name="id-ms">
     <pipeline>
+      <program name="perl">
+        <file name="comp-words.pl"/>
+        <file name="COMPOUNDWORDLIST"/>
+      </program>
       <program name="foma-proc">
         <file name="id-ms.automorf.foma"/>
       </program>
@@ -21,6 +25,10 @@
   </mode>
   <mode name="id-ms-morph" install="no">
     <pipeline>
+      <program name="perl">
+        <file name="comp-words.pl"/>
+        <file name="COMPOUNDWORDLIST"/>
+      </program>
       <program name="foma-proc">
         <file name="id-ms.automorf.foma"/>
       </program>
@@ -38,6 +46,10 @@
   </mode>
   <mode name="id-ms-transfer" install="no">
     <pipeline>
+      <program name="perl">
+        <file name="comp-words.pl"/>
+        <file name="COMPOUNDWORDLIST"/>
+      </program>
       <program name="foma-proc">
         <file name="id-ms.automorf.foma"/>
       </program>
