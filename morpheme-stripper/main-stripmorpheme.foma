@@ -1,0 +1,12 @@
+read lexc < apertium-id-ms-stripmorpheme.lexc
+
+define initialnet
+
+source apertium-id-ms.morphophonemic.xfst
+
+read regex initialnet .o. Morphrules ;
+
+save stack xfst-stripmorpheme.bin
+
+exit
+

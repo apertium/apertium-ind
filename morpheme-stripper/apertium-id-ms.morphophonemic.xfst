@@ -1,0 +1,67 @@
+! Modified by : Septina Dian Larasati
+! septina.larasati@gmail.com
+
+
+define Cons [b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z];
+define Consnor [b|c|d|f|g|h|j|k|l|m|n|p|q|s|t|v|w|x|y|z];
+define Vow [a|i|u|e|o];
+define lbraces ["^["|"["|"{"|"}"|"]"|"^"|2|"^]"];
+define flgs ["@C.REDUP@" | "@D.ASPECT@" | "@D.CAP@" | "@D.DERADJ@" | "@D.DERNOUN@" | "@D.DERNUM@" | "@D.FLAG@" | "@D.MARK@" | "@D.NUM@" | "@D.OBJ@" | "@D.PERSON@" | "@D.REDUP@" | "@D.VERBVAR@" | "@D.VOICE@" | "@P.ASPECT.imperf@" | "@P.ASPECT.perf@" | "@P.CAP.on@" | "@P.DERADJ.exceed@" | "@P.DERADJ.manner@" | "@P.DERADJ.positive@" | "@P.DERADJ.sup@" | "@P.DERNOUN.abstract@" | "@P.DERNOUN.act@" | "@P.DERNOUN.actor@" | "@P.DERNOUN.bare@" | "@P.DERNOUN.ent@" | "@P.DERNOUN.theme@" | "@P.DERNUM.car@" | "@P.DERNUM.coll@" | "@P.DERNUM.ord@" | "@P.DERNUM.ref@" | "@P.DERNUM.uni@" | "@P.ENCLITIC.enc@" | "@P.FLAG.bare@" | "@P.FLAG.deradj@" | "@P.FLAG.dernoun@" | "@P.FLAG.numinfl@" | "@P.FLAG.verbinfl@" | "@P.MARK.bare@" | "@P.MARK.ber@" | "@P.MARK.ke@" | "@P.MARK.on@" | "@P.MARK.pen@" | "@P.MARK.per@" | "@P.MARK.ter@" | "@P.NUM.pl@" | "@P.NUM.sg@" | "@P.OBJ.appl@" | "@P.OBJ.caus@" | "@P.PERSON.p1@" | "@P.PERSON.p2@" | "@P.PERSON.p3@" | "@P.POS.adj@" | "@P.POS.cnjcoo@" | "@P.POS.cnjsub@" | "@P.POS.det@" | "@P.POS.n@" | "@P.POS.num@" | "@P.POS.prn@" | "@P.POS.v@" | "@P.PROCLITIC.pro@" | "@P.REDUP.on@" | "@P.VERBVAR.vbhaver@" | "@P.VERBVAR.vbser@" | "@P.VOICE.av@" | "@P.VOICE.pv@" | "@R.ASPECT.imperf@" | "@R.ASPECT.perf@" | "@R.CAP.on@" | "@R.DERADJ.exceed@" | "@R.DERADJ.manner@" | "@R.DERADJ.positive@" | "@R.DERADJ.sup@" | "@R.DERNOUN@" | "@R.DERNOUN.abstract@" | "@R.DERNOUN.act@" | "@R.DERNOUN.actor@" | "@R.DERNOUN.bare@" | "@R.DERNOUN.ent@" | "@R.DERNOUN.theme@" | "@R.DERNUM.car@" | "@R.DERNUM.coll@" | "@R.DERNUM.ord@" | "@R.DERNUM.ref@" | "@R.DERNUM.uni@" | "@R.FLAG.deradj@" | "@R.FLAG.dernoun@" | "@R.FLAG.numinfl@" | "@R.FLAG.verbinfl@" | "@R.MARK.bare@" | "@R.MARK.ber@" | "@R.MARK.ke@" | "@R.MARK.pen@" | "@R.MARK.per@" | "@R.MARK.ter@" | "@R.NUM.pl@" | "@R.NUM.sg@" | "@R.OBJ.appl@" | "@R.OBJ.caus@" | "@R.PERSON.p1@" | "@R.PERSON.p2@" | "@R.PERSON.p3@" | "@R.POS.adj@" | "@R.POS.cnjcoo@" | "@R.POS.cnjsub@" | "@R.POS.det@" | "@R.POS.n@" | "@R.POS.num@" | "@R.POS.prn@" | "@R.POS.v@" | "@R.REDUP.on@" | "@R.VERBVAR.vbhaver@" | "@R.VERBVAR.vbser@" | "@R.VOICE@" | "@R.VOICE.av@" | "@R.VOICE.pv@" | "@P.MARKP.toparticle@" | "@P.DERNUM.card@" | "@P.DERADJ.mimic@"];
+define Upper [A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z];
+define Lower [a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z];
+
+
+! R1-R4b merupakan aturan yang akan dijalankan setelah DG pada composition rules di akhir
+define R1 %^N->n||[m e]_ lbraces* [d|c|j|[s y]];
+define R2 %^N->n||[p e]_ lbraces* [d|c|j];
+define R3 r%+->0||[b e] _ lbraces* [r|[Cons+ e r]];
+define R4 r%+->0||[t e]_ lbraces* r;
+define R6 r%+->0||[p e]_ lbraces* r;
+define R7 %^N->m||[[m e]|[p e]]_ lbraces* [b|f];
+
+! R5 adalah aturan yang akan diparalel nantinya
+define R5 %^N->0||[[m e]|[p e]]_ lbraces* [l|m|n|r|y|w|t|s|p|k] ,, %^N->n g||[p e]_ lbraces* r;
+
+! R9-R10 dikomposisi setelah R1-R4b
+define R9 r %+->0||[p e]_ lbraces* [r|[Cons+ e r]];
+define R10 %^N->n g e||[[m e]|[p e]]_ lbraces* Cons* Vow Cons* .#.;
+
+! R11-R14 akan diparalel dengan R5
+define R11 k->n g||[m|p] e %^N lbraces*_;
+define R12 s->n y||[m|p] e %^N lbraces*_;
+define R13 p->m||[m|p] e %^N lbraces*_;
+define R14 t->n||[m|p] e %^N lbraces*_;
+
+! R16-R17 menangani untuk bagian yang tidak mengalami perubahan morfofonemik
+define R16 %^N->n g||[m e|p e]_ lbraces*;
+define R17 %+->0||[p e r|b e r|t e r]_ lbraces*;
+
+! D1-D3 untuk kasus dimana perlu dideklarasikan aturan tambahan untuk prefiks bertingkat
+define D1 %^N->m||[m e]_[p e r %+|b e r %+];
+define D2 %^N->0||[m e]_[t e r %+] ,, t e r %+->n e r||m e %^N_;
+define D3 %^N->n g||[m e]_[k e] ,, k e->e||m e %^N_;
+
+! Paralelisasi rule-rule sebelumnya yang perlu saja
+define RG4 %^N->0||[m e|p e]_lbraces* [l|m|n|r|y|w|t|s|p|k] ,, %^N->n g||[p e]_ lbraces* r ,, t->n||[m|p] e %^N lbraces* _ ,, p->m||[m|p] e %^N lbraces* _ ,, s->n y||[m|p] e %^N lbraces *_ ,, k->n g||[m|p] e %^N lbraces* _;
+
+! compose dua kategori aturan terakhir yang sudah diparalelkan
+define DG D1 .o. D2 .o. D3;
+
+!! Reduplication Capitalization
+define Hyp A -> a || "-" _ ,, B -> b || "-" _ ,, C -> c || "-" _ ,, D -> d || "-" _ ,, E -> e || "-" _ ,, F -> f || "-" _ ,, G -> g || "-" _ ,, H -> h || "-" _ ,, I -> i || "-" _ ,, J -> j || "-" _ ,, K -> k || "-" _ ,, L -> l || "-" _ ,, M -> m || "-" _ ,, N -> n || "-" _ ,, O -> o || "-" _ ,, P -> p || "-" _ ,, Q -> q || "-" _ ,, R -> r || "-" _ ,, S -> s || "-" _ ,, T -> t || "-" _ ,, U -> u || "-" _ ,, V -> v || "-" _ ,, W -> w || "-" _ ,, X -> x || "-" _ ,, Y -> y || "-" _ ,, Z -> z || "-" _ ; 
+!define CAP a -> A || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, b -> B || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, c -> C || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, d -> D || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, e -> E || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, f -> F || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, g -> G || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, h -> H || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, i -> I || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, j -> J || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, k -> K || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, l -> L || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, m -> M || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, n -> N || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, o -> O || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, p -> P || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, q -> Q || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, r -> R || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, s -> S || .#. [lbraces|flgs]* "@P.CAP.on@" [lbraces|flgs]* _ ,, t -> T || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, u -> U || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, v -> V || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, w -> W || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, x -> X || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, y -> Y || .#. "@P.CAP.on@" [lbraces|flgs]* _ ,, z -> Z || .#. "@P.CAP.on@" [lbraces|flgs]* _ ;
+define CAP a -> A, b -> B, c -> C, d -> D, e -> E,
+           f -> F, g -> G, h -> H, i -> I, j -> J,
+           k -> K, l -> L, m -> M, n -> N, o -> O,
+           p -> P, q -> Q, r -> R, s -> S, t -> T,
+           u -> U, v -> V, w -> W, x -> X, y -> Y,
+           z -> Z || .#. "@P.CAP.on@" [lbraces|flgs]* _ ;
+define Exception %^K [k|p|c|t|K|P|C|T] -> 0 || [k|p|c|t|K|P|C|T] _ ,, %^K -> 0 || n g _ [k|K] ,, %^K -> 0 || m _ [p|P] ,, %^K -> 0 || n _ [c|C|t|T] ;
+define Syllable %^M -> 0 || [~[Upper]|~[Lower]] _ ,, %^M -> e || [Upper|Lower]+ _ ;
+define DoubleR r -> 0 || b e _ [lbraces|flgs]* r ,, r -> 0 || p e _ [lbraces|flgs]* r ,, r -> 0 || t e _ [lbraces|flgs]* r ;
+
+
+! composition rules terakhir
+define Morphrules DG .o. R1 .o. R2 .o. R3 .o. R4 .o. R6 .o. R7 .o. R9 .o. R10 .o. RG4 .o. R16 .o. R17 .o. Hyp .o. CAP .o. Exception .o. Syllable .o. DoubleR ;
+
+

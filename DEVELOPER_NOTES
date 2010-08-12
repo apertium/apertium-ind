@@ -138,3 +138,7 @@ it will change "piranti lunak" to "piranti+lunak". It's still one way no generat
 There still some weird problem in the pipeline particularly when passing through apertium-pretransfer.
 It gave "ERROR: Unexpected EOF"
 while when it's done by simple pipe it works perfecly fine :(
+
+***
+[12.08.2010]
+Refined structure

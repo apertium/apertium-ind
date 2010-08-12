@@ -1,0 +1,9 @@
+README
+------
+
+usage:   perl lex-entry-split.pl -i [lexical entry file] -t [main lexc file]         -o [outputfile] -n [#entry]
+example: perl lex-entry-split.pl -i ID-LEXICAL_ENTRIES   -t apertium-id-ms.core.lexc -o xfst-id.bin  -n 50
+         perl lex-entry-split.pl -i MS-LEXICAL_ENTRIES   -t apertium-id-ms.core.lexc -o xfst-ms.bin  -n 50
+
+
+

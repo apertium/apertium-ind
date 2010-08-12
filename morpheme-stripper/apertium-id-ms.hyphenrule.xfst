@@ -1,0 +1,14 @@
+! HyphenRules
+! ada perubahan dari versi yang lalu
+! kali ini semua langsung digabung menjadi satu rule
+
+define HyphenRulesBiasa %^REHYPH -> 0 || %^REHYPH ?* _ .o. %^REHYPH -> "-" .o. m e %^N -> 0 || m e %^N ?* _;
+! push defined HyphenRulesBiasa;
+
+! define HyphenRulesMeN %^REHYPH -> 0 || %^REHYPH ?* _ .o. m e n .#. -> 0 || %^REHYPH ?* _ .o. %^REHYPH -> "-" .o. m e n -> m e %^N;
+! define HyphenRulesMeN m e %^N .#. -> 0 || %^REHYPH ?* _;
+! define HyphenRulesMeN %^REHYPHme%^N -> 0 || %^REHYPHme%^N ?* _ .o. %^REHYPHme%^N -> "-" m e %^N;
+! push defined HyphenRulesMeN;
+
+! define HyphenRules HyphenRulesBiasa .o. HyphenRulesMeN;
+! push defined HyphenRules;

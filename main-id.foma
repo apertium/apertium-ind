@@ -2,7 +2,7 @@ read lexc < apertium-id-ms.id.lexc
 
 define initialnet
 
-source apertium-id-ms.morpho.xfst
+source apertium-id-ms.morphophonemic.xfst
 
 read regex initialnet .o. Morphrules ;
 
@@ -29,7 +29,7 @@ define secondarynet _eq(secondarynetB, %<, %>) .o. %<|%> -> 0;
 
 # Here we continue as with xfst
 
-source HyphenRules9-1.xfst
+source apertium-id-ms.hyphenrule.xfst
 
 read regex secondarynet .o. HyphenRulesBiasa ;
 

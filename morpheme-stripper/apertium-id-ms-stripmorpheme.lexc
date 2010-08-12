@@ -1,0 +1,690 @@
+!!! ================================================================
+!!! Indonesian Morphological Analyzer
+!!! Author        : Septina Dian Larasati (septina.larasati@gmail.com)
+!!! Last Modified : July 2010
+!!! ================================================================
+
+
+!!! -- Multicharacter Definitions --
+!!! Includes the Morphological Tags, Nasal Marks, and Diacritic Flags
+!!! <TAGS>, ^NASAL, and @THE.DIACRITIC.FLAG@
+!!! ----------------------------------------------------------------
+Multichar_Symbols
+         %<abstract%>           !! Morphological Tags
+         %<actio%>
+         %<actor%>
+         %<adj%>
+         %<appl%>
+         %<actv%>
+         %<bare%>
+         %<cap%>
+         %<card%>
+         %<caus%>
+         %<cnjcoo%>
+         %<cnjsub%>
+         %<coll%>
+         %<det%>
+         %<enc%>
+         %<ent%>
+         %<exceed%>
+         %<imp%>
+         %<manner%>
+         %<mimic%>
+         %<n%>
+         %<num%>
+         %<ord%>
+         %<p1%>
+         %<p2%>
+         %<p3%>
+         %<perf%>
+         %<pl%>
+         %<pos%>
+         %<positive%>
+         %<prn%>
+         %<pro%>
+         %<pasv%>
+         %<ref%>
+         %<sg%>
+         %<sup%>
+         %<theme%>
+         %<uni%>
+         %<vblex%>
+         %<vbhaver%>
+         %<vbser%>
+         %<part%>
+         %<uni%>
+         %<mod%>
+         %<ij%>
+         %<qst%>
+         %<pr%>
+         %<possib%>
+	 ^N                        !! Nasal Mark
+	 ^K
+	 ^M
+	 %~
+	 ^REHYPH
+	 ^[
+	 ^2^]
+	 +
+	 -
+         @P.ASPECT.imperf@         !! Diacritic Flags
+         @P.ASPECT.perf@
+         @P.CAP.on@
+         @P.DERADJ.exceed@
+         @P.DERADJ.manner@
+         @P.DERADJ.positive@
+         @P.DERADJ.sup@
+         @P.DERADJ.uni@
+         @P.DERADJ.possib@
+         @P.DERADJ.mimic@
+         @P.DERNOUN.abstract@
+         @P.DERNOUN.act@
+         @P.DERNOUN.actor@
+         @P.DERNOUN.bare@
+         @P.DERNOUN.ent@
+         @P.DERNOUN.theme@
+         @P.DERNUM.card@
+         @P.DERNUM.coll@
+         @P.DERNUM.ord@
+         @P.DERNUM.ref@
+         @P.DERNUM.uni@
+         @P.ENCLITIC.enc@
+         @P.FLAG.bare@
+         @P.FLAG.deradj@
+         @P.FLAG.dernoun@
+         @P.FLAG.numinfl@
+         @P.FLAG.verbinfl@
+         @P.MARK.bare@
+         @P.MARK.ber@
+         @P.MARK.ke@
+         @P.MARK.on@
+         @P.MARK.pen@
+         @P.MARK.per@
+         @P.MARK.ter@
+         @P.MARK.se@
+         @P.MARKP.toparticle@
+         @P.NUM.pl@
+         @P.NUM.sg@
+         @P.OBJ.appl@
+         @P.OBJ.caus@
+         @P.PERSON.p1@
+         @P.PERSON.p2@
+         @P.PERSON.p3@
+         @P.POS.adj@
+         @P.POS.adv@
+         @P.POS.cnjcoo@
+         @P.POS.cnjsub@
+         @P.POS.det@
+         @P.POS.mod@
+         @P.POS.interjection@
+         @P.POS.n@
+         @P.POS.num@
+         @P.POS.prn@
+         @P.POS.question@
+         @P.POS.v@
+         @P.POS.part@
+         @P.POS.pr@
+         @P.PROCLITIC.pro@
+         @P.REDUP.on@
+         @P.VERBVAR.vbhaver@
+         @P.VERBVAR.vbser@
+         @P.VOICE.av@
+         @P.VOICE.pv@
+         @R.ASPECT.imperf@
+         @R.ASPECT.perf@
+         @R.CAP.on@
+         @R.DERADJ.exceed@
+         @R.DERADJ.manner@
+         @R.DERADJ.positive@
+         @R.DERADJ.sup@
+         @R.DERADJ.uni@
+         @R.DERADJ.possib@
+         @R.DERADJ.mimic@
+         @R.DERNOUN.abstract@
+         @R.DERNOUN.act@
+         @R.DERNOUN.actor@
+         @R.DERNOUN.bare@
+         @R.DERNOUN.ent@
+         @R.DERNOUN.theme@
+         @R.DERNUM.card@
+         @R.DERNUM.coll@
+         @R.DERNUM.ord@
+         @R.DERNUM.ref@
+         @R.DERNUM.uni@
+         @R.ENCLITIC.enc@
+         @R.FLAG.bare@
+         @R.FLAG.deradj@
+         @R.FLAG.dernoun@
+         @R.FLAG.numinfl@
+         @R.FLAG.verbinfl@
+         @R.MARK.bare@
+         @R.MARK.ber@
+         @R.MARK.ke@
+         @R.MARK.on@
+         @R.MARK.pen@
+         @R.MARK.per@
+         @R.MARK.ter@
+         @R.MARK.se@
+         @R.MARKP.toparticle@
+         @R.NUM.pl@
+         @R.NUM.sg@
+         @R.OBJ.appl@
+         @R.OBJ.caus@
+         @R.PERSON.p1@
+         @R.PERSON.p2@
+         @R.PERSON.p3@
+         @R.POS.adj@
+         @R.POS.adv@
+         @R.POS.cnjcoo@
+         @R.POS.cnjsub@
+         @R.POS.det@
+         @R.POS.mod@
+         @R.POS.interjection@
+         @R.POS.n@
+         @R.POS.num@
+         @R.POS.prn@
+         @R.POS.question@
+         @R.POS.v@
+         @R.POS.part@
+         @R.POS.pr@
+         @R.PROCLITIC.pro@
+         @R.REDUP.on@
+         @R.VERBVAR.vbhaver@
+         @R.VERBVAR.vbser@
+         @R.VOICE.av@
+         @R.VOICE.pv@
+         @R.ASPECT@
+         @R.CAP@
+         @R.DERADJ@
+         @R.DERNOUN@
+         @R.DERNUM@
+         @R.ENCLITIC@
+         @R.FLAG@
+         @R.MARK@
+         @R.NUM@
+         @R.OBJ@
+         @R.PERSON@
+         @R.POS@
+         @R.PROCLITIC@
+         @R.REDUP@
+         @R.VERBVAR@
+         @R.VOICE@
+         @D.ASPECT@
+         @D.CAP@
+         @D.DERADJ@
+         @D.DERNOUN@
+         @D.DERNUM@
+         @D.ENCLITIC@
+         @D.FLAG@
+         @D.MARK@
+         @D.NUM@
+         @D.OBJ@
+         @D.PERSON@
+         @D.POS@
+         @D.PROCLITIC@
+         @D.REDUP@
+         @D.VERBVAR@
+         @D.VOICE@
+         @D.MARK.bare@
+         @D.POS.question@
+
+
+
+!!! -- Morphotactic Rules --
+!!! 
+!!! 
+!!! ----------------------------------------------------------------
+
+! Start Node: Root
+LEXICON Root
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@" "@P.FLAG.verbinfl@">             verb_alternation ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@" "@P.FLAG.deradj@">               adjective_alternation ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@" "@P.FLAG.dernoun@">              noun_alternation ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@" "@P.FLAG.numinfl@">              numeral_alternation ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@">                                 adverb ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@">                                 question ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@">                                 pronoun ;
+<["@P.CAP.on@"|0] "@P.MARKP.toparticle@">                                 determiner ;
+<["@P.CAP.on@"|0]>                                                        subordinating_conjunction ;
+<["@P.CAP.on@"|0]>                                                        coordinating_conjunction ;
+<["@P.CAP.on@"|0]>                                                        interjection ;
+<["@P.CAP.on@"|0]>                                                        preposition ;
+<["@P.CAP.on@"|0]>                                                        modal ;
+<["@P.CAP.on@"|0]>                                                        particle ;
+<["@P.CAP.on@"|0]>                                                        copula ;
+@P.MARKP.toparticle@                                                      proclitic ;
+@P.MARKP.toparticle@                                                      punctuation ;
+
+
+LEXICON proclitic
+aku%<prn%>%<p1%>%<sg%>%<pro%>%+@P.FLAG.verbinfl@:ku000000@P.FLAG.verbinfl@                                            verb_alternation ;
+kamu%<prn%>%<p2%>%<sg%>%<pro%>%+@P.FLAG.verbinfl@:kau000000@P.FLAG.verbinfl@                                          verb_alternation ;
+aku%<prn%>%<p1%>%<sg%>%<pro%>%<cap%>%+@P.FLAG.verbinfl@:Ku0000000@P.FLAG.verbinfl@                                    verb_alternation ;
+kamu%<prn%>%<p2%>%<sg%>%<pro%>%<cap%>%+@P.FLAG.verbinfl@:Kau0000000@P.FLAG.verbinfl@                                  verb_alternation ;
+satu%<num%>%<card%>+per%<adv%>+@P.DERNUM.card@@P.FLAG.numinfl@:seper0000000@P.DERNUM.card@@P.FLAG.numinfl@            numeral ;  ! eg. "se- + per + tujuh" [one seventh, 1/7, lit. one each seven]
+satu%<num%>%<card%>%<cap%>+per%<adv%>+@P.DERNUM.card@@P.FLAG.numinfl@:Seper00000000@P.DERNUM.card@@P.FLAG.numinfl@    numeral ;  ! eg. "se- + per + tujuh" [one seventh, 1/7, lit. one each seven]
+
+
+LEXICON noun_alternation
+@P.NUM.sg@                                  na_prefix ;
+@P.REDUP.on@000:@P.REDUP.on@%^%[%[%{        na_prefix ;
+
+LEXICON numeral_alternation
+                  numa_prefix ;
+
+LEXICON adjective_alternation
+                  adja_prefix ;
+
+LEXICON verb_alternation
+@P.NUM.sg@                                  va_preprefix ;
+
+
+
+!! -- Section: PREFIX
+
+LEXICON na_prefix
+@P.MARK.bare@                                                                         verb ;        ! eg. "kirim + -an" [package]
+@P.MARK.bare@                                                                         noun ;        ! eg. "sapu + -an" [stroke (of a sweep/brush, sapu = sweep)]
+@P.MARK.bare@                                                                         adjective ;   ! eg. "besar + -an" [metric]
+@P.MARK.bare@                                                                         numeral ;     ! eg. "ratus + -an" [hundreds] xxx?
+@P.MARK.pen@@P.DERNOUN.actor@000:@P.MARK.pen@@P.DERNOUN.actor@pe%^N                   verb ;        ! eg. "peN- + kirim" [deliverer], "peN- + kirim + -an" [the process of delivering / delivery]
+@P.MARK.pen@@P.DERNOUN.actor@000:@P.MARK.pen@@P.DERNOUN.actor@pe%^N                   noun ;        ! eg. "peN- + sapu" [sweeper], "peN- + sapu + -an" [the act of stroking]
+@P.MARK.pen@@P.DERNOUN.actor@000:@P.MARK.pen@@P.DERNOUN.actor@pe%^N                   adjective ;   ! eg. "peN- + dingin" [cooler], "peN- + dingin + -an" [the process of cooling]
+@P.MARK.pen@@P.DERNOUN.actor@000:@P.MARK.pen@@P.DERNOUN.actor@pe%^N                   numeral ;     ! eg. xxx?
+00@P.MARK.ke@:ke@P.MARK.ke@                                                           adjective ;   ! eg. "ke- + dingin + -an" [coolness]
+00@P.MARK.ke@:ke@P.MARK.ke@                                                           verb ;        ! eg. xxx?
+00@P.MARK.ke@:ke@P.MARK.ke@                                                           noun ;        ! eg. "ke- + raja + -an" [kingdom]
+000@P.MARK.per@:per@P.MARK.per@                                                       noun ;        ! eg. "per- + toko + -an" [shoping centre]
+000@P.MARK.per@:per@P.MARK.per@                                                       adjective ;   ! eg. "per- + cepat + -an" [velocity]
+000@P.MARK.per@:per@P.MARK.per@                                                       numeral ;     ! eg. "per- + tiga + -an" [three-way road junction]
+000@P.MARK.per@:per@P.MARK.per@                                                       verb ;        ! eg. "per- + main + -an" [game]
+
+
+LEXICON numa_prefix
+@P.DERNUM.card@                                                              numeral ;  ! eg. "tujuh" [seven]
+00@P.DERNUM.ord@:ke@P.DERNUM.ord@                                            numeral ;  ! eg. "ke- + tujuh" [seventh]
+000@P.DERNUM.coll@:ber@P.DERNUM.coll@                                        numeral ;  ! eg. "ber- + tujuh" [in group of seven]
+00@P.REDUP.on@000:ke@P.REDUP.on@%^%[%[%{                                     numeral ;  ! eg. "ke- + tujuh-tujuh + -nya" [all the seven of them]
+@P.REDUP.on@000:@P.REDUP.on@%^%[%[%{                                         numeral ;  ! eg. "tujuh-tujuh + -nya" [all the seven of them]
+
+
+LEXICON adja_prefix
+@P.DERADJ.positive@                                                                     adjective ;         ! eg. "cantik" [beautiful]
+@P.DERADJ.positive@@P.REDUP.on@000:@P.DERADJ.positive@@P.REDUP.on@%^%[%[%{              adjective ;         ! eg. "cantik-cantik" [beautiful (addressing to plural references)]
+@P.DERADJ.positive@@P.REDUP.on@000:@P.DERADJ.positive@@P.REDUP.on@%^%[%[%{              verb ;              ! eg. "tulis - meN- + tulis" [anything related to writing]
+000@P.DERADJ.sup@:ter@P.DERADJ.sup@                                                     adjective ;         ! eg. "ter- + cantik" [the most beautiful (equally grammatical with "paling cantik")]
+00@P.DERADJ.manner@:ke@P.DERADJ.manner@                                                 noun ;              ! eg. "ke- + ibu + -an" [motherly]
+00@P.DERADJ.manner@@P.REDUP.on@000:ke@P.DERADJ.manner@@P.REDUP.on@%^%[%[%{              noun ;              ! eg. "ke- + ibu-ibu + -an" [like mothers]
+00@P.DERADJ.exceed@:ke@P.DERADJ.exceed@                                                 adjective ;         ! eg. "ke- + cantik + an" [too beautiful (equally grammatical with "terlalu cantik")]
+@P.DERADJ.mimic@@P.REDUP.on@000:@P.DERADJ.mimic@@P.REDUP.on@%^%[%[%{                    noun ;              ! eg. "mobil-mobil + -an" [like cars (a toy car)]
+00@P.DERADJ.uni@:se@P.DERADJ.uni@                                                       adjective ;         ! eg. "se- + cantik" [as beautiful as]
+00@P.DERADJ.possib@@P.REDUP.on@000:se@P.DERADJ.possib@@P.REDUP.on@%^%[%[%{              adjective ;         ! eg. "se- + besar-besar + -nya" [as big as something can possibly be]
+00@P.FLAG.dernoun@@P.DERADJ.uni@:se@P.FLAG.dernoun@@P.DERADJ.uni@                       noun_alternation ;   ! eg. "se- + ibu" [one/same mother]
+
+
+LEXICON va_preprefix
+@P.VOICE.av@@P.ASPECT.imperf@000:@P.VOICE.av@@P.ASPECT.imperf@me%^N                                              va_prefix1 ;
+@P.VOICE.pv@@P.ASPECT.imperf@00:@P.VOICE.pv@@P.ASPECT.imperf@di                                                  va_prefix1 ;
+@P.VOICE.av@@P.ASPECT.imperf@@P.REDUP.on@000000:@P.VOICE.av@@P.ASPECT.imperf@@P.REDUP.on@me%^N%^%[%[%{           va_prefix1 ;
+@P.VOICE.pv@@P.ASPECT.imperf@@P.REDUP.on@00000:@P.VOICE.pv@@P.ASPECT.imperf@@P.REDUP.on@di%^%[%[%{               va_prefix1 ;
+@P.VOICE.av@@P.ASPECT.perf@:@P.VOICE.av@@P.ASPECT.perf@                                                          verb ;
+@P.VOICE.av@@P.ASPECT.perf@000:@P.VOICE.av@@P.ASPECT.perf@ber                                                    verb ;
+@P.VOICE.pv@@P.ASPECT.perf@000:@P.VOICE.av@@P.ASPECT.perf@ter                                                    verb ;
+@P.VOICE.av@@P.ASPECT.perf@@P.REDUP.on@000:@P.VOICE.av@@P.ASPECT.perf@@P.REDUP.on@%^%[%[%{                       verb ;
+@P.VOICE.av@@P.ASPECT.perf@@P.REDUP.on@000000:@P.VOICE.av@@P.ASPECT.perf@ber@P.REDUP.on@%^%[%[%{                 verb ;
+@P.VOICE.pv@@P.ASPECT.perf@@P.REDUP.on@000000:@P.VOICE.av@@P.ASPECT.perf@ter@P.REDUP.on@%^%[%[%{                 verb ;
+@P.VOICE.av@@P.VERBVAR.vbhaver@000:@P.VOICE.av@@P.VERBVAR.vbhaver@ber                                            va_prefix2 ;
+@P.VOICE.av@@P.VERBVAR.vbhaver@@P.REDUP.on@000000:@P.VOICE.av@@P.VERBVAR.vbhaver@ber@P.REDUP.on@%^%[%[%{         va_prefix2 ;
+@P.VOICE.av@@P.VERBVAR.vbser@:@P.VOICE.av@@P.VERBVAR.vbser@                                                  va_prefix3 ;
+@P.VOICE.av@@P.VERBVAR.vbser@@P.REDUP.on@000:@P.VOICE.av@@P.VERBVAR.vbser@@P.REDUP.on@%^%[%[%{               va_prefix3 ;
+
+
+LEXICON va_prefix1
+0000@P.VERBVAR.vbser@:p%^Kper@P.VERBVAR.vbser@                                            n0 ;
+                                                                                          n0 ;
+
+LEXICON va_prefix2
+                                                                                          adjective ;
+@P.FLAG.dernoun@                                                                          noun_alternation ;
+
+LEXICON va_prefix3
+@P.MARK.bare@                                                                             adjective ;
+@P.MARK.bare@                                                                             noun ;
+
+
+
+LEXICON n0
+@D.REDUP@@P.REDUP.on@000:@D.REDUP@@P.REDUP.on@%^%[%[%{                                    noun ;
+@D.REDUP@@P.REDUP.on@000:@D.REDUP@@P.REDUP.on@%^%[%[%{                                    numeral ;
+@D.REDUP@@P.REDUP.on@000:@D.REDUP@@P.REDUP.on@%^%[%[%{                                    adjective ;
+@D.REDUP@@P.REDUP.on@000:@D.REDUP@@P.REDUP.on@%^%[%[%{                                    verb ;
+                                                                                          noun ;
+                                                                                          numeral ;
+                                                                                          adjective ;
+                                                                                          verb ;
+
+
+
+
+!! -- Section: PREFIX
+
+LEXICON branching
+@R.FLAG.numinfl@            numa_suffix ;
+@R.FLAG.dernoun@            na_suffix ;
+@R.FLAG.deradj@             adja_suffix ;
+@R.FLAG.verbinfl@           va_suffix ;
+@D.FLAG@                    tagging ;
+
+LEXICON na_suffix
+@R.MARK.bare@@R.POS.n@@P.DERNOUN.bare@                                                   f ;
+00@R.MARK.bare@@P.DERNOUN.ent@:an@R.MARK.bare@@P.DERNOUN.ent@                            f ;
+00@R.MARK.pen@@P.DERNOUN.act@:an@R.MARK.pen@@P.DERNOUN.act@                              f ;
+@R.MARK.pen@                                                                             f ;
+00@R.MARK.ke@@P.DERNOUN.abstract@:an@R.MARK.ke@@P.DERNOUN.abstract@                      f ;
+00@R.MARK.per@@P.DERNOUN.theme@:an@R.MARK.per@@P.DERNOUN.theme@                          f ;
+
+
+LEXICON numa_suffix
+@D.REDUP@                                                                                                     f ;
+000@D.REDUP@@R.DERNUM.ord@@P.DERNUM.ref@:nya@D.REDUP@@R.DERNUM.ord@@P.DERNUM.ref@                             f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.DERNUM.ref@" 0:n 0:y 0:a>             f ;
+belas@D.REDUP@                                                                                                f ;
+<b e l a s [0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.DERNUM.ref@" 0:n 0:y 0:a>   f ;
+
+LEXICON adja_suffix
+@D.REDUP@@R.DERADJ.positive@@R.POS.adj@                                                                                    f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@R.POS.adj@" "@R.DERADJ.positive@">      f ;
+<[0 .x. "}" "%^REHYPH m e %^N" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.POS.v@" "@R.DERADJ.positive@">             f ;
+@D.REDUP@@R.DERADJ.sup@                                                                                                    f ;
+<"@D.REDUP@" ["@R.DERADJ.exceed@" | "@R.DERADJ.manner@" | "@R.DERADJ.mimic@"] 0:a 0:n>                                     f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@R.DERADJ.manner@" 0:a 0:n>              f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.DERADJ.mimic@" 0:a 0:n>                            f ;
+@D.REDUP@@R.DERADJ.possib@000:@D.REDUP@@R.DERADJ.possib@nya                                                                f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@R.DERADJ.possib@" 0:n 0:y 0:a>                       f ;
+@D.REDUP@@R.DERADJ.uni@                                                                                                    f ;
+
+
+LEXICON va_suffix
+@D.REDUP@000@P.OBJ.caus@:@D.REDUP@kan@P.OBJ.caus@                                                                   f ;
+@D.REDUP@0@P.OBJ.appl@:@D.REDUP@i@P.OBJ.appl@                                                                       f ;
+@D.REDUP@@D.MARK@:@D.REDUP@@D.MARK@                                                                                 f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@P.OBJ.caus@" 0:k 0:a 0:n>        f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@P.OBJ.appl@" 0:i>                f ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@" "@D.MARK@">                        f ;
+
+
+LEXICON f
+@D.REDUP@        tagging ;
+<[0 .x. "}" "%^REHYPH" "]" "^" 2 "^]"  ] "@R.REDUP.on@" "@C.REDUP@" "@P.NUM.pl@">        tagging ;
+
+
+!! -- Section: TAGGING
+!! but aslo includes pronoun proclitic and particle
+
+LEXICON tagging
+%<vblex%>@R.POS.v@:0@R.POS.v@                                 check_voice ;
+%<n%>@R.POS.n@:0@R.POS.n@                                     check_voice ;
+%<adj%>@R.POS.adj@:0@R.POS.adj@                               check_voice ;
+%<adv%>@R.POS.adv@:0@R.POS.adv@                               check_voice ;
+%<num%>@R.POS.num@:0@R.POS.num@                               check_voice ;
+%<prn%>@R.POS.prn@:0@R.POS.prn@                               check_voice ;
+%<cnjsub%>@R.POS.cnjsub@:0@R.POS.cnjsub@                      check_voice ;
+%<cnjcoo%>@R.POS.cnjcoo@:0@R.POS.cnjcoo@                      check_voice ;
+%<det%>0@R.POS.det@:0@R.POS.det@                              check_voice ;
+%<mod%>0@R.POS.mod@:0@R.POS.mod@                              check_voice ;
+%<ij%>0@R.POS.interjection@:0@R.POS.interjection@             check_voice ;
+%<qst%>0@R.POS.question@:0@R.POS.question@                    check_voice ;
+%<part%>0@R.POS.part@:0@R.POS.part@                           check_voice ;
+%<pr%>0@R.POS.pr@:0@R.POS.pr@                                 check_voice ;
+
+LEXICON check_voice
+%<actv%>@R.VOICE.av@:0@R.VOICE.av@                            check_aspect ;
+%<pasv%>@R.VOICE.pv@:0@R.VOICE.pv@                            check_aspect ;
+@D.VOICE@                                                     check_aspect ;
+
+LEXICON check_aspect
+%<perf%>@R.ASPECT.perf@:0@R.ASPECT.perf@                      check_verbvariance ;
+%<imp%>@R.ASPECT.imperf@:0@R.ASPECT.imperf@                   check_verbvariance ;
+@D.ASPECT@                                                    check_verbvariance ;
+
+LEXICON check_verbvariance
+%<vbser%>@R.VERBVAR.vbser@:0@R.VERBVAR.vbser@                 check_transitivity ;
+%<vbhaver%>@R.VERBVAR.vbhaver@:0@R.VERBVAR.vbhaver@           check_transitivity ;
+@D.VERBVAR@                                                   check_transitivity ;
+
+LEXICON check_transitivity
+%<caus%>@R.OBJ.caus@:0@R.OBJ.caus@                            check_noun_type ;
+%<appl%>@R.OBJ.appl@:0@R.OBJ.appl@                            check_noun_type ;
+@D.OBJ@                                                       check_noun_type ;
+
+LEXICON check_noun_type
+%<ent%>@R.DERNOUN.ent@:0@R.DERNOUN.ent@                       check_numeral_type ;
+%<actio%>@R.DERNOUN.act@:0@R.DERNOUN.act@                     check_numeral_type ;
+%<actor%>@R.DERNOUN.actor@:0@R.DERNOUN.actor@                 check_numeral_type ;
+%<theme%>@R.DERNOUN.theme@:0@R.DERNOUN.theme@                 check_numeral_type ;
+%<abstract%>@R.DERNOUN.abstract@:0@R.DERNOUN.abstract@        check_numeral_type ;
+%<bare%>@R.DERNOUN.bare@:0@R.DERNOUN.bare@                    check_numeral_type ;
+@D.DERNOUN@                                                   check_numeral_type ;
+
+LEXICON check_numeral_type
+%<card%>@R.DERNUM.card@:0@R.DERNUM.card@                      check_person ;
+%<ord%>@R.DERNUM.ord@:0@R.DERNUM.ord@                         check_person ;
+%<coll%>@R.DERNUM.coll@:0@R.DERNUM.coll@                      check_person ;
+%<ref%>@R.DERNUM.ref@:0@R.DERNUM.ref@                         check_person ;
+%<uni%>@R.DERNUM.uni@:0@R.DERNUM.uni@                         check_person ;
+@D.DERNUM@                                                    check_person ;
+
+LEXICON check_person
+%<p1%>@R.PERSON.p1@:0@R.PERSON.p1@                            check_adjective_type ;
+%<p2%>@R.PERSON.p2@:0@R.PERSON.p2@                            check_adjective_type ;
+%<p3%>@R.PERSON.p3@:0@R.PERSON.p3@                            check_adjective_type ;
+@D.PERSON@                                                    check_adjective_type ;
+
+LEXICON check_adjective_type
+%<positive%>@R.DERADJ.positive@:0@R.DERADJ.positive@          check_number ;
+%<sup%>@R.DERADJ.sup@:0@R.DERADJ.sup@                         check_number ;
+%<manner%>@R.DERADJ.manner@:0@R.DERADJ.manner@                check_number ;
+%<exceed%>@R.DERADJ.exceed@:0@R.DERADJ.exceed@                check_number ;
+%<uni%>@R.DERADJ.uni@:0@R.DERADJ.uni@                         check_number ;
+%<possib%>@R.DERADJ.possib@:0@R.DERADJ.possib@                check_number ;
+%<mimic%>@R.DERADJ.mimic@:0@R.DERADJ.mimic@                   check_number ;
+@D.DERADJ@                                                    check_number ;
+
+LEXICON check_number
+%<sg%>@R.NUM.sg@:0@R.NUM.sg@                                  check_capital ;
+%<pl%>@R.NUM.pl@:0@R.NUM.pl@                                  check_capital ;
+@D.NUM@                                                       check_capital ;
+
+! ignores capitalization
+LEXICON check_capital
+!%<cap%>@R.CAP.on@:0@R.CAP.on@                                 enclitic ;
+!@D.CAP@                                                       enclitic ;
+                                                       enclitic ;
+
+
+
+
+LEXICON enclitic
+%+aku%<prn%>%<p1%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:00ku00000@R.DERNOUN@                   CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:000mu00000@R.DERNOUN@                 CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:00kau00000@R.DERNOUN@                 CheckParticle ;
+%+dia%<prn%>%<p3%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:0nya00000@R.DERNOUN@                   CheckParticle ;
+%+aku%<prn%>%<p1%>%<sg%>%<enc%>@R.VOICE@:00ku0000@R.VOICE@                               CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>@R.VOICE@:000mu0000@R.VOICE@                             CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>@R.VOICE@:00kau0000@R.VOICE@                             CheckParticle ;
+%+dia%<prn%>%<p3%>%<sg%>%<enc%>@R.VOICE@:0nya0000@R.VOICE@                               CheckParticle ;
+                                                                                         CheckParticle ;
+!%<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
+
+LEXICON CheckParticle
+%+kah%<part%>@D.POS.question@@R.MARKP.toparticle@:0kah0@D.POS.question@@R.MARKP.toparticle@                   # ;
+000@R.POS.question@:kah@R.POS.question@                                       # ;
+%+lah%<part%>@R.MARKP.toparticle@:0lah0@R.MARKP.toparticle@                   # ;
+%+tah%<part%>@R.MARKP.toparticle@:0tah0@R.MARKP.toparticle@                   # ;
+%+pun%<part%>@R.MARKP.toparticle@:0pun0@R.MARKP.toparticle@                   # ;
+                                                                              # ;
+
+
+
+!!! -- Monolingual Dictionary --
+!!! 
+!!! 
+!!! ----------------------------------------------------------------
+
+
+LEXICON adjective
+<a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|"-">        adjective ;
+@P.POS.adj@                                                      branching ;
+
+
+
+LEXICON coordinating_conjunction
+dan@P.POS.cnjcoo@             branching ;
+atau@P.POS.cnjcoo@            branching ;
+maupun@P.POS.cnjcoo@          branching ;
+
+
+LEXICON determiner
+itu@P.POS.det@                branching ;
+ini@P.POS.det@                branching ;
+suatu@P.POS.det@              branching ;
+seluruh@P.POS.det@            branching ;
+keseluruhan@P.POS.det@        branching ;
+tertentu@P.POS.det@           branching ;
+tiap@P.POS.det@               branching ;
+tiap00@P.POS.det@:setiap@P.POS.det@            branching ;
+semua@P.POS.det@              branching ;
+semua0@P.POS.det@:segala@P.POS.det@            branching ;
+banyak@P.POS.det@             branching ;
+beberapa@P.POS.det@           branching ;
+
+
+LEXICON interjection
+ah@P.POS.interjection@        branching ;
+betapa@P.POS.interjection@    branching ;
+aduhai@P.POS.interjection@    branching ;
+
+
+LEXICON noun
+<a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|"-">        noun ;
+@P.POS.n@                                                        branching ;
+
+
+LEXICON numeral
+satu@P.POS.num@                 branching ;
+dua@P.POS.num@                  branching ;
+tiga@P.POS.num@                 branching ;
+empat@P.POS.num@                branching ;
+lima@P.POS.num@                 branching ;
+enam@P.POS.num@                 branching ;
+tujuh@P.POS.num@                branching ;
+delapan@P.POS.num@              branching ;
+sembilan@P.POS.num@             branching ;
+sepuluh@P.POS.num@              branching ;
+sebelas@P.POS.num@              branching ;
+puluh@P.POS.num@                branching ;
+ratus@P.POS.num@                branching ;
+ribu@P.POS.num@                 branching ;
+juta@P.POS.num@                 branching ;
+milyar@P.POS.num@               branching ;
+miliar@P.POS.num@               branching ;
+triliun@P.POS.num@              branching ;
+
+LEXICON question
+apa@P.POS.question@             branching ;
+apa@P.POS.question@             branching ;
+bagaimana@P.POS.question@       branching ;
+kapan@P.POS.question@           branching ;
+kenapa@P.POS.question@          branching ;
+siapa@P.POS.question@           branching ;
+berapa@P.POS.question@          branching ;
+
+LEXICON subordinating_conjunction
+ketika@P.POS.cnjsub@             branching ;
+agar@P.POS.cnjsub@               branching ;
+apabila@P.POS.cnjsub@            branching ;
+apabila0@P.POS.cnjsub@:bilamana@P.POS.cnjsub@            branching ;
+apabila@P.POS.cnjsub@:000jika@P.POS.cnjsub@              branching ;
+bahwa@P.POS.cnjsub@              branching ;
+bahwa00000@P.POS.cnjsub@:bahwasanya@P.POS.cnjsub@        branching ;
+daripada@P.POS.cnjsub@           branching ;
+demikian@P.POS.cnjsub@           branching ;
+demi@P.POS.cnjsub@               branching ;
+kalau@P.POS.cnjsub@              branching ;
+karena@P.POS.cnjsub@             branching ;
+kendati@P.POS.cnjsub@            branching ;
+lantaran@P.POS.cnjsub@           branching ;
+maklum@P.POS.cnjsub@             branching ;
+meski@P.POS.cnjsub@              branching ;
+namun@P.POS.cnjsub@              branching ;
+padahal@P.POS.cnjsub@            branching ;
+sambil@P.POS.cnjsub@             branching ;
+seakan%-akan@P.POS.cnjsub@       branching ;
+sebagaimana@P.POS.cnjsub@        branching ;
+sebelum@P.POS.cnjsub@            branching ;
+selagi@P.POS.cnjsub@             branching ;
+seperti@P.POS.cnjsub@            branching ;
+supaya@P.POS.cnjsub@             branching ;
+tatkala@P.POS.cnjsub@            branching ;
+yang@P.POS.cnjsub@               branching ;
+kecuali@P.POS.cnjsub@            branching ;
+tetapi@P.POS.cnjsub@             branching ;
+tetapi@P.POS.cnjsub@:00tapi@P.POS.cnjsub@                 branching ;
+
+
+LEXICON verb
+<a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|"-">        verb ;
+@P.POS.v@                                                        branching ;
+
+LEXICON particle
+lah@P.POS.part@             branching ;
+kah@P.POS.part@             branching ;
+tah@P.POS.part@             branching ;
+pun@P.POS.part@             branching ;
+
+LEXICON preposition
+di@P.POS.pr@                branching ;
+ke@P.POS.pr@                branching ;
+untuk@P.POS.pr@             branching ;
+untuk@P.POS.pr@:bagi0@P.POS.pr@          branching ;
+untuk@P.POS.pr@:atas0@P.POS.pr@          branching ;
+tentang@P.POS.pr@           branching ;
+pada00@P.POS.pr@:kepada@P.POS.pr@        branching ;
+dari@P.POS.pr@              branching ;
+dari0000@P.POS.pr@:daripada@P.POS.pr@    branching ;
+dalam@P.POS.pr@             branching ;
+pada@P.POS.pr@              branching ;
+oleh@P.POS.pr@              branching ;
+pada0000@P.POS.pr@:terhadap@P.POS.pr@    branching ;
+menurut@P.POS.pr@           branching ;
+antara@P.POS.pr@            branching ;
+
+LEXICON pronoun
+saya@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@                 branching ;
+aku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@                  branching ;
+anda@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@                 branching ;
+kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@                 branching ;
+kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@:au00@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@      branching ;
+dia@P.POS.prn@@P.PERSON.p3@@P.NUM.sg@                  branching ;
+kami@P.POS.prn@@P.PERSON.p1@@P.NUM.pl@                 branching ;
+kita@P.POS.prn@@P.PERSON.p1@@P.NUM.pl@                 branching ;
+kalian@P.POS.prn@@P.PERSON.p2@@P.NUM.pl@               branching ;
+mereka@P.POS.prn@@P.PERSON.p3@@P.NUM.pl@               branching ;
+beliau@P.POS.prn@@P.PERSON.p3@@P.NUM.sg@               branching ;
+0aku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@:daku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@      branching ;
+0kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@:dikau@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@    branching ;
+
+LEXICON copula
+adalah@P.POS.v@@P.VERBVAR.vbser@                                                   branching ;
+adalah@P.POS.v@@P.VERBVAR.vbser@:0ialah@P.POS.v@@P.VERBVAR.vbser@                  branching ;
+
+
+LEXICON punctuation
+%(        # ;
+%)        # ;
+%@        # ;
+%?        # ;
+%=        # ;
+
+
+!!! -- End -- !!!
