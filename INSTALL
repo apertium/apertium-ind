@@ -1,0 +1,32 @@
+DEPENDENCIES:
+============
+Install all the following dependencies
+
+1. http://wiki.apertium.org/wiki/Lttoolbox
+2. http://wiki.apertium.org/wiki/Installation
+3. http://wiki.apertium.org/wiki/Foma
+4. http://wiki.apertium.org/wiki/OpenFST
+5. Optional http://wiki.apertium.org/wiki/SFST
+6. Mandatory http://wiki.apertium.org/wiki/Hfst
+
+
+INSTALL:
+=======
+Run make to install
+
+Run "make morphTest" and "make test" to test your installation
+
+TROUBLESHOOT:
+============
+If you get segmentation fault errors, run "make clean" and run "make" again
+
+OPTIONAL:
+========
+If you want modes, run "make modes". 
+You may remove comp-words.pl and COMPOUNDLIST from modes/*.mode to keep it simple. Also change the paths of perl accordingly.
+
+REPORTS ERRORS TO:
+=================
+Septina Dian Larasati (septina.larasati@gmail.com)
+Siva Reddy (siva@sivareddy.in), 2012
+
