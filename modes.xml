@@ -6,8 +6,8 @@
         <file name="comp-words.pl"/>
         <file name="COMPOUNDWORDLIST"/>
       </program>
-      <program name="foma-proc">
-        <file name="id-ms.automorf.foma"/>
+      <program name="hsft-proc">
+        <file name="id-ms.automorf.hfst.ol"/>
       </program>
       <program name="apertium-tagger -g $2">
         <file name="id-ms.prob"/>
@@ -18,8 +18,8 @@
         <file name="id-ms.t1x.bin"/>
         <file name="id-ms.autobil.bin"/>
       </program>
-      <program name="foma-proc -g">
-        <file name="id-ms.autogen.foma"/>
+      <program name="hsft-proc -g">
+        <file name="id-ms.autogen.hfst.ol"/>
       </program>
     </pipeline>
   </mode>
@@ -29,15 +29,15 @@
         <file name="comp-words.pl"/>
         <file name="COMPOUNDWORDLIST"/>
       </program>
-      <program name="foma-proc">
-        <file name="id-ms.automorf.foma"/>
+      <program name="hfst-proc">
+        <file name="id-ms.automorf.hfst.ol"/>
       </program>
     </pipeline>
   </mode>
   <mode name="id-ms-tagger" install="no">
     <pipeline>
-      <program name="foma-proc">
-        <file name="id-ms.automorf.foma"/>
+      <program name="hfst-proc">
+        <file name="id-ms.automorf.hfst.ol"/>
       </program>
       <program name="apertium-tagger -g $2">
         <file name="id-ms.prob"/>
@@ -50,8 +50,8 @@
         <file name="comp-words.pl"/>
         <file name="COMPOUNDWORDLIST"/>
       </program>
-      <program name="foma-proc">
-        <file name="id-ms.automorf.foma"/>
+      <program name="hfst-proc">
+        <file name="id-ms.automorf.hfst.ol"/>
       </program>
       <program name="apertium-tagger -g $2">
         <file name="id-ms.prob"/>

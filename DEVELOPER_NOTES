@@ -142,3 +142,8 @@ while when it's done by simple pipe it works perfecly fine :(
 ***
 [12.08.2010]
 Refined structure
+
+***
+[27.01.2012]
+Added by Siva Reddy
+Original .hfst  files corrupted. Removing them. May be these are system specific. Modified Makefile to regenerate *.hfst.ol. Replacing lt-proc with hfst-proc.
