@@ -42,5 +42,5 @@ morphTest:
 	echo 'Silakan klik tombol "lanjut" untuk meneruskan ke tahap berikutnya' | hfst-proc id-ms.automorf.hfst.ol
 
 test:
-	echo 'Silakan klik tombol "lanjut" untuk meneruskan ke tahap berikutnya' | hfst-proc id-ms.automorf.hfst.ol | apertium-tagger -g id-ms.prob | apertium-pretransfer | apertium-transfer apertium-id-ms.id-ms.t1x id-ms.t1x.bin id-ms.autobil.bin | hfst-proc -g id-ms.autogen.bin
+	echo 'Silakan klik tombol "lanjut" untuk meneruskan ke tahap berikutnya' | hfst-proc id-ms.automorf.hfst.ol | apertium-tagger -g id-ms.prob | apertium-pretransfer | apertium-transfer apertium-id-ms.id-ms.t1x id-ms.t1x.bin id-ms.autobil.bin | hfst-proc -g id-ms.autogen.hfst.ol
 
