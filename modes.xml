@@ -6,7 +6,7 @@
         <file name="comp-words.pl"/>
         <file name="COMPOUNDWORDLIST"/>
       </program>
-      <program name="hsft-proc">
+      <program name="hfst-proc">
         <file name="id-ms.automorf.hfst.ol"/>
       </program>
       <program name="apertium-tagger -g $2">
@@ -18,7 +18,7 @@
         <file name="id-ms.t1x.bin"/>
         <file name="id-ms.autobil.bin"/>
       </program>
-      <program name="hsft-proc -g">
+      <program name="hfst-proc -g">
         <file name="id-ms.autogen.hfst.ol"/>
       </program>
     </pipeline>

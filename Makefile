@@ -9,6 +9,8 @@ all:
 	else cd morphological-analyzer-id-ms && foma -l main-id.foma; \
 	fi;
 	
+	echo "main-id.foma"
+
 	if test -e xfst-ms.bin; \
 	then echo; \
 	else cd morphological-analyzer-id-ms && foma -l main-ms.foma; \

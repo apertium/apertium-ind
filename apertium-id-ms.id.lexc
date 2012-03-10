@@ -14,6 +14,7 @@ Multichar_Symbols
          %<actio%>
          %<actor%>
          %<adj%>
+         %<adv%>
          %<appl%>
          %<actv%>
          %<bare%>
@@ -499,18 +500,17 @@ LEXICON check_capital
 %<cap%>@R.CAP.on@:0@R.CAP.on@                                 enclitic ;
 @D.CAP@                                                       enclitic ;
 
-
-
-
 LEXICON enclitic
-%+aku%<prn%>%<p1%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:00ku00000@R.DERNOUN@                   CheckParticle ;
-%+kamu%<prn%>%<p2%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:000mu00000@R.DERNOUN@                 CheckParticle ;
-%+kamu%<prn%>%<p2%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:00kau00000@R.DERNOUN@                 CheckParticle ;
-%+dia%<prn%>%<p3%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:0nya00000@R.DERNOUN@                   CheckParticle ;
-%+aku%<prn%>%<p1%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:00ku0000[@R.VOICE@|@R.POS.pr@]                               CheckParticle ;
-%+kamu%<prn%>%<p2%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:000mu0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
-%+kamu%<prn%>%<p2%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:00kau0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
-%+dia%<prn%>%<p3%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:0nya0000[@R.VOICE@|@R.POS.pr@]                               CheckParticle ;
+%+aku%<prn%>%<enc%>%<p1%>%<sg%>%<pos%>@R.DERNOUN@:00ku00000@R.DERNOUN@                   CheckParticle ;
+%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%>@R.DERNOUN@:000mu00000@R.DERNOUN@                 CheckParticle ;
+%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%>@R.DERNOUN@:00kau00000@R.DERNOUN@                 CheckParticle ;
+%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>@R.DERNOUN@:0nya00000@R.DERNOUN@                   CheckParticle ;
+!%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%>@R.DERNOUN@:%-Nya000000@R.DERNOUN@          CheckParticle ;  !! check this later
+%+aku%<prn%>%<enc%>%<p1%>%<sg%>@R.VOICE@:00ku0000@R.VOICE@                               CheckParticle ;
+%+kamu%<prn%>%<enc%>%<p2%>%<sg%>@R.VOICE@:000mu0000@R.VOICE@                             CheckParticle ;
+%+kamu%<prn%>%<enc%>%<p2%>%<sg%>@R.VOICE@:00kau0000@R.VOICE@                             CheckParticle ;
+%+dia%<prn%>%<enc%>%<p3%>%<sg%>@R.VOICE@:0nya0000@R.VOICE@                               CheckParticle ;
+!%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%>@R.VOICE@:%-Nya000000@R.VOICE@    
                                                                                          CheckParticle ;
 !%<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
 
@@ -1340,6 +1340,7 @@ conflict@P.POS.n@        branching ;
 contoh@P.POS.n@        branching ;
 contract@P.POS.n@        branching ;
 conventions@P.POS.n@        branching ;
+cuaca@P.POS.n@        branching ;
 cucu@P.POS.n@        branching ;
 cuka@P.POS.n@        branching ;
 dace@P.POS.n@        branching ;
@@ -1506,7 +1507,6 @@ hujan@P.POS.n@        branching ;
 hukum@P.POS.n@        branching ;
 huruf@P.POS.n@        branching ;
 huthamah@P.POS.n@        branching ;
-ia@P.POS.n@        branching ;
 ibadah@P.POS.n@        branching ;
 iblis@P.POS.n@        branching ;
 ibrahim@P.POS.n@        branching ;
@@ -1649,6 +1649,7 @@ keliling@P.POS.n@        branching ;
 kelopak@P.POS.n@        branching ;
 keluarga@P.POS.n@        branching ;
 keluh@P.POS.n@        branching ;
+kemarin@P.POS.n@        branching ;
 kembang@P.POS.n@        branching ;
 kemul@P.POS.n@        branching ;
 kenari@P.POS.n@        branching ;
@@ -2407,6 +2408,7 @@ kapan@P.POS.question@           branching ;
 kenapa0@P.POS.question@:mengapa@P.POS.question@          branching ;
 kenapa@P.POS.question@          branching ;
 siapa@P.POS.question@           branching ;
+mana@P.POS.question@            branching ;
 
 
 LEXICON subordinating_conjunction
@@ -2426,6 +2428,7 @@ kendati@P.POS.cnjsub@            branching ;
 ketika@P.POS.cnjsub@             branching ;
 lantaran@P.POS.cnjsub@           branching ;
 maklum@P.POS.cnjsub@             branching ;
+maka@P.POS.cnjsub@             branching ;
 meski@P.POS.cnjsub@              branching ;
 namun@P.POS.cnjsub@              branching ;
 padahal@P.POS.cnjsub@            branching ;
@@ -2929,6 +2932,7 @@ untuk@P.POS.pr@             branching ;
 LEXICON pronoun
 saya@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@                 branching ;
 aku@P.POS.prn@@P.PERSON.p1@@P.NUM.sg@                  branching ;
+ia@P.POS.prn@@P.PERSON.p3@@P.NUM.sg@                  branching ;
 anda@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@                 branching ;
 kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@                 branching ;
 kamu@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@:au00@P.POS.prn@@P.PERSON.p2@@P.NUM.sg@      branching ;
