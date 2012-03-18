@@ -18,22 +18,22 @@ all:
 	
 	if test -e id-ms.autogen.hfst.ol; \
 	then echo; \
-	else zcat xfst-ms.bin | hfst-fst2fst -O -o id-ms.autogen.hfst.ol; \
+	else gzcat xfst-ms.bin | hfst-fst2fst -O -o id-ms.autogen.hfst.ol; \
 	fi;
 
 	if test -e ms-id.autogen.hfst.ol; \
 	then echo; \
-	else zcat xfst-id.bin | hfst-fst2fst -O -o ms-id.autogen.hfst.ol; \
+	else gzcat xfst-id.bin | hfst-fst2fst -O -o ms-id.autogen.hfst.ol; \
 	fi;
 
 	if test -e id-ms.automorf.hfst.ol; \
 	then echo; \
-	else zcat xfst-id.bin | hfst-invert | hfst-fst2fst -O -o id-ms.automorf.hfst.ol; \
+	else gzcat xfst-id.bin | hfst-invert | hfst-fst2fst -O -o id-ms.automorf.hfst.ol; \
 	fi; 
 
 	if test -e ms-id.automorf.hfst.ol; \
 	then echo; \
-	else zcat xfst-ms.bin | hfst-invert | hfst-fst2fst -O -o ms-id.automorf.hfst.ol; \
+	else gzcat xfst-ms.bin | hfst-invert | hfst-fst2fst -O -o ms-id.automorf.hfst.ol; \
 	fi;
 
 	apertium-validate-dictionary apertium-id-ms.id-ms.dix
