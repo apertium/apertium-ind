@@ -2,8 +2,6 @@
 ## Makefile for apertium-ind
 ###############################################################################
 
-RELEASE=0.1
-VERSION=0.1.0
 LANG1=ind
 BASENAME=apertium-$(LANG1)
 
@@ -43,8 +41,8 @@ $(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
 ## Disambiguation rules
 ###############################################################################
 
-$(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx $(CGCOMP)
-	$(CGCOMP) $< $@
+$(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx
+	cg-comp $< $@
 
 ###############################################################################
 ## Distribution
@@ -66,7 +64,8 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix		\
 apertium_inddir=$(prefix)/share/apertium/$(BASENAME)/
 apertium_ind_srcdir=$(prefix)/share/apertium/$(BASENAME)/
 
-apertium_ind_DATA=$(TARGETS_COMMON)
+apertium_ind_DATA=$(TARGETS_COMMON) \
+	$(LANG1).prob
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
