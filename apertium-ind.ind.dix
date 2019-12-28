@@ -99,20 +99,36 @@
     <sdef n="guio"/>
   </sdefs>
 	<pardef n="Linux__np">
-  <e><p><l></l>                 <r><s n="np"/><s n="al"/><s n="m"/><s n="sg"/></r></p></e>
-  <e r="RL"><p><l></l>          <r><s n="np"/><s n="al"/></r></p></e>
-  <e r="RL"><p><l></l>          <r><s n="np"/><s n="ant"/></r></p></e>
+  <e>
+     <p>
+        <l></l>
+	<r><s n="np"/><s n="al"/><s n="m"/><s n="sg"/></r>
+     </p>
+ </e>
 </pardef>
 	
 	<pardef n="BBC__n">
-  <e><p><l></l>                 <r><s n="n"/><s n="acr"/><s n="f"/><s n="sg"/></r></p></e>
+  <e>
+     <p>
+	<l>-</l>
+	<r><s n="n"/><s n="acr"/><s n="f"/><s n="sg"/></r>
+     </p>
+ </e>
 </pardef>
 	
 	<pardef n="VCR__n">
-  <e><p><l></l>                 <r><s n="n"/><s n="acr"/><s n="sg"/></r></p></e>
-  <e r="RL"><p><l>'s</l>        <r><s n="n"/><s n="acr"/><s n="sg"/><j/>'s<s n="gen"/></r></p></e>
-  <e><p><l>s</l>                <r><s n="n"/><s n="acr"/><s n="pl"/></r></p></e>
-  <e r="RL"><p><l>s'</l>        <r><s n="n"/><s n="acr"/><s n="pl"/><j/>'s<s n="gen"/></r></p></e>
+	<e>
+	   <p>
+	      <l></l>
+	      <r><s n="n"/><s n="acr"/><s n="sg"/></r>
+	    </p>
+	</e>
+        <e>
+	   <p>
+	      <l>-</l> 
+	      <r><s n="n"/><s n="acr"/><s n="pl"/></r>
+	     </p>
+	</e>
 </pardef>
 	
   <pardefs>
