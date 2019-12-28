@@ -5,6 +5,7 @@
     <!-- POS categories -->
     <sdef n="n"/>
     <sdef n="vblex"/>
+    <sdef n="acr"/>
     <sdef n="adj"/>
     <sdef n="adv"/>
     <sdef n="mod"/>
