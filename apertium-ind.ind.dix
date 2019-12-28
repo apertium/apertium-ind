@@ -98,6 +98,39 @@
     <sdef n="percent"/>
     <sdef n="guio"/>
   </sdefs>
+	<pardef n="Linux__np">
+  <e>
+     <p>
+        <l></l>
+	<r><s n="np"/><s n="al"/><s n="m"/><s n="sg"/></r>
+     </p>
+ </e>
+</pardef>
+	
+	<pardef n="BBC__n">
+  <e>
+     <p>
+	<l>-</l>
+	<r><s n="n"/><s n="acr"/><s n="f"/><s n="sg"/></r>
+     </p>
+ </e>
+</pardef>
+	
+	<pardef n="VCR__n">
+	<e>
+	   <p>
+	      <l></l>
+	      <r><s n="n"/><s n="acr"/><s n="sg"/></r>
+	    </p>
+	</e>
+        <e>
+	   <p>
+	      <l>-</l> 
+	      <r><s n="n"/><s n="acr"/><s n="pl"/></r>
+	     </p>
+	</e>
+</pardef>
+	
   <pardefs>
     <pardef n="guionet">
     <e>
@@ -15416,4 +15449,284 @@
     <e><par n="separ"/></e>
     <e><par n="guionet"/></e>
   </section>
+	<!-- Acronyms -->
+<e lm="ABC"><i>ABC</i><par n="BBC__n"/></e>
+<e lm="A/D"><i>A/D</i><par n="BBC__n"/></e>
+<e lm="AFP"><i>AFP</i><par n="BBC__n"/></e>
+<e lm="AG"<i>AG</i><par n="BBC__n"/></e>
+<e lm="AIDS"><i>AIDS</i><par n="BBC__n"/></e>
+<e lm="AM/FM"><i>AM/FM</i><par n="BBC__n"/></e>
+<e lm="AM"><i>AM</i><par n="BBC__n"/></e>
+<e lm="ANSI"><i>ANSI</i><par n="BBC__n"/></e>
+<e lm="ASC"><i>ASC</i><par n="BBC__n"/></e>
+<e lm="ASCII"><i>ASCII</i><par n="BBC__n"/></e>
+<e lm="ASIC"><i>ASIC</i><par n="VCR__n"/></e>
+<e lm="ATM" c="(US)"><i>ATM</i><par n="VCR__n"/></e>
+<e lm="ATP"<i>ATP</i><par n="BBC__n"/></e>
+<e lm="B&amp;B"><i>B&amp;B</i><par n="VCR__n"/></e>
+<e lm="BASIC"><i>BASIC</i><par n="BBC__n"/></e>
+<e lm="B.B.C."><i>B.B.C.</i><par n="BBC__n"/></e>
+<e lm="BBC"><i>BBC</i><par n="BBC__n"/></e>
+<e lm="BBK"><i>BBK</i><par n="BBC__n"/></e>
+<e lm="B.C."><i>B.C.</i><par n="BBC__n"/></e>
+<e lm="BEA"><i>BEA</i><par n="BBC__n"/></e>
+<e lm="BIOS"><i>BIOS</i><par n="SOS__n"/></e>
+<e lm="B.M.C."><i>B.M.C.</i><par n="BBC__n"/></e>
+<e lm="BMW"><i>BMW</i><par n="BBC__n"/></e>
+<e lm="B.O.A.C."><i>B.O.A.C.</i><par n="BBC__n"/></e>
+<e lm="BOE"><i>BOE</i><par n="BBC__n"/></e>
+<e lm="BOF"><i>BOF</i><par n="BBC__n"/></e>
+<e lm="BOM"><i>BOM</i><par n="BBC__n"/></e>
+<e lm="BP"><i>BP</i><par n="BBC__n"/></e>
+<e lm="CAT"><i>CAT</i><par n="BBC__n"/></e>
+<e lm="CCCP"><i>CCCP</i><par n="BBC__n"/></e>
+<e lm="CCD"><i>CCD</i><par n="VCR__n"/></e>
+<e lm="CC"><i>CC</i><par n="BBC__n"/></e>
+<e lm="CD"><i>CD</i><par n="VCR__n"/></e>
+<e lm="CD-ROM"><i>CD-ROM</i><par n="VCR__n"/></e>
+<e lm="CDU"<i>CDU</i><par n="BBC__n"/></e>
+<e lm="CEO"><i>CEO</i><par n="VCR__n"/></e>
+<e lm="CIA"><i>CIA</i><par n="BBC__n"/></e>
+<e lm="CID"><i>CID</i><par n="BBC__n"/></e>
+<e lm="CNN"><i>CNN</i><par n="BBC__n"/></e>
+<e lm="CO2"><i>CO2</i><par n="BBC__n"/></e>
+<e lm="CPM"><i>CPM</i><par n="BBC__n"/></e>
+<e lm="CPU"><i>CPU</i><par n="VCR__n"/></e>
+<e lm="CRC"><i>CRC</i><par n="BBC__n"/></e>
+<e lm="CSSD"><i>CSSD</i><par n="BBC__n"/></e>
+<e lm="CT"><i>CT</i><par n="BBC__n"/></e>
+<e lm="CTK"><i>CTK</i><par n="BBC__n"/></e>
+<e lm="CV"><i>CV</i><par n="VCR__n"/></e>
+<e lm="DBMS"><i>DBMS</i><par n="SOS__n"/></e>
+<e lm="D.C."><i>D.C.</i><par n="BBC__n"/></e>
+<e lm="DDR"><i>DDR</i><par n="BBC__n"/></e>
+<e lm="DJ"><i>DJ</i><par n="VCR__n"/></e>
+<e lm="DM"><i>DM</i><par n="BBC__n"/></e>
+<e lm="DNA"><i>DNA</i><par n="BBC__n"/></e>
+<e lm="DNS"><i>DNS</i><par n="BBC__n"/></e>
+<e lm="DOS"><i>DOS</i><par n="BBC__n"/></e>
+<e lm="DVD"><i>DVD</i><par n="VCR__n"/></e>
+<e lm="EC"><i>EC</i><par n="BBC__n"/></e>
+<e lm="EPP-ED"><i>EPP-ED</i><par n="BBC__n"/></e>
+<e lm="ERC"><i>ERC</i><par n="BBC__n"/></e>
+<e lm="ETA"><i>ETA</i><par n="BBC__n"/></e>
+<e lm="et al"><i>et<b/>al</i><par n="BBC__n"/></e>
+<e lm="EU"<i>EU</i><par n="BBC__n"/></e>
+<e lm="EUR"><i>EUR</i><par n="BBC__n"/></e>
+<e lm="E.V."><i>E.V.</i><par n="BBC__n"/></e>
+<e lm="FAQ"><i>FAQ</i><par n="BBC__n"/></e>
+<e lm="FARC"><i>FARC</i><par n="BBC__n"/></e>
+<e lm="FAX"><i>FAX</i><par n="BBC__n"/></e>
+<e lm="FBI"><i>FBI</i><par n="BBC__n"/></e>
+<e lm="F.C."><i>F.C.</i><par n="BBC__n"/></e>
+<e lm="FIFA"><i>FIFA</i><par n="BBC__n"/></e>
+<e lm="FM"><i>FM</i><par n="BBC__n"/></e>
+<e lm="g"><i>g</i><par n="BBC__n"/></e>
+<e lm="GB"><i>GB</i><par n="BBC__n"/></e>
+<e lm="GDP"><i>GDP</i><par n="VCR__n"/></e>
+<e lm="GM"><i>GM</i><par n="BBC__n"/></e>
+<e lm="GNU"><i>GNU</i><par n="BBC__n"/></e>
+<e lm="G.P."><i>G.P.</i><par n="BBC__n"/></e>
+<e lm="GPS"><i>GPS</i><par n="SOS__n"/></e>
+<e lm="GPU"><i>GPU</i><par n="VCR__n"/></e>
+<e lm="GSM"><i>GSM</i><par n="BBC__n"/></e>
+<e lm="GSoC"><i>GSoC</i><par n="BBC__n"/></e>
+<e lm="GUI"><i>GUI</i><par n="VCR__n"/></e>
+<e lm="HBO"><i>HBO</i><par n="BBC__n"/></e>
+<e lm="HD"><i>HD</i><par n="BBC__n"/></e>
+<e lm="HIV"><i>HIV</i><par n="BBC__n"/></e>
+<e lm="HRH"><i>HRH</i><par n="BBC__n"/></e>
+<e lm="HSV"><i>HSV</i><par n="BBC__n"/></e>
+<e lm="HTML"><i>HTML</i><par n="BBC__n"/></e>
+<e lm="http"><i>http</i><par n="BBC__n"/></e>
+<e lm="https"><i>https</i><par n="BBC__n"/></e>
+<e lm="IBM"><i>IBM</i><par n="Linux__np"/></e>
+<e lm="IC"><i>IC</i><par n="BBC__n"/></e>
+<e lm="ICT"><i>ICT</i><par n="BBC__n"/></e>
+<e lm="IEEE"><i>IEEE</i><par n="BBC__n"/></e>
+<e lm="IMF"><i>IMF</i><par n="BBC__n"/></e>
+<e lm="IP"><i>IP</i><par n="VCR__n"/></e>
+<e lm="ISBN"><i>ISBN</i><par n="BBC__n"/></e>
+<e lm="ISDN"><i>ISDN</i><par n="BBC__n"/></e>
+<e r="RL" lm="ISK"><i>ISK</i><par n="BBC__n"/></e>
+<e lm="ISO"><i>ISO</i><par n="BBC__n"/></e>
+<e lm="IT"><i>IT</i><par n="BBC__n"/></e>
+<e lm="JPEG"><i>JPEG</i><par n="BBC__n"/></e>
+<e lm="KGB"><i>KGB</i><par n="BBC__n"/></e>
+<e lm="LAN"><i>LAN</i><par n="BBC__n"/></e>
+<e lm="LCD"><i>LCD</i><par n="VCR__n"/></e>
+<e lm="LED"><i>LED</i><par n="VCR__n"/></e>
+<e lm="LF"><i>LF</i><par n="BBC__n"/></e>
+<e lm="LGBT"><i>LGBT</i><par n="BBC__n"/></e>
+<e lm="LP"><i>LP</i><par n="BBC__n"/></e>
+<e lm="LSD"><i>LSD</i><par n="BBC__n"/></e>
+<e lm="M1"><i>M1</i><par n="BBC__n"/></e>
+<e lm="MAN"><i>MAN</i><par n="BBC__n"/></e>
+<e lm="MB"><i>MB</i><par n="VCR__n"/></e>
+<e lm="MIDI"><i>MIDI</i><par n="BBC__n"/></e>
+<e lm="mp3"><i>mp3</i><par n="BBC__n"/></e>
+<e lm="MPEG"><i>MPEG</i><par n="BBC__n"/></e>
+<e lm="MP"><i>MP</i><par n="BBC__n"/></e>
+<e lm="MTA"><i>MTA</i><par n="BBC__n"/></e>
+<e lm="Na+"><i>Na+</i><par n="BBC__n"/></e>
+<e lm="NASA"><i>NASA</i><par n="BBC__n"/></e>
+<e lm="NATO"><i>NATO</i><par n="BBC__n"/></e>
+<e lm="NBA"><i>NBA</i><par n="BBC__n"/></e>
+<e lm="NBC"><i>NBC</i><par n="BBC__n"/></e>
+<e lm="NFC"><i>NFC</i><par n="BBC__n"/></e>
+<e lm="NSA"><i>NSA</i><par n="BBC__n"/></e>
+<e lm="NTSC"><i>NTSC</i><par n="BBC__n"/></e>
+<e lm="N.W."><i>N.W.</i><par n="BBC__n"/></e>
+<e lm="N.Y."><i>N.Y.</i><par n="BBC__n"/></e>
+<e lm="NYSE"><i>NYSE</i><par n="BBC__n"/></e>
+<e lm="OCR"><i>OCR</i><par n="BBC__n"/></e>
+<e lm="OPEC"><i>OPEC</i><par n="BBC__n"/></e>
+<e lm="PAL"><i>PAL</i><par n="BBC__n"/></e>
+<e lm="PC"><i>PC</i><par n="VCR__n"/></e>
+<e lm="PDA"><i>PDA</i><par n="VCR__n"/></e>
+<e lm="PDF"><i>PDF</i><par n="BBC__n"/></e>
+<e lm="PD"><i>PD</i><par n="BBC__n"/></e>
+<e lm="PHP"><i>PHP</i><par n="BBC__n"/></e>
+<e lm="PIN"><i>PIN</i><par n="BBC__n"/></e>
+<e lm="PIP"><i>PIP</i><par n="BBC__n"/></e>
+<e lm="PKK"><i>PKK</i><par n="BBC__n"/></e>
+<e lm="PM"><i>PM</i><par n="BBC__n"/></e>
+<e lm="PNB"><i>PNB</i><par n="BBC__n"/></e>
+<e lm="PNG"><i>PNG</i><par n="BBC__n"/></e>
+<e lm="POSIX"><i>POSIX</i><par n="BBC__n"/></e>
+<e lm="PP"><i>PP</i><par n="BBC__n"/></e>
+<e lm="PROM"><i>PROM</i><par n="BBC__n"/></e>
+<e lm="PSC"><i>PSC</i><par n="BBC__n"/></e>
+<e lm="PSOE"><i>PSOE</i><par n="BBC__n"/></e>
+<e lm="PVC"><i>PVC</i><par n="BBC__n"/></e>
+<e lm="QE2"><i>QE2</i><par n="BBC__n"/></e>
+<e lm="RAF"><i>RAF</i><par n="BBC__n"/></e>
+<e lm="RAID"><i>RAID</i><par n="BBC__n"/></e>
+<e lm="RATP"><i>RATP</i><par n="BBC__n"/></e>
+<e lm="RGB"><i>RGB</i><par n="BBC__n"/></e>
+<e lm="RIS"><i>RIS</i><par n="BBC__n"/></e>
+<e lm="RNA"><i>RNA</i><par n="BBC__n"/></e>
+<e lm="ROM"><i>ROM</i><par n="VCR__n"/></e>
+<e lm="S.A."><i>S.A.</i><par n="BBC__n"/></e>
+<e lm="SAP"><i>SAP</i><par n="BBC__n"/></e>
+<e lm="S.E."><i>S.E.</i><par n="BBC__n"/></e>
+<e lm="SMS"><i>SMS</i><par n="SOS__n"/></e>
+<e lm="S.O.S."><i>S.O.S.</i><par n="BBC__n"/></e>
+<e lm="SPD"><i>SPD</i><par n="BBC__n"/></e>
+<e lm="SQL"><i>SQL</i><par n="Linux__np"/></e>
+<e lm="SRAM"><i>SRAM</i><par n="VCR__n"/></e>
+<e lm="STD"><i>STD</i><par n="BBC__n"/></e>
+<e lm="S.W."><i>S.W.</i><par n="BBC__n"/></e>
+<e lm="TARDIS"><i>TARDIS</i><par n="SOS__n"/></e>
+<e lm="TeV"><i>TeV</i><par n="BBC__n"/></e>
+<e lm="TGV"><i>TGV</i><par n="VCR__n"/></e>
+<e lm="TI">i>TI</i><par n="BBC__n"/></e>
+<e lm="TNT"><i>TNT</i><par n="BBC__n"/></e>
+<e lm="TVG"><i>TVG</i><par n="BBC__n"/></e>
+<e lm="TV"><i>TV</i><par n="BBC__n"/></e>
+<e lm="UDF"><i>UDF</i><par n="BBC__n"/></e>
+<e lm="UEFA"><i>UEFA</i><par n="BBC__n"/></e>
+<e lm="UNESCO"><i>UNESCO</i><par n="BBC__n"/></e>
+<e lm="UNHCR"><i>UNHCR</i><par n="BBC__n"/></e>
+<e lm="U.N."><i>U.N.</i><par n="BBC__n"/></e>
+<e lm="UN"><i>UN</i><par n="BBC__n"/></e>
+<e lm="USB"><i>USB</i><par n="BBC__n"/></e>
+<e lm="VAT"><i>VAT</i><par n="BBC__n"/></e>
+<e lm="VCR"><i>VCR</i><par n="VCR__n"/></e>
+<e lm="W3C"><i>W3C</i><par n="BBC__n"/></e>
+<e lm="W.C."><i>W.C.</i><par n="BBC__n"/></e>
+<e lm="WC"><i>WC</i><par n="VCR__n"/></e>
+<e lm="WFW"><i>WFW</i><par n="BBC__n"/></e>
+<e lm="WHO"><i>WHO</i><par n="BBC__n"/></e>
+<e lm="WPC"><i>WPC</i><par n="BBC__n"/></e>
+<e lm="WT"><i>WT</i><par n="BBC__n"/></e>
+<e lm="WWII"><i>WWII</i><par n="BBC__n"/></e>
+<e lm="WWI"><i>WWI</i><par n="BBC__n"/></e>
+<e lm="XML"><i>XML</i><par n="BBC__n"/></e>
+<e lm="ZDF"><i>ZDF</i><par n="BBC__n"/></e>
+<!-- Others -->
+<e lm="Adobe"><i>Adobe</i><par n="Linux__np"/></e>
+<e lm="Adobe Acrobat">i>Adobe<b/>Acrobat</i><par n="Linux__np"/></e>
+<e lm="Adobe After Effects"><i>Adobe<b/>After<b/>Effects</i><par n="Linux__np"/></e>
+<e lm="Adobe Audition"><i>Adobe<b/>Audition</i><par n="Linux__np"/></e>
+<e lm="Adobe Dreamviewer”><i>Adobe<b/>Dreamviewer</i><par n="Linux__np"/></e>
+<e lm="Adobe Flash"><i>Adobe<b/>Flash</i><par n="Linux__np"/></e>
+<e lm="Adobe Flash Player"><i>Adobe<b/>Flash<b/>Player</i><par n="Linux__np"/></e>
+<e lm="Adobe Fireworks"><i>Adobe<b/>Fireworks</i><par n="Linux__np"/></e>
+<e lm="Adobe Illustrator"><i>Adobe<b/>Illustrator</i><par n="Linux__np"/></e>
+<e lm="Adobe Indesign"><i>Adobe<b/>Indesign</i><par n="Linux__np"/></e>
+<e lm="Adobe Media Encoder"><i>Adobe<b/>Media<b/>Encoder</i><par n="Linux__np"/></e>
+<e lm="Adobe Photoshop"><i>Adobe<b/>Photoshop</i><par n="Linux__np"/></e>
+<e lm="Adobe Reader"><i>Adobe<b/>Reader</i><par n="Linux__np"/></e>
+<e lm="Adobe Spark"><i>Adobe<b/>Spark</i><par n="Linux__np"/></e>
+<e lm="Adobe Systems"><i>Adobe<b/>Systems</i><par n="Linux__np"/></e>
+<e lm="Apertium"><i>Apertium</i><par n="Linux__np"/></e>
+<e lm="Il trovatore"><i>Il<b/>trovatore</i><par n="Linux__np"/></e>
+<e lm="Air France"><i>Air<b/>France</i><par n="Linux__np"/></e>
+<e lm="Bayern"><i>Bayern</i><par n="Linux__np"/></e>
+<e lm="Fortis"><i>Fortis</i><par n="Wikipedia__np"/></e>
+<e lm="FORTRAN"><i>FORTRAN</i><par n="Linux__np"/></e>
+<e lm="Hamàs"><i>Hamàs</i><par n="Linux__np"/></e>
+<e lm="Hansa"><i>Hansa</i><par n="Wikipedia__np"/></e>
+<e lm="Iurbentia"><i>Iurbentia</i><par n="Wikipedia__np"/></e>
+<e lm="Jackass"><i>Jackass</i><par n="Linux__np"/></e>
+<e lm="Maccabi"><i>Maccabi</i><par n="Linux__np"/></e>
+<e lm="Metallica"><i>Metallica</i><par n="Linux__np"/></e>
+<e lm="Monsanto"><i>Monsanto</i><par n="Wikipedia__np"/></e>
+<e lm="Oracle"><i>Oracle</i><par n="Wikipedia__np"/></e>
+<e lm="Pink Floyd"><i>Pink<b/>Floyd</i><par n="Linux__np"/></e>
+<e lm="Rent"><i>Rent</i><par n="Linux__np"/></e>
+<e lm="Schalke"><i>Schalke</i><par n="Linux__np"/></e>
+<e lm="Schuller"><i>Schuller</i><par n="Wikipedia__np"/></e>
+<e lm="Segi"><i>Segi</i><par n="Wikipedia__np"/></e>
+<e lm="Sisley"><i>Sisley</i><par n="Wikipedia__np"/></e>
+<e lm="Solson"><i>Solson</i><par n="Saussure__np"/></e>
+<e lm="Trabanco"><i>Trabanco</i><par n="Linux__np"/></e>
+<e lm="New Nintendo 2DS"><i>New<b/>Nintendo<b/>2DS</i><par n="Wikipedia__np"/></e>
+<e lm="New Nintendo 3DS"><i>New<b/>Nintendo<b/>3DS</i><par n="Wikipedia__np"/></e>
+<e lm="New Nintendo 3DS XL"><i>New<b/>Nintendo<b/>3DS<b/>XL</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo"><i>Nintendo</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo 2DS"><i>Nintendo<b/>2DS</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo 3DS"><i>Nintendo<b/>3DS</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo 3DS XL"><i>Nintendo<b/>3DS<b/>XL</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo 64"><i>Nintendo<b/>64</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo DS"><i>Nintendo<b/>DS</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo DS Lite"><i>Nintendo<b/>DS<b/>Lite</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo DSi"><i>Nintendo<b/>DSi</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo DSi XL"><i>Nintendo<b/>DSi<b/>XL</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo Entertainment System"><i>Nintendo<b/>Entertainment<b/>System</i><par n="Wikipedia__np"/></e>
+<e lm="Nintendo Switch"><i>Nintendo<b/>Switch</i><par n="Wikipedia__np"/></e>
+<e lm="PlayStation"><i>PlayStation</i><par n="Wikipedia__np"/></e>
+<e lm="PlayStation 2"><i>PlayStation<b/>2</i><par n="Wikipedia__np"/></e>
+<e lm="PlayStation 3"><i>PlayStation<b/>3</i><par n="Wikipedia__np"/></e>
+<e lm="PlayStation 4"><i>PlayStation<b/>4</i><par n="Wikipedia__np"/></e>
+<e lm="PlayStation Portable"><i>PlayStation<b/>Portable</i><par n="Wikipedia__np"/></e>
+<e lm="PlayStation Vita"><i>PlayStation<b/>Vita</i><par n="Wikipedia__np"/></e>
+<e lm="Wii"><i>Wii</i><par n="Wikipedia__np"/></e>
+<e lm="Wii U"><i>Wii<b/>U</i><par n="Wikipedia__np"/></e>
+<e lm="Wikimedia"><i>Wikimedia</i><par n="Wikipedia__np"/></e>
+<e lm="Wikipedia"><i>Wikipedia</i><par n="Wikipedia__np"/></e>
+<e lm="Windows"><i>Windows</i><par n="Linux__np"/></e>
+<e lm="Windows 10"><i>Windows<b/>10</i><par n="Linux__np"/></e>
+<e lm="Windows 2000"><i>Windows<b/>2000</i><par n="Linux__np"/></e>
+<e lm="Windows 3.1"><i>Windows<b/>3.1</i><par n="Linux__np"/></e>
+<e lm="Windows 7"><i>Windows<b/>7</i><par n="Linux__np"/></e>
+<e lm="Windows 8"><i>Windows<b/>8</i><par n="Linux__np"/></e>
+<e lm="Windows 8.1"><i>Windows<b/>8.1</i><par n="Linux__np"/></e>
+<e lm="Windows 95"><i>Windows<b/>95</i><par n="Linux__np"/></e>
+<e lm="Windows 98"><i>Windows<b/>98</i><par n="Linux__np"/></e>
+<e lm="Windows Embedded"><i>Windows<b/>Embedded</i><par n="Linux__np"/></e>
+<e lm="Windows ME"><i>Windows<b/>ME</i><par n="Linux__np"/></e>
+<e lm="Windows Mobile"><i>Windows<b/>Mobile</i><par n="Linux__np"/></e>
+<e lm="Windows NT"><i>Windows<b/>NT</i><par n="Linux__np"/></e>
+<e lm="Windows Phone"><i>Windows<b/>Phone</i><par n="Linux__np"/></e>
+<e lm="Windows Server"><i>Windows<b/>Server</i><par n="Linux__np"/></e>
+<e lm="Windows Vista"><i>Windows<b/>Vista</i><par n="Linux__np"/></e>
+<e lm="Windows XP"><i>Windows<b/>XP</i><par n="Linux__np"/></e>
+<e lm="Word"><i>Word</i><par n="Linux__np"/></e>
+<e lm="WordPerfect"><i>WordPerfect</i><par n="Linux__np"/></e>
+<e lm="Xbox"><i>Xbox</i><par n="Wikipedia__np"/></e>
+<e lm="Xbox 360"><i>Xbox<b/>360</i><par n="Wikipedia__np"/></e>
+<e lm="Xbox One"><i>Xbox<b/>One</i><par n="Wikipedia__np"/></e>
+<e lm="Xbox One X"><i>Xbox<b/>One<b/>X</i><par n="Wikipedia__np"/></e>							   
 </dictionary>
