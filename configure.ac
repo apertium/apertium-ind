@@ -1,6 +1,6 @@
 AC_PREREQ(2.52)
 
-AC_INIT([Apertium Indonesian], [0.2.0], [apertium-stuff@lists.sourceforge.net], [apertium-ind], [http://wiki.apertium.org/wiki/Apertium-ind])
+AC_INIT([Apertium Indonesian], [0.2.0], [apertium-stuff@lists.sourceforge.net], [apertium-ind], [https://wiki.apertium.org/wiki/Apertium-ind])
 AM_INIT_AUTOMAKE
 
 AC_PROG_AWK
