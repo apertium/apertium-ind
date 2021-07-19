@@ -18,3 +18,7 @@
 /.deps
 /config.in
 /config
+/*.hfst
+/*.zhfst
+/*-*.prob
+/test/*-output.txt
