@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+srcdir=@datarootdir@/apertium/apertium-ind
+
+Name: apertium-ind
+Description: Finite-state morphological transducer and constraint grammar for Indonesian
+Version: @VERSION@
+

@@ -1,0 +1,92 @@
+Indonesian: `apertium-ind`
+===============================================================================
+
+This is an Apertium monolingual language package for Indonesian. What
+you can use this language package for:
+
+* Morphological analysis of Indonesian
+* Morphological generation of Indonesian
+* Part-of-speech tagging of Indonesian
+
+Requirements
+-------------------------------------------------------------------------------
+
+You will need the following software installed:
+
+* autoconf
+* automake
+* pkg-config
+* lttoolbox (>= 3.5.1)
+* apertium (>= 3.6.1)
+* vislcg3 (>= 1.3.1)
+* hfst (>= 3.15.1)
+* foma
+
+If this does not make any sense, we recommend you look at: apertium.org.
+
+Compiling
+-------------------------------------------------------------------------------
+
+Given the requirements being installed, you should be able to just run:
+
+```bash
+$ autoreconf -fvi
+$ ./configure
+$ make
+```
+
+You can use `./autogen.sh` instead of `autoreconf` and `./configure` if you're compiling
+from source.
+
+If you're doing development, you don't have to install the data, you
+can use it directly from this directory.
+
+If you are installing this language package as a prerequisite for an
+Apertium translation pair, then do (typically as root / with sudo):
+
+```bash
+$ make install
+```
+
+You can use a `--prefix` with `./configure` to install as a non-root user,
+but make sure to use the same prefix when installing the translation
+pair and any other language packages.
+
+If any of this doesn't make sense or doesn't work, see https://wiki.apertium.org/wiki/Install_language_data_by_compiling
+
+Testing
+-------------------------------------------------------------------------------
+
+If you are in the source directory after running make, the following
+commands should work:
+
+```console
+$ echo "Silakan klik tombol "lanjut" untuk meneruskan ke tahap berikutnya" | apertium -d . ind-morph
+^Silakan/*Silakan$ ^klik/klik<vblex><actv><perf><sg>$ ^tombol/tombol<n><bare><sg>$ ^lanjut/lanjut<vblex><actv><perf><sg>$ ^untuk/untuk<pr>$ ^meneruskan/terus<adj><actv><imp><caus><sg>/terus<vblex><actv><imp><caus><sg>$ ^ke/ke<pr>$ ^tahap/*tahap$ ^berikutnya/ikut<vblex><actv><perf><sg>+dia<prn><enc><p3><sg>$
+```
+
+Files and data
+-------------------------------------------------------------------------------
+
+
+* [`apertium-ind.ind.foma`](apertium-ind.ind.foma) - FOMA script to build the transducer
+* [`apertium-ind.ind.lexc`](apertium-ind.ind.lexc) - Morphotactic dictionary
+* [`apertium-ind.morphophonemic.xfst`](apertium-ind.morphophonemic.xfst)  - Morphophonemic rules
+* [`apertium-ind.hyphenrule.xfst`](apertium-ind.hyphenrule.xfst)  - Hyphen rules for reduplication
+* [`modes.xml`](modes.xml) - Translation modes
+
+For more information
+-------------------------------------------------------------------------------
+
+* https://wiki.apertium.org/wiki/Installation
+* https://wiki.apertium.org/wiki/apertium-ind
+
+Help and support
+-------------------------------------------------------------------------------
+
+If you need help using this language pair or data, you can contact:
+
+* Mailing list: apertium-stuff@lists.sourceforge.net
+* IRC: `#apertium` on irc.oftc.net (irc://irc.oftc.net/#apertium)
+
+See also the file [`AUTHORS`](AUTHORS), included in this distribution.

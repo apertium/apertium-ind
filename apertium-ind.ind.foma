@@ -1,8 +1,8 @@
-read lexc < apertium-id-ms.id.lexc
+read lexc < apertium-ind.ind.lexc
 
 define initialnet
 
-source apertium-id-ms.morphophonemic.xfst
+source apertium-ind.morphophonemic.xfst
 
 read regex initialnet .o. Morphrules ;
 
@@ -29,7 +29,7 @@ define secondarynet _eq(secondarynetB, %<, %>) .o. %<|%> -> 0;
 
 # Here we continue as with xfst
 
-source apertium-id-ms.hyphenrule.xfst
+source apertium-ind.hyphenrule.xfst
 
 read regex secondarynet .o. HyphenRulesBiasa ;
 
@@ -37,7 +37,7 @@ define ternarynet
 
 read regex ternarynet .o. Morphrules ;
 
-save stack ../xfst-id.bin
+save stack apertium-ind.ind.foma.bin.gz
 
 exit
 

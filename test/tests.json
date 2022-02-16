@@ -1,0 +1,10 @@
+{
+    "analysis": {
+        "input": "analysis-input.txt",
+        "mode": "ind-morph"
+    },
+    "generation": {
+        "input": "generation-input.txt",
+        "mode": "ind-gener"
+    }
+}

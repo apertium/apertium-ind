@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hfstspeller dtdversion="1.0" hfstversion="3">
+  <info>
+    <locale>id</locale>
+    <title>Apertium morphological analyser-based speller (Indonesian)</title>
+    <description>
+      A spellchecker for Indonesian.
+    </description>
+    <version vcsrev="GT_REVISION">@APERTIUM_AUTO_VERSION@</version>
+    <date>DATE</date>
+    <producer>Apertium contributors</producer>
+    <contact email="nlhowell@gmail.com"
+        website="http://apertium.org"/>
+  </info>
+  <acceptor type="general" id="acceptor.default.hfst">
+    <title>Apertium dictionary (Indonesian)</title>
+    <description>
+        Apertium dictionary for Indonesian compiled for HFST.
+    </description>
+  </acceptor>
+  <errmodel id="errmodel.default.hfst">
+    <title>Levenshtein edit distance transducer</title>
+    <description>
+        Correction model for keyboard misstrokes, at most 2 per word.
+    </description>
+        <type type="default"/>
+        <model>errmodel.default.hfst</model>
+    </errmodel>
+</hfstspeller>
