@@ -506,10 +506,10 @@ LEXICON enclitic
 %+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%>@R.DERNOUN@:00kau00000@R.DERNOUN@                 CheckParticle ;
 %+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>@R.DERNOUN@:0nya00000@R.DERNOUN@                   CheckParticle ;
 !%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%>@R.DERNOUN@:%-Nya000000@R.DERNOUN@          CheckParticle ;  !! check this later
-%+aku%<prn%>%<enc%>%<p1%>%<sg%>@R.VOICE@:00ku0000@R.VOICE@                               CheckParticle ;
-%+kamu%<prn%>%<enc%>%<p2%>%<sg%>@R.VOICE@:000mu0000@R.VOICE@                             CheckParticle ;
-%+kamu%<prn%>%<enc%>%<p2%>%<sg%>@R.VOICE@:00kau0000@R.VOICE@                             CheckParticle ;
-%+dia%<prn%>%<enc%>%<p3%>%<sg%>@R.VOICE@:0nya0000@R.VOICE@                               CheckParticle ;
+%+aku%<prn%>%<enc%>%<p1%>%<sg%>[@R.VOICE|@R.POS.pr@]:00ku0000[@R.VOICE|@R.POS.pr@]                               CheckParticle ;
+%+kamu%<prn%>%<enc%>%<p2%>%<sg%>[@R.VOICE@|@R.POS.pr@]:000mu0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
+%+kamu%<prn%>%<enc%>%<p2%>%<sg%>[@R.VOICE@|@R.POS.pr@]:00kau0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
+%+dia%<prn%>%<enc%>%<p3%>%<sg%>[@R.VOICE@|@R.POS.pr@]:0nya0000[@R.VOICE@|@R.POS.pr@]                               CheckParticle ;  
 !%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%>@R.VOICE@:%-Nya000000@R.VOICE@    
                                                                                          CheckParticle ;
 %<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
