@@ -512,7 +512,7 @@ LEXICON enclitic
 %+dia%<prn%>%<enc%>%<p3%>%<sg%>@R.VOICE@:0nya0000@R.VOICE@                               CheckParticle ;
 !%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>%<cap%>@R.VOICE@:%-Nya000000@R.VOICE@    
                                                                                          CheckParticle ;
-!%<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
+%<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
 
 LEXICON CheckParticle
 %+kah%<part%>@D.POS.question@@R.MARKP.toparticle@:0kah0@D.POS.question@@R.MARKP.toparticle@                   # ;
