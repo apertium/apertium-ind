@@ -501,14 +501,14 @@ LEXICON check_capital
 @D.CAP@                                                       enclitic ;
 
 LEXICON enclitic
-%+aku%<prn%>%<enc%>%<p1%>%<sg%>%<pos%>@R.DERNOUN@:00ku00000@R.DERNOUN@                   CheckParticle ;
-%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%>@R.DERNOUN@:000mu00000@R.DERNOUN@                 CheckParticle ;
-%+kamu%<prn%>%<enc%>%<p2%>%<sg%>%<pos%>@R.DERNOUN@:00kau00000@R.DERNOUN@                 CheckParticle ;
-%+dia%<prn%>%<enc%>%<p3%>%<sg%>%<pos%>@R.DERNOUN@:0nya00000@R.DERNOUN@                   CheckParticle ;
-%+aku%<prn%>%<enc%>%<p1%>%<sg%>[@R.VOICE|@R.POS.pr@]:00ku0000[@R.VOICE|@R.POS.pr@]                               CheckParticle ;
-%+kamu%<prn%>%<enc%>%<p2%>%<sg%>[@R.VOICE@|@R.POS.pr@]:000mu0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
-%+kamu%<prn%>%<enc%>%<p2%>%<sg%>[@R.VOICE@|@R.POS.pr@]:00kau0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
-%+dia%<prn%>%<enc%>%<p3%>%<sg%>[@R.VOICE@|@R.POS.pr@]:0nya0000[@R.VOICE@|@R.POS.pr@]                               CheckParticle ;  
+%+aku%<prn%>%<p1%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:00ku00000@R.DERNOUN@                   CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:000mu00000@R.DERNOUN@                 CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:00kau00000@R.DERNOUN@                 CheckParticle ;
+%+dia%<prn%>%<p3%>%<sg%>%<enc%>%<pos%>@R.DERNOUN@:0nya00000@R.DERNOUN@                   CheckParticle ;
+%+aku%<prn%>%<p1%>%<sg%>%<enc%>[@R.VOICE|@R.POS.pr@]:00ku0000[@R.VOICE|@R.POS.pr@]                               CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:000mu0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
+%+kamu%<prn%>%<p2%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:00kau0000[@R.VOICE@|@R.POS.pr@]                             CheckParticle ;
+%+dia%<prn%>%<p3%>%<sg%>%<enc%>[@R.VOICE@|@R.POS.pr@]:0nya0000[@R.VOICE@|@R.POS.pr@]                               CheckParticle ;  
                                                                                          CheckParticle ;
 %<det%>00@D.VOICE@:nya@D.VOICE@                                                                            CheckParticle ;  !! determiner
 
