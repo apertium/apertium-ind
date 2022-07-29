@@ -28,6 +28,7 @@ Multichar_Symbols
          %<enc%>
          %<ent%>
          %<exceed%>
+         %<frac%>
          %<imp%>
          %<manner%>
          %<mimic%>
@@ -86,6 +87,7 @@ Multichar_Symbols
          @P.DERNOUN.theme@
          @P.DERNUM.card@
          @P.DERNUM.coll@
+         @P.DERNUM.frac@
          @P.DERNUM.ord@
          @P.DERNUM.ref@
          @P.DERNUM.uni@
@@ -149,6 +151,7 @@ Multichar_Symbols
          @R.DERNOUN.theme@
          @R.DERNUM.card@
          @R.DERNUM.coll@
+         @R.DERNUM.frac@
          @R.DERNUM.ord@
          @R.DERNUM.ref@
          @R.DERNUM.uni@
@@ -305,6 +308,7 @@ LEXICON numa_prefix
 @P.DERNUM.card@                                                              numeral ;  ! eg. "tujuh" [seven]
 00@P.DERNUM.ord@:ke@P.DERNUM.ord@                                            numeral ;  ! eg. "ke- + tujuh" [seventh]
 000@P.DERNUM.coll@:ber@P.DERNUM.coll@                                        numeral ;  ! eg. "ber- + tujuh" [in group of seven]
+000@P.DERNUM.frac@:per@P.DERNUM.frac@                                        numeral ;  ! eg. "per- + tujuh" [out of seven]
 00@P.REDUP.on@000:ke@P.REDUP.on@%^%[%[%{                                     numeral ;  ! eg. "ke- + tujuh-tujuh + -nya" [all the seven of them]
 @P.REDUP.on@000:@P.REDUP.on@%^%[%[%{                                         numeral ;  ! eg. "tujuh-tujuh + -nya" [all the seven of them]
 
@@ -471,6 +475,7 @@ LEXICON check_numeral_type
 %<card%>@R.DERNUM.card@:0@R.DERNUM.card@                      check_person ;
 %<ord%>@R.DERNUM.ord@:0@R.DERNUM.ord@                         check_person ;
 %<coll%>@R.DERNUM.coll@:0@R.DERNUM.coll@                      check_person ;
+%<frac%>@R.DERNUM.frac@:0@R.DERNUM.frac@                      check_person ;
 %<ref%>@R.DERNUM.ref@:0@R.DERNUM.ref@                         check_person ;
 %<uni%>@R.DERNUM.uni@:0@R.DERNUM.uni@                         check_person ;
 @D.DERNUM@                                                    check_person ;
